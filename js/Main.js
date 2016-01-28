@@ -20,6 +20,10 @@ $(document).ready(function(){
      $('#Home').fadeTo(500,0.6).css('box-shadow','none');
    })
 
+   $('.carousel').carousel({
+      pause:'focus'
+   });
+
 
    $('.carousel-inner').fadeIn(2000);
    $('.carousel-indicators').fadeIn(2000);

@@ -1,4 +1,33 @@
+<?php
 
+if(isset($_POST['submit'])){
+
+  // header('Cache-Control: no-cache,must-revalidate',true);
+
+  include_once 'connection.php';
+  $username = strip_tags($_POST['userName']);
+  $password = strip_tags($_POST['password']);
+
+  $query ="SELECT Password FROM users WHERE UserName = '$username'";
+
+  $result = mysqli_query($conn,$query);
+
+  $row = $result->fetch_array(MYSQLI_BOTH);
+
+  if($result){
+    $RightPass = $row['Password'];
+  }
+
+  if($password == $RightPass && $password!=""){
+    header('Location: user.php');
+    exit();
+  }
+  else{
+    header('Location: Main.php');
+  }
+}
+
+ ?>
  <!DOCTYPE html>
  <html>
    <head>
@@ -21,11 +50,44 @@
          <h1 id="header">Home page</h1>
        </div>
 
-       <input id='Home' class="btn btn-success" type="Submit" name="Home" value="Home"/>
-       <input id='login' type="Submit" class="btn btn-primary" name="login" value="login"/>
+       <input id='Home' class="btn btn-primary" type="Submit" value="Home"/>
+       <input id='login' type="Submit" class="btn btn-primary" name="login" value="login" data-toggle="modal" data-target="#Signin"/>
        <input id='register' type="Submit" class="btn btn-primary" name="register" value="Register"/>
 
      </div>
+
+  <!-- sign-in modal -->
+   <div class="modal fade" id="Signin" role="dialog" aria-labelledby="modallabel">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           <h4 class="modal-title" id="modallabel">Log in</h4>
+         </div>
+         <div class="modal-body">
+           <!-- input-group -->
+           <div class="row">
+             <div class="col-md-4 col-md-offset-4">
+               <form method="post">
+                 <div class="form-group">
+                   <h3 style="font-family:'Raleway-Light'" class="text-center">Your Name</h3>
+                   <input type="text" class="form-control" placeholder="UserName" name="userName"/>
+                 </div>
+                 <div class="form-group">
+                   <h3 style="font-family:'Raleway-Light'" class="text-center">Password</h3>
+                   <input type="password" class="form-control" placeholder="Password" name="password"/><br>
+                 </div>
+                 <div class="modal-footer">
+                   <input style="font-family:'Raleway-Light'" type="Submit" class="btn btn-primary center-block" name = "submit" value="login"/>
+                 </div>
+               </form>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
 
      <div id = "mycarousel" class="carousel slide" data-ride="carousel">
 

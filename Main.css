@@ -3,6 +3,11 @@
   src: url('fonts/CaviarDreams.ttf');
 }
 
+@font-face {
+  font-family: 'Raleway-Light';
+  src: url('fonts/Raleway-Light.ttf');
+}
+
 body{
   /*background-image: url('imgs/simple2.jpg');*/
 }
@@ -44,6 +49,11 @@ body{
 }
 
 
+
+
+#modallabel{
+   font-family: 'Raleway-Light';
+}
 
 #header{
   text-shadow: 5px 5px 5px #FFEFD5;

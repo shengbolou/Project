@@ -1,8 +1,9 @@
 <?php
 
+// for login
 if(isset($_POST['submit'])){
 
-  // header('Cache-Control: no-cache,must-revalidate',true);
+   header('Cache-Control: no-cache,must-revalidate',true);
 
   include_once 'connection.php';
   $username = strip_tags($_POST['userName']);
@@ -25,6 +26,49 @@ if(isset($_POST['submit'])){
   else{
     header('Location: Main.php');
   }
+}
+
+// for register
+if(isset($_POST['RegisterSubmit'])){
+  include 'connection.php';
+
+  $name = strip_tags($_POST['name']);
+  $password = strip_tags($_POST['password']);
+  $passwordConfirm = strip_tags($_POST['passwordConfirm']);
+
+  if($name == '' || $password == '' || $passwordConfirm == ''){
+    header('Location:Main.php');
+  }
+  else{
+
+      if($password != $passwordConfirm){
+        echo "
+        <div id = 'Mine' class='alert alert-warning alert-dismissible'>
+         <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+         <strong>Warning!</strong> Please retype your passsword!
+       </div>
+        ";
+        //header('Location: register.php');
+      }
+      else{
+
+        $query = "INSERT INTO users(Name,UserName,Password) VALUES('$name','$name','$password')";
+
+        $result = mysqli_query($conn,$query);
+
+        if($result){
+          echo "Registion Success<br>";
+          header('Location: user.php');
+
+        }
+        else{
+          header('Location: Main.php');
+        }
+
+      }
+  }
+
+
 }
 
  ?>
@@ -52,7 +96,7 @@ if(isset($_POST['submit'])){
 
        <input id='Home' class="btn btn-primary" type="Submit" value="Home"/>
        <input id='login' type="Submit" class="btn btn-primary" name="login" value="login" data-toggle="modal" data-target="#Signin"/>
-       <input id='register' type="Submit" class="btn btn-primary" name="register" value="Register"/>
+       <input id='register' type="Submit" class="btn btn-primary" name="register" value="Register" data-toggle="modal" data-target="#RegisterModal"/>
 
      </div>
 
@@ -66,9 +110,9 @@ if(isset($_POST['submit'])){
          </div>
          <div class="modal-body">
            <!-- input-group -->
-           <div class="row">
-             <div class="col-md-4 col-md-offset-4">
-               <form method="post">
+           <form method="post">
+             <div class="row">
+               <div class="col-md-4 col-md-offset-4">
                  <div class="form-group">
                    <h3 style="font-family:'Raleway-Light'" class="text-center">Your Name</h3>
                    <input type="text" class="form-control" placeholder="UserName" name="userName"/>
@@ -77,18 +121,54 @@ if(isset($_POST['submit'])){
                    <h3 style="font-family:'Raleway-Light'" class="text-center">Password</h3>
                    <input type="password" class="form-control" placeholder="Password" name="password"/><br>
                  </div>
-                 <div class="modal-footer">
-                   <input style="font-family:'Raleway-Light'" type="Submit" class="btn btn-primary center-block" name = "submit" value="login"/>
-                 </div>
-               </form>
+               </div>
              </div>
-           </div>
+             <div class="modal-footer">
+               <input style="font-family:'Raleway-Light'" type="Submit" class="btn btn-primary" name = "submit" value="login"/>
+             </div>
+           </form>
          </div>
        </div>
      </div>
    </div>
 
 
+ <!-- register modal -->
+ <div class="modal fade" id="RegisterModal" tabindex="-1" role="dialog" aria-labelledby="RegisterHeader" aria-hidden="true">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+         <h4 style="font-family:'Raleway-Light'" class="modal-title" id="RegisterHeader">Register</h4>
+       </div>
+       <div class="modal-body">
+         <form method="post">
+           <div class="row">
+             <div class="col-md-4 col-md-offset-4">
+               <div class="form-group">
+                 <h4 style="font-family:'Raleway-Light'" class="text-center">UserName</h4>
+                 <input type="text" class="form-control" name="name" placeholder="Your Name"/>
+               </div>
+               <div class="form-group">
+                 <h4 style="font-family:'Raleway-Light'" class="text-center">Password</h4>
+                 <input type="password" class="form-control" name="password" placeholder="Your Password"/>
+               </div>
+               <div class="form-group">
+                 <h4 style="font-family:'Raleway-Light'" class="text-center inline-block">Confirm Password</h4>
+                 <input type="password" class="form-control" name="passwordConfirm" placeholder="Confirm Password"/>
+               </div>
+             </div>
+           </div>
+           <div class="modal-footer">
+             <input type="Submit" class="btn btn-primary" name="RegisterSubmit" value="Submit"/>
+           </div>
+         </form>
+       </div>
+     </div>
+   </div>
+ </div>
+
+    <!-- carousel -->
      <div id = "mycarousel" class="carousel slide" data-ride="carousel">
 
        <ol class="carousel-indicators">

@@ -21,8 +21,10 @@ $(document).ready(function(){
    })
 
    $('.carousel').carousel({
-      pause:'focus'
+      pause:'active'
    });
+
+
 
 
    $('.carousel-inner').fadeIn(2000);
@@ -37,12 +39,7 @@ $(document).ready(function(){
    $("#Home").click(function(){
         window.location="Main.php";
     });
-    // $('#login').click(function(){
-    //     window.location="index.php";
-    // });
-    $('#register').click(function(){
-        window.location="Register.php";
-    });
+
 
 
 });

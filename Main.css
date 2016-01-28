@@ -1,0 +1,105 @@
+@font-face {
+  font-family: 'Caviar';
+  src: url('fonts/CaviarDreams.ttf');
+}
+
+body{
+  /*background-image: url('imgs/simple2.jpg');*/
+}
+
+
+.sbt{
+  margin-top: 10px;
+}
+
+
+.page-header{
+  /*override bootstrap*/
+  border-bottom: 0;
+  box-shadow: 0 0 0 0;
+  /*fixed header*/
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top:0;
+  margin-top: 0;
+}
+
+
+.header{
+  height: 100px;
+  position: absolute;
+  box-shadow: 10px 10px 50px #A9A9A9;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(5px);
+  -webkit-filter:blur(5px);
+  background-color:#A9A9A9;
+  opacity: 0.6;
+  /*background-image: url('imgs/simple2.jpg');*/
+  /*background-size: cover;*/
+  z-index: -1;
+}
+
+
+
+#header{
+  text-shadow: 5px 5px 5px #FFEFD5;
+  display:none;
+  text-align: center;
+  font-family: 'Caviar';
+  color:#FFFFFF;
+}
+
+#login{
+  display:none;
+  opacity: 0.6;
+  border:none;
+  position: absolute;
+  right:100px;
+  background: none;
+  font-family: 'Caviar';
+  z-index: 1;
+  outline: none;
+}
+
+
+#register{
+  display:none;
+  opacity: 0.6;
+  border: none;
+  position: absolute;
+  right: 20px;
+  background: none;
+  font-family: 'Caviar';
+  z-index: 1;
+  outline: none;
+}
+
+#Home{
+  display:none;
+  position: absolute;
+  left: 20px;
+  background: none;
+  color: white;
+  font-family: 'Caviar';
+  border: none;
+  opacity: 0.6;
+  z-index: 1;
+  outline: none;
+}
+
+
+
+.carousel-indicators{
+  display: none;
+}
+
+.carousel-inner{
+   display: none;
+   /*margin-top: 50px;*/
+   box-shadow: -5px -5px 50px #4682B4;
+   bottom: 0;
+}

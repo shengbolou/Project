@@ -37,17 +37,21 @@ if(isset($_POST['RegisterSubmit'])){
   $passwordConfirm = strip_tags($_POST['passwordConfirm']);
 
   if($name == '' || $password == '' || $passwordConfirm == ''){
-    header('Location:Main.php');
+    echo
+    "<script type='text/javascript'>
+      $('#UserNameLoginInput').effect('shake');
+    </script>";
+    // header('Location:Main.php');
   }
   else{
 
       if($password != $passwordConfirm){
-        echo "
-        <div id = 'Mine' class='alert alert-warning alert-dismissible'>
-         <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-         <strong>Warning!</strong> Please retype your passsword!
-       </div>
-        ";
+      //   echo "
+      //   <div id = 'Mine' class='alert alert-warning alert-dismissible'>
+      //    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+      //    <strong>Warning!</strong> Please retype your passsword!
+      //  </div>
+      //   ";
         //header('Location: register.php');
       }
       else{
@@ -57,19 +61,14 @@ if(isset($_POST['RegisterSubmit'])){
         $result = mysqli_query($conn,$query);
 
         if($result){
-          echo "Registion Success<br>";
           header('Location: user.php');
-
         }
-        else{
-          header('Location: Main.php');
-        }
-
       }
   }
 
 
 }
+
 
  ?>
  <!DOCTYPE html>
@@ -79,7 +78,9 @@ if(isset($_POST['RegisterSubmit'])){
      <title>Main</title>
      <link rel="stylesheet" href="/css/bootstrap.min.css"charset="utf-8"/>
      <link rel="stylesheet" href="Main.css" charset="utf-8">
+
      <script src="js/jquery-2.2.0.min.js"></script>
+     <script src="js/jquery-ui.min.js" charset="utf-8"></script>
      <script src="js/bootstrap.min.js" charset="utf-8"></script>
      <script src="js/Main.js"></script>
    </head>
@@ -147,7 +148,7 @@ if(isset($_POST['RegisterSubmit'])){
              <div class="col-md-4 col-md-offset-4">
                <div class="form-group">
                  <h4 style="font-family:'Raleway-Light'" class="text-center">UserName</h4>
-                 <input type="text" class="form-control" name="name" placeholder="Your Name"/>
+                 <input id="UserNameLoginInput" type="text" class="form-control" name="name" placeholder="Your Name"/>
                </div>
                <div class="form-group">
                  <h4 style="font-family:'Raleway-Light'" class="text-center">Password</h4>
@@ -161,6 +162,7 @@ if(isset($_POST['RegisterSubmit'])){
            </div>
            <div class="modal-footer">
              <input type="Submit" class="btn btn-primary" name="RegisterSubmit" value="Submit"/>
+              <!-- <button id="button" type="button" name="button">button</button> -->
            </div>
          </form>
        </div>

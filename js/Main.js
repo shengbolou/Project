@@ -39,6 +39,9 @@ $(document).ready(function(){
    $("#Home").click(function(){
         window.location="Main.php";
     });
+   $("#button").click(function(){
+        $('#UserNameLoginInput').effect('shake');
+    });
 
 
 

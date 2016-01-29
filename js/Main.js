@@ -28,31 +28,39 @@ $(document).ready(function(){
    $('#t1').hover(
      function(){
      $(this).find('.hover').show('fade',500);
+     $(this).find('img').css('transform','scale(1.1)');
    },function(){
      $(this).find('.hover').hide('fade',500);
+     $(this).find('img').css('transform','scale(1)');
    });
    $('#t2').hover(
      function(){
-     $(this).find('.hover2').show('puff',350);
+     $(this).find('.hover2').show('puff',500);
+     $(this).find('img').css('transform','scale(1.1)');
    },function(){
-     $(this).find('.hover2').hide('fade',350);
+     $(this).find('.hover2').hide('fade',500);
+     $(this).find('img').css('transform','scale(1)');
    });
    $('#t3').hover(
      function(){
      $(this).find('.hover3').show('puff',500);
+      $(this).find('img').css('transform','scale(1.1)');
    },function(){
      $(this).find('.hover3').hide('puff',500);
+     $(this).find('img').css('transform','scale(1)');
    });
    $('#t4').hover(
      function(){
      $(this).find('.hover4').show('fade',500);
+     $(this).find('img').css('transform','scale(1.1)');
    },function(){
      $(this).find('.hover4').hide('puff',500);
+      $(this).find('img').css('transform','scale(1)');
    });
 
 
 
-  $('#mythumbnail').fadeIn(3000);
+  $('#mythumbnail').fadeIn(4000);
    $('.carousel-inner').fadeIn(2000);
    $('.carousel-inner').add('height',window.innerHeight);
    $('.carousel-indicators').fadeIn(2000);

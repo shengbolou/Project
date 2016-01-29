@@ -86,6 +86,7 @@ body{
   display: none;
   color: black;
 	position: absolute;
+  z-index: 1;
 	top: 0;
 	left: 0;
 	background: #90EE90;
@@ -94,6 +95,7 @@ body{
 	height: 100%;
 }
 .hover2{
+  z-index: 1;
   display: none;
   color: black;
 	position: absolute;
@@ -105,6 +107,7 @@ body{
 	height: 100%;
 }
 .hover3{
+  z-index: 1;
   display: none;
   color: black;
 	position: absolute;
@@ -116,6 +119,7 @@ body{
 	height: 100%;
 }
 .hover4{
+  z-index: 1;
   display: none;
   color: black;
 	position: absolute;
@@ -136,8 +140,8 @@ body{
   top: 20px;
 }
 .thumbnail{
-  position: relative;
   overflow: hidden;
+  position: relative;
   box-shadow: 5px 5px 20px black;
 }
 .thumbnail > img{
@@ -168,6 +172,22 @@ body{
   opacity: 0.6;
   z-index: 1;
   outline: none;
+}
+
+
+#t1 > img{
+  transition: all,1s,ease-in-out;
+}
+
+#t2 > img{
+  transition: all, 1s, ease-in-out;
+}
+#t3 > img{
+  transition: all,1s,ease-in-out;
+}
+
+#t4 > img{
+  transition: all, 1s, ease-in-out;
 }
 
 

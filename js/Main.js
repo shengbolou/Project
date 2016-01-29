@@ -25,9 +25,36 @@ $(document).ready(function(){
    });
 
 
+   $('#t1').hover(
+     function(){
+     $(this).find('.hover').show('fade',500);
+   },function(){
+     $(this).find('.hover').hide('fade',500);
+   });
+   $('#t2').hover(
+     function(){
+     $(this).find('.hover2').show('puff',350);
+   },function(){
+     $(this).find('.hover2').hide('fade',350);
+   });
+   $('#t3').hover(
+     function(){
+     $(this).find('.hover3').show('puff',500);
+   },function(){
+     $(this).find('.hover3').hide('puff',500);
+   });
+   $('#t4').hover(
+     function(){
+     $(this).find('.hover4').show('fade',500);
+   },function(){
+     $(this).find('.hover4').hide('puff',500);
+   });
 
 
+
+  $('#mythumbnail').fadeIn(3000);
    $('.carousel-inner').fadeIn(2000);
+   $('.carousel-inner').add('height',window.innerHeight);
    $('.carousel-indicators').fadeIn(2000);
    $("#login").fadeIn(2000);
    $(".header").fadeIn(1000);

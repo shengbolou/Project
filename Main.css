@@ -77,13 +77,17 @@ body{
 
 #mythumbnail{
   position: relative;
+  width: 100%;
   max-width: 100%;
   top: 20px;
-  
 }
 .thumbnail{
   box-shadow: 5px 5px 20px black;
 }
+.thumbnail > img{
+  width: 100vw;
+}
+
 
 #register{
   display:none;

@@ -75,6 +75,16 @@ body{
 }
 
 
+.hover{
+  overflow: hidden; 
+  position: absolute;
+  display: center-block;
+  background-color: black;
+  z-index: 1;
+  color: white;
+  width: 100%;
+}
+
 #mythumbnail{
   position: relative;
   width: 100%;
@@ -82,7 +92,10 @@ body{
   top: 20px;
 }
 .thumbnail{
+  overflow: hidden;
   box-shadow: 5px 5px 20px black;
+  z-index: 0;
+  position: absolute;
 }
 .thumbnail > img{
   width: 100vw;

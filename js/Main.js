@@ -50,9 +50,14 @@ function login(){
          data = data.split(",");
          if(userName == '' || passWord == ''){
            $('#Signin').effect('shake');
+           if(userName == '') {
+             $('#username').css('box-shadow','0 1px 1px red inset, 0 0 8px red');
+           }
+           if(passWord == ''){
+             $('#password').css('box-shadow','0 1px 1px red inset, 0 0 8px red');
+           }
          }
-         else
-         if(data[0] == userName && data[1] == passWord && data[2] == "1"){
+         else if(data[0] == userName && data[1] == passWord && data[2] == "1"){
            window.location="user.php";
          }
          else{
@@ -68,6 +73,15 @@ function register(){
 
   if(userName == '' || passWord == '' || passWord2 == ''){
     $('#RegisterModal').effect('shake');
+    if(userName == ''){
+      $('#usernameR').css('box-shadow','0 1px 1px red inset, 0 0 8px red');
+    }
+    if(passWord == ''){
+      $('#password1R').css('box-shadow','0 1px 1px red inset, 0 0 8px red');
+    }
+    if(passWord2 == ''){
+      $('#password2R').css('box-shadow','0 1px 1px red inset, 0 0 8px red');
+    }
   }
   else if(passWord != passWord2){
     $('#RegisterModal').effect('shake');

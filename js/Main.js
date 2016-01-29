@@ -51,10 +51,10 @@ function login(){
          if(userName == '' || passWord == ''){
            $('#Signin').effect('shake');
            if(userName == '') {
-             $('#username').css('box-shadow','0 1px 1px red inset, 0 0 8px red');
+             $('#userdiv').addClass('has-error');
            }
            if(passWord == ''){
-             $('#password').css('box-shadow','0 1px 1px red inset, 0 0 8px red');
+             $('#passworddiv').addClass('has-error');
            }
          }
          else if(data[0] == userName && data[1] == passWord && data[2] == "1"){
@@ -74,13 +74,13 @@ function register(){
   if(userName == '' || passWord == '' || passWord2 == ''){
     $('#RegisterModal').effect('shake');
     if(userName == ''){
-      $('#usernameR').css('box-shadow','0 1px 1px red inset, 0 0 8px red');
+      $('#userdivR').addClass('has-error');
     }
     if(passWord == ''){
-      $('#password1R').css('box-shadow','0 1px 1px red inset, 0 0 8px red');
+      $('#passworddivR1').addClass('has-error');
     }
     if(passWord2 == ''){
-      $('#password2R').css('box-shadow','0 1px 1px red inset, 0 0 8px red');
+      $('#passworddivR2').addClass('has-error');
     }
   }
   else if(passWord != passWord2){

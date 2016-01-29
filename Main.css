@@ -41,7 +41,7 @@ body{
   filter: blur(5px);
   -webkit-filter:blur(5px);
   background-color:#A9A9A9;
-  opacity: 0.6;
+  opacity: 0.7;
   /*background-image: url('imgs/simple2.jpg');*/
   /*background-size: cover;*/
   z-index: -1;
@@ -74,6 +74,15 @@ body{
   outline: none;
 }
 
+
+#mythumbnail{
+  position: relative;
+  max-width: 100%;
+  top: 20px;
+}
+.thumbnail{
+  box-shadow: 5px 5px 20px black;
+}
 
 #register{
   display:none;
@@ -112,6 +121,6 @@ body{
 
    display: none;
    /*margin-top: 50px;*/
-   box-shadow: -5px -5px 50px #4682B4;
+   box-shadow: 5px 5px 20px black;
    bottom: 0;
 }

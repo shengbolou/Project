@@ -38,6 +38,7 @@ $(document).ready(function(){
    $('#t2').hover(
      function(){
      $(this).find('.t2h').css('transform','translatey(-10px)');
+     $(this).find('.t2h').css('background','#6B868D');
      $(this).find('.hover2').css('background','#00586E');
      $(this).find('.hover2').fadeTo(400,0.5);
      $(this).find('#t2b').css('transform','scale(1)');
@@ -45,6 +46,7 @@ $(document).ready(function(){
    },function(){
       $(this).find('.t2h').css('transform','translatey(50px)');
       $(this).find('.hover2').css('background','#5C5959');
+      $(this).find('.t2h').css('background','black');
       $(this).find('.hover2').fadeTo(400,0.7);
       $(this).find('#t2b').css('transform','scale(0)');
      $(this).find('img').css('transform','scale(1)');

@@ -53,24 +53,31 @@ $(document).ready(function(){
    });
    $('#t3').hover(
      function(){
-     $(this).find('.hover3').show('puff',500);
+      $(this).find('.hover3').css('transform','translate(0,0)');
+      $(this).find('#t3b').css('transform','translatey(0)');
+      $(this).find('#t3b').css('transition-delay','0.3s');
+      $(this).find('.hover3').css('transition-delay','0s');
       $(this).find('img').css('transform','scale(1.1)');
    },function(){
-     $(this).find('.hover3').hide('puff',500);
+     $(this).find('#t3b').css('transform','translatey(-800px)');
+     $(this).find('#t3b').css('transition-delay','0s');
+    $(this).find('.hover3').css('transform','translate(300px,-300px) rotate(180deg)');
+    $(this).find('.hover3').css('transition-delay','0.3s');
      $(this).find('img').css('transform','scale(1)');
    });
    $('#t4').hover(
      function(){
-     $(this).find('.hover4').show('fade',500);
+       $(this).find('.hover4').css('transform','translate3d(0,0,0)');
+       $(this).find('.hover4').css('opacity','0.7');
      $(this).find('img').css('transform','scale(1.1)');
    },function(){
-     $(this).find('.hover4').hide('puff',500);
+
       $(this).find('img').css('transform','scale(1)');
    });
 
 
 
-  $('#mythumbnail').fadeIn(4000);
+   $('#mythumbnail').fadeIn(4000);
    $('.carousel-inner').fadeIn(2000);
    $('.carousel-inner').add('height',window.innerHeight);
    $('.carousel-indicators').fadeIn(2000);

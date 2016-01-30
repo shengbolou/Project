@@ -8,10 +8,6 @@
   src: url('fonts/Raleway-Light.ttf');
 }
 
-body{
-  /*background-image: url('imgs/simple2.jpg');*/
-}
-
 
 .sbt{
   margin-top: 10px;
@@ -90,7 +86,7 @@ body{
    -ms-transform:translatey(-110px);
    transform:translatey(-100px);
    -webkit-transition:all, 0.5s, ease-in-out;
-   transition:all, 0.5s ,ease-in-out;
+   transition:all 0.5s ease-in-out;
 }
 .t2h{
    padding:10px;
@@ -111,7 +107,7 @@ body{
 .t3h{
    padding:10px;
    height: 50px;
-   background:black;
+   background:#8C8C89;
    text-align: center;
    font-family: 'Raleway-Light';
    position: relative;
@@ -119,14 +115,24 @@ body{
    top: 35px;
 }
 .t4h{
-   padding:10px;
+   position: relative;
+   padding-top:10px;
    height: 50px;
-   background:black;
+   /*background:#D591C1;*/
    text-align: center;
    font-family: 'Raleway-Light';
    position: relative;
    width: 100%;
    top: 35px;
+}
+
+hr{
+  border-top: 2px solid;
+  width: 80%;
+  size: 30px;
+  color: black;
+  position: relative;
+  top: 20px;
 }
 #t1b{
   color: black;
@@ -144,6 +150,14 @@ body{
   -webkit-transition-timing-function: cubic-bezier(0.88,-0.99, 0, 1.81); /* Safari */
   transition: all 0.4s;
   transition-timing-function: cubic-bezier(0.88,-0.99, 0, 1.81);
+}
+#t3b{
+  color: black;
+  position: relative;
+  top:100px;
+  outline: none;
+  transform: translatey(-800px);
+  transition: all 0.4s ease-in-out;
 }
 .hover{
   display: none;
@@ -171,29 +185,52 @@ body{
 }
 .hover3{
   z-index: 1;
-  display: none;
   color: white;
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: #EEE8AA;
+	background: #C8C9BF;
   opacity: 0.7;
 	width: 100%;
 	height: 100%;
+  transform: translate(300px,-300px) rotate(180deg);
+  transition:all 0.4s ease-in-out;
 }
 .hover4{
   z-index: 1;
-  display: none;
   color: white;
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: #FFB6C1;
-  opacity: 0.7;
+	/*background: #EDC4E1;*/
+  opacity: 0;
 	width: 100%;
 	height: 100%;
+
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: all 0.5s;
+  -webkit-transform: translate3d(-100%,0,0);
+  transform: translate3d(-100%,0,0);
 }
 
+#t1 > img{
+  transition: all 0.5s ease-in-out;
+}
+
+#t2 > img{
+  -webkit-transition: all 0.4s; /* Safari */
+  -webkit-transition-timing-function: cubic-bezier(0.88,-0.99, 0, 1.81); /* Safari */
+  transition: all 0.4s;
+  transition-timing-function: cubic-bezier(0.88,-0.99, 0, 1.81);
+}
+
+#t3 > img{
+  transition: all 0.5s ease-in-out;
+}
+
+#t4 > img{
+  transition: all 0.5s ease-in-out;
+}
 
 #mythumbnail{
   display: none;
@@ -235,26 +272,6 @@ body{
   opacity: 0.6;
   z-index: 1;
   outline: none;
-}
-
-
-#t1 > img{
-  transition: all,1s,ease-in-out;
-}
-
-#t2 > img{
-  -webkit-transition: all 0.4s; /* Safari */
-  -webkit-transition-timing-function: cubic-bezier(0.88,-0.99, 0, 1.81); /* Safari */
-  transition: all 0.4s;
-  transition-timing-function: cubic-bezier(0.88,-0.99, 0, 1.81);
-}
-}
-#t3 > img{
-  transition: all,1s,ease-in-out;
-}
-
-#t4 > img{
-  transition: all, 1s, ease-in-out;
 }
 
 

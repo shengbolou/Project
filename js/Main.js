@@ -37,10 +37,16 @@ $(document).ready(function(){
    });
    $('#t2').hover(
      function(){
-     $(this).find('.hover2').show('puff',500);
+     $(this).find('.t2h').css('transform','translatey(-10px)');
+     $(this).find('.hover2').css('background','#00586E');
+     $(this).find('.hover2').fadeTo(400,0.5);
+     $(this).find('#t2b').css('transform','scale(1)');
      $(this).find('img').css('transform','scale(1.1)');
    },function(){
-     $(this).find('.hover2').hide('fade',500);
+      $(this).find('.t2h').css('transform','translatey(50px)');
+      $(this).find('.hover2').css('background','#5C5959');
+      $(this).find('.hover2').fadeTo(400,0.7);
+      $(this).find('#t2b').css('transform','scale(0)');
      $(this).find('img').css('transform','scale(1)');
    });
    $('#t3').hover(

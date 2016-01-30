@@ -18,6 +18,7 @@ body{
 }
 
 
+
 .page-header{
   /*override bootstrap*/
   border-bottom: 0;
@@ -77,19 +78,58 @@ body{
 
 
 .t1h{
+   padding:10px;
+   height: 50px;
+   background:black;
    text-align: center;
    font-family: 'Raleway-Light';
    position: relative;
-   top: 50px;
+   width: 100%;
+   top: 35px;
+   -webkit-transform:translatey(-110px);
+   -ms-transform:translatey(-110px);
+   transform:translatey(-100px);
+   -webkit-transition:all, 0.5s, ease-in-out;
+   transition:all, 0.5s ,ease-in-out;
+}
+.t2h{
+   padding:10px;
+   height: 50px;
+   background:black;
+   text-align: center;
+   font-family: 'Raleway-Light';
+   position: relative;
+   width: 100%;
+   top: 35px;
+}
+.t3h{
+   padding:10px;
+   height: 50px;
+   background:black;
+   text-align: center;
+   font-family: 'Raleway-Light';
+   position: relative;
+   width: 100%;
+   top: 35px;
+}
+.t4h{
+   padding:10px;
+   height: 50px;
+   background:black;
+   text-align: center;
+   font-family: 'Raleway-Light';
+   position: relative;
+   width: 100%;
+   top: 35px;
 }
 .hover{
   display: none;
-  color: black;
+  color: white;
 	position: absolute;
   z-index: 1;
 	top: 0;
 	left: 0;
-	background: #90EE90;
+	background: #5C5959;
   opacity: 0.7;
 	width: 100%;
 	height: 100%;

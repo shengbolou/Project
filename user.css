@@ -19,6 +19,21 @@ div[class^='col-md']{
   padding-bottom: 2px;
 }
 
+
+.panel-body>ul{
+  padding-bottom: 5px;
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 2px;
+}
+.panel-body>.row{
+  border-top: 1px solid lightgrey;
+  margin-top: 2px;
+}
+.panel-body textarea{
+resize: none;
+box-shadow: none !important;
+border: none;
+}
 .chat{
   border: 1px solid rgba(117, 117, 117);
   border-radius: 3px;

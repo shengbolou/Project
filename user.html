@@ -32,7 +32,8 @@
            </a>
          </div>
 
-         <form class="navbar-form navbar-left" role="search" method="post">
+         <!-- change the div back to form for backend -->
+         <div class="navbar-form navbar-left">
            <div class="input-group fb-search">
              <input type="text" placeholder="Search" class="form-control" name="search" value="">
              <span class="input-group-btn">
@@ -41,7 +42,7 @@
                </button>
              </span>
            </div>
-         </form>
+         </div>
 
          <div id="right-side" class="nav navbar-nav navbar-right">
            <div class="btn-toolbar pull-right" role="toolbar">
@@ -56,12 +57,15 @@
              <div class="btn-group" role="group">
                <button type="button" class="btn btn-default">
                  <span class="glyphicon glyphicon-user"></span>
+                 <span class="badge">4</span>
                </button>
                <button type="button" class="btn btn-default">
                  <span class="glyphicon glyphicon-comment"></span>
+                 <span class="badge">6</span>
                </button>
                <button type="button" class="btn btn-default">
                  <span class="glyphicon glyphicon-globe"></span>
+                 <span class="badge">8</span>
               </button>
              </div>
 
@@ -75,7 +79,7 @@
                  </button>
 
                  <ul class="dropdown-menu">
-                   <li><a href="#" class="text-center">Log out</p></a></li>
+                   <li><a href="#" class="text-center">Log out</a></li>
                  </ul>
                </div>
              </div>
@@ -89,8 +93,59 @@
       <div id="main" class="row">
 
         <div class="col-md-2">
-          leftside
-
+          <ul class="nav nav-pills nav-stacked">
+            <li role="presentation"><a href="#"><span class="glyphicon glyphicon-user"></span> Vincent</a></li>
+            <li role="presentation">
+              <a href="#"><span class="glyphicon glyphicon-pencil"></span> Edit Profile</a>
+            </li>
+            <li role="presentation">FAVORITES</li>
+            <li role="presentation" class="active">
+              <a href="#">
+                <span class="glyphicon glyphicon-list-alt"></span>
+                <strong>New Feeds</strong>
+              </a>
+            </li>
+            <li role="presentation">
+              <a href="#">
+                <span class="glyphicon glyphicon-comment"></span> Messages <span class="badge">7</span>
+              </a>
+            </li>
+            <li role="presentation">
+              <a href="#"><span class="glyphicon glyphicon-calendar"></span> Events</a>
+            </li>
+            <li role="presentation">
+              <a href="#"><span class="glyphicon glyphicon-picture"></span> Photos</a>
+            </li>
+            <li role="presentation">
+              <a href="#"><span class="glyphicon glyphicon-gift"></span> Gifts</a>
+            </li>
+            <li role="presentation">
+              <a href="#">
+                <span class="glyphicon glyphicon-bookmark"></span> Saved <span class="badge">2</span>
+              </a>
+            </li>
+            <li role="presentation">
+                <a href="#"><span class="glyphicon glyphicon-tags"></span> Sale Groups</a>
+            </li>
+              <li role="presentation">PAGES</li>
+              <li role="presentation">
+                <a href="#"><span class="glyphicon glyphicon-plus"></span> Create Page</a>
+              </li>
+              <li role="presentation">
+                <a href="#"><span class="glyphicon glyphicon-signal"></span> Create Ad</a>
+              </li>
+              <li role="presentation">GROUPS</li>
+              <li role="presentation">
+                <a href="#"><span class="glyphicon glyphicon-plus"></span> Create Group</a>
+              </li>
+              <li role="presentation">
+                <a href="#"><span class="glyphicon glyphicon-user"></span> New Groups</a>
+              </li>
+              <li role="presentation">FRIENDS</li>
+              <li role="presentation">
+                <a href="#"><span class="glyphicon glyphicon-pushpin"></span> Amherst, MA</a>
+              </li>
+          </ul>
         </div>
 
         <div class="col-md-7">
@@ -102,19 +157,150 @@
         </div>
 
         <div class="col-md-3">
-          right side
+            <!-- Nested grid! Like the outer grid, it's just a sequence of rows. -->
+            <!-- Ticker -->
+            <div class="row">
+              <div class="col-md-12">
+                <a href="#">
+                  <span class="pull-right glyphicon glyphicon-download-alt"></span>
+                </a>
+              </div>
+            </div>
+            <!-- Birthday -->
+            <div id="birthday" class="row">
+              <div class="col-md-12">
+                <span class="glyphicon glyphicon-gift"></span> <a href="#">Zak</a> and <a href="#">1 other</a>
+              </div>
+            </div>
+            <!-- Trending -->
+            <div id="trending"class="row">
+              <div class="col-md-12">
+                <div id='title' class="col-md-4">
+                  TRENDING
+                </div>
+                <div class="col-md-8">
+                  <ul class="nav nav-pills">
+                    <li role="presentation"> <a href="#"><span class="glyphicon glyphicon-facetime-video"></span></a></li>
+                    <li role="presentation"> <a href="#"><span class="glyphicon glyphicon-sunglasses"></span></a></li>
+                    <li role="presentation"> <a href="#"><span class="glyphicon glyphicon-record"></span></a></li>
+                    <li role="presentation" class="active"> <a href="#"><span class="glyphicon glyphicon-film"></span></a></li>
+                    <li role="presentation"> <a href="#"><span class="glyphicon glyphicon-tower"></span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- trending widgets -->
+            <div id="trending-widgets" class="row">
+              <div class="col-md-12">
+                <ul class="media-list">
+                  <li class="media">
+                    <div class="media-left media-top">
+                      <span class="glyphicon glyphicon-flash"></span>
+                    </div>
+                    <div class="media-body">
+                      <a href="#">Google</a>: Filmmaker Criticizes New "Star Wars" Film and Direction of Franchise Under Disney
+                    </div>
+                  </li>
+                  <li class="media">
+                    <div class="media-left media-top">
+                      <span class="glyphicon glyphicon-flash"></span>
+                    </div>
+                    <div class="media-body">
+                      <a href="#">Super Smash Bros.</a>:Game Glitch Allows Players to Control 8 Characters With 1 Controller
+                    </div>
+                  </li>
+                  <li class="media">
+                    <div class="media-left media-top">
+                      <span class="glyphicon glyphicon-flash"></span>
+                    </div>
+                    <div class="media-body">
+                      <a href="#">Apple</a>: Apple published Iphone 7 today!
+                    </div>
+                  </li>
+                  <li class="media">
+                    <div class="media-left media-top">
+                      <span class="glyphicon glyphicon-flash"></span>
+                    </div>
+                    <div class="media-body">
+                      <a href="#">Ben</a>: He pranked eliot again!
+                    </div>
+                  </li>
+                  <li class="media">
+                    <div class="media-left media-top">
+                      <span class="caret"></span>
+                    </div>
+                    <div class="media-body">
+                      <a href="#">See More</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Suggested pages -->
+            <div id="suggested" class="row">
+              <div class="col-md-12">
 
+                <!-- first part -->
+                <div class="row">
+                  <div class="col-md-8 pull-left">
+                    SUGGESTED PAGES
+                  </div>
+                  <div class="col-md-4">
+                    <a href="#" class="pull-right">LIKE</a>
+                  </div>
+                </div>
+
+                <!-- second part -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <img src="imgs/food.jpg" width="100%" alt="" />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <a href="#">Pita's</a>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    Shoiusgdf's Restaurant 301 likes
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <button class="btn btn-default" type="button" name="button">
+                      <span class="glyphicon glyphicon-thumbs-up"></span>
+                      Like Page
+                    </button>
+                  </div>
+                </div>
+            </div>
+          </div>
         </div>
-
-
-
-
-      </div>
+      </div><!--main div-->
 
     </div>
 
     <div class="chat">
-      chat
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-8 pull-left">
+            <span class="green">●</span>  Chat 32
+          </div>
+          <div class="col-md-4">
+            <div class="btn-group pull-right">
+              <button class="btn btn-xs btn-default"type="button" class="btn btn-xs">
+                <span class="glyphicon glyphicon-pencil"></span>
+              </button>
+              <button class="btn btn-xs btn-default"type="button" class="btn btn-xs">
+                  <span class="glyphicon glyphicon-asterisk"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
   </body>

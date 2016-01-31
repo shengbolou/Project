@@ -82,8 +82,8 @@
    position: relative;
    width: 100%;
    top: 35px;
-   -webkit-transform:translatey(-110px);
-   -ms-transform:translatey(-110px);
+   -webkit-transform:translatey(-100px);
+   -ms-transform:translatey(-100px);
    transform:translatey(-100px);
    -webkit-transition:all, 0.5s, ease-in-out;
    transition:all 0.5s ease-in-out;
@@ -115,6 +115,7 @@
    top: 35px;
 }
 .t4h{
+  color:black;
    position: relative;
    padding-top:10px;
    height: 50px;
@@ -128,11 +129,12 @@
 
 hr{
   border-top: 2px solid;
-  width: 80%;
+  width: 0;
   size: 30px;
   color: black;
   position: relative;
   top: 20px;
+  transition: all 0.4s ease-in-out;
 }
 #t1b{
   color: black;
@@ -158,6 +160,18 @@ hr{
   outline: none;
   transform: translatey(-800px);
   transition: all 0.4s ease-in-out;
+}
+#t4b{
+  color: black;
+  position: relative;
+  top:70px;
+  background: white;
+  outline: none;
+  transform: translatex(-400px);
+  -webkit-transition: all 0.4s; /* Safari */
+  -webkit-transition-timing-function: cubic-bezier(0.88,-0.99, 0, 1.81); /* Safari */
+  transition: all 0.4s;
+  transition-timing-function: cubic-bezier(0.88,-0.99, 0, 1.81);
 }
 .hover{
   display: none;
@@ -202,15 +216,18 @@ hr{
 	position: absolute;
 	top: 0;
 	left: 0;
-	/*background: #EDC4E1;*/
+	background: #F1ECEC;
   opacity: 0;
 	width: 100%;
 	height: 100%;
 
-  -webkit-transition: -webkit-transform 0.35s;
-  transition: all 0.5s;
+
   -webkit-transform: translate3d(-100%,0,0);
   transform: translate3d(-100%,0,0);
+  -webkit-transition: all 0.4s; /* Safari */
+  -webkit-transition-timing-function: cubic-bezier(0.88,-0.99, 0, 1.81); /* Safari */
+  transition: all 0.4s;
+  transition-timing-function: cubic-bezier(0.88,-0.99, 0, 1.81);
 }
 
 #t1 > img{

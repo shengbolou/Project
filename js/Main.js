@@ -68,16 +68,26 @@ $(document).ready(function(){
    $('#t4').hover(
      function(){
        $(this).find('.hover4').css('transform','translate3d(0,0,0)');
+       $(this).find('.hover4').css('transition-delay','0s');
        $(this).find('.hover4').css('opacity','0.7');
-     $(this).find('img').css('transform','scale(1.1)');
+       $(this).find('hr').css('width','80%');
+       $(this).find('hr').css('transition-delay','0.5s');
+       $(this).find('#t4b').css('transform','translatex(0)');
+       $(this).find('#t4b').css('transition-delay','0.8s');
+       $(this).find('img').css('transform','scale(1.1)');
    },function(){
-
+      $(this).find('#t4b').css('transform','translatex(-400px)');
+      $(this).find('#t4b').css('transition-delay','0.8s');
+       $(this).find('hr').css('width','0');
+       $(this).find('hr').css('transition-delay','0.5s');
+       $(this).find('.hover4').css('transform','translate3d(-100%,0,0)');
+       $(this).find('.hover4').css('transition-delay','1s');
       $(this).find('img').css('transform','scale(1)');
    });
 
 
 
-   $('#mythumbnail').fadeIn(4000);
+   $('#mythumbnail').fadeIn(2000);
    $('.carousel-inner').fadeIn(2000);
    $('.carousel-inner').add('height',window.innerHeight);
    $('.carousel-indicators').fadeIn(2000);

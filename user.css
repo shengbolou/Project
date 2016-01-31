@@ -2,6 +2,7 @@ div[class^='col-md']{
 }
 
 
+
 #main{
   padding-top: 60px;
 }
@@ -19,15 +20,21 @@ div[class^='col-md']{
   padding-bottom: 2px;
 }
 
+#second > .panel-body > .media > .media-body{
+  margin-bottom: 10px;
+}
 
-.panel-body>ul{
+
+#first > .panel-body > .media{
+  border-top: 1px solid lightgrey;
+  padding-top: 10px;
   padding-bottom: 5px;
   border-bottom: 1px solid lightgrey;
   margin-bottom: 2px;
 }
-.panel-body>.row{
-  border-top: 1px solid lightgrey;
-  margin-top: 2px;
+#second  > .panel-body > .media:first-child{
+   padding-top: 10px;
+   padding-bottom: 10px;
 }
 .panel-body textarea{
 resize: none;

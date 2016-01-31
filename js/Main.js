@@ -120,7 +120,7 @@ function login(){
            }
          }
          else if(data[0] == userName && data[1] == passWord && data[2] == "1"){
-           window.location="user.php";
+           window.location="user.html";
          }
          else{
            $('#Signin').effect('shake');
@@ -151,7 +151,7 @@ function register(){
   else{
     $.post('Main.php',{RegisterSubmit:'yes', name:userName, password:passWord, passwordConfirm:passWord2},function(data){
       if(data == 'success'){
-        window.location = "user.php";
+        window.location = "user.html";
       }
     });
   }

@@ -246,7 +246,10 @@ hr{
 }
 
 #t4 > img{
-  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.4s; /* Safari */
+  -webkit-transition-timing-function: cubic-bezier(0.88,-0.99, 0, 1.81); /* Safari */
+  transition: all 0.4s;
+  transition-timing-function: cubic-bezier(0.88,-0.99, 0, 1.81);
 }
 
 #mythumbnail{

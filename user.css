@@ -1,0 +1,23 @@
+div[class^='col-md']{
+}
+
+
+#main{
+  padding-top: 60px;
+}
+
+#right-side{
+  position: relative;
+  top: 10px;
+}
+
+.fb-search{
+  width: 500px;
+}
+
+.chat{
+  position: fixed;
+  bottom: 0;
+  right:20px;
+  width: 300px;
+}

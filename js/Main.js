@@ -24,14 +24,17 @@ $(document).ready(function(){
       pause:'active'
    });
 
+   $('.hover').velocity({backgroundColor: '#5C5959' ,backgroundColorAlpha: 0.6});
 
    $('#t1').hover(
      function(){
-     $(this).find('.hover').show('fade',500);
+     $(this).find('.hover').velocity('transition.slideUpIn',500);
+    // $(this).find('.hover').show('fade',500);
      $(this).find('.t1h').css('transform','translatey(0)');
      $(this).find('img').css('transform','scale(1.1)');
    },function(){
-     $(this).find('.hover').hide('fade',500);
+     $(this).find('.hover').velocity('transition.slideDownOut');
+    // $(this).find('.hover').hide('fade',500);
      $(this).find('.t1h').css('transform','translatey(-110px)');
      $(this).find('img').css('transform','scale(1)');
    });

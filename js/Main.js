@@ -44,7 +44,7 @@ $(document).ready(function(){
      $(this).find('#t2b').css('transform','scale(1)');
      $(this).find('img').css('transform','scale(1.1)');
    },function(){
-      $(this).find('.t2h').css('transform','translatey(50px)');
+      $(this).find('.t2h').css('transform','translatey(30px)');
       $(this).find('.hover2').css('background','#5C5959');
       $(this).find('.t2h').css('background','black');
       $(this).find('.hover2').fadeTo(400,0.7);
@@ -87,9 +87,9 @@ $(document).ready(function(){
 
 
 
-   $(".thumbnail").velocity("transition.slideLeftIn", { stagger: 200});
+   $("#mythumbnail").fadeIn(2000);
    $('.carousel-inner').fadeIn(2000);
-   $('.carousel-inner').add('height',window.innerHeight);
+   $('.carousel-inner').css('height',window.innerHeight);
    $('.carousel-indicators').fadeIn(2000);
    $("#login").fadeIn(2000);
    $(".header").fadeIn(1000);

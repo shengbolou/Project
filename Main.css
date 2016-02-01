@@ -74,14 +74,13 @@
 
 
 .t1h{
-   padding:10px;
-   height: 50px;
+   padding:5px;
    background:black;
    text-align: center;
    font-family: 'Raleway-Light';
    position: relative;
    width: 100%;
-   top: 35px;
+   top: 20px;
    -webkit-transform:translatey(-100px);
    -ms-transform:translatey(-100px);
    transform:translatey(-100px);
@@ -89,42 +88,38 @@
    transition:all 0.5s ease-in-out;
 }
 .t2h{
-   padding:10px;
-   height: 50px;
+   padding:5px;
    background:black;
    text-align: center;
    font-family: 'Raleway-Light';
    position: relative;
    width: 100%;
-   top: 35px;
-
-   transform:translatey(50px);
+   top: 20px;
+   transform:translatey(30px);
    -webkit-transition: all 0.4s; /* Safari */
    -webkit-transition-timing-function: cubic-bezier(0.88,-0.99, 0, 1.81); /* Safari */
    transition: all 0.4s;
    transition-timing-function: cubic-bezier(0.88,-0.99, 0, 1.81);
 }
 .t3h{
-   padding:10px;
-   height: 50px;
+   padding:5px;
    background:#8C8C89;
    text-align: center;
    font-family: 'Raleway-Light';
    position: relative;
    width: 100%;
-   top: 35px;
+   top: 20px;
 }
 .t4h{
   color:black;
    position: relative;
-   padding-top:10px;
-   height: 50px;
+   padding:5px;
    /*background:#D591C1;*/
    text-align: center;
    font-family: 'Raleway-Light';
    position: relative;
    width: 100%;
-   top: 35px;
+   top: 20px;
 }
 
 hr{
@@ -133,20 +128,21 @@ hr{
   size: 30px;
   color: black;
   position: relative;
-  top: 20px;
+  top: 10px;
   transition: all 0.4s ease-in-out;
 }
+
 #t1b{
   color: black;
   position: relative;
-  top:100px;
+  top:80px;
   outline: none;
 }
 #t2b{
   color: black;
   position: relative;
-  top:100px;
   outline: none;
+  top:80px;
   transform: scale(0);
   -webkit-transition: all 0.4s; /* Safari */
   -webkit-transition-timing-function: cubic-bezier(0.88,-0.99, 0, 1.81); /* Safari */
@@ -156,7 +152,7 @@ hr{
 #t3b{
   color: black;
   position: relative;
-  top:100px;
+  top:80px;
   outline: none;
   transform: translatey(-800px);
   transition: all 0.4s ease-in-out;
@@ -164,7 +160,7 @@ hr{
 #t4b{
   color: black;
   position: relative;
-  top:70px;
+  top:40px;
   background: white;
   outline: none;
   transform: translatex(-400px);
@@ -253,14 +249,13 @@ hr{
 }
 
 #mythumbnail{
-  /*display: none;*/
+  display: none;
   position: relative;
   width: 100%;
   max-width: 100%;
   top: 20px;
 }
 .thumbnail{
-  display: none;
   overflow: hidden;
   position: relative;
   box-shadow: 5px 5px 20px black;

@@ -128,21 +128,21 @@ hr{
   size: 30px;
   color: black;
   position: relative;
-  top: 10px;
+  top: 5px;
   transition: all 0.4s ease-in-out;
 }
 
 #t1b{
   color: black;
   position: relative;
-  top:80px;
+  top:50px;
   outline: none;
 }
 #t2b{
   color: black;
   position: relative;
   outline: none;
-  top:80px;
+  top:50px;
   transform: scale(0);
   -webkit-transition: all 0.4s; /* Safari */
   -webkit-transition-timing-function: cubic-bezier(0.88,-0.99, 0, 1.81); /* Safari */
@@ -152,7 +152,7 @@ hr{
 #t3b{
   color: black;
   position: relative;
-  top:80px;
+  top:50px;
   outline: none;
   transform: translatey(-800px);
   transition: all 0.4s ease-in-out;
@@ -160,7 +160,7 @@ hr{
 #t4b{
   color: black;
   position: relative;
-  top:40px;
+  top:30px;
   background: white;
   outline: none;
   transform: translatex(-400px);
@@ -256,12 +256,14 @@ hr{
   top: 20px;
 }
 .thumbnail{
+  height:200px;
   overflow: hidden;
   position: relative;
   box-shadow: 5px 5px 20px black;
 }
 .thumbnail > img{
   width: 100vw;
+  height: 100%;
 }
 
 

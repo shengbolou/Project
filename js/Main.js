@@ -87,16 +87,17 @@ $(document).ready(function(){
 
 
 
-   $('#mythumbnail').fadeIn(2000);
-   $('.carousel-inner').fadeIn(2000);
-   $('.carousel-inner').add('height',window.innerHeight);
-   $('.carousel-indicators').fadeIn(2000);
-   $("#login").fadeIn(2000);
-   $(".header").fadeIn(1000);
-   $("#header").fadeIn(1000);
-   $("#h2").fadeIn(1000);
-   $("#register").fadeIn(2000);
-   $("#Home").fadeIn(2000);
+  //  $('#mythumbnail').fadeIn(2000);
+   $('#mythumbnail').velocity("fadeIn",{duration:2000});
+  //  $('.carousel-inner').fadeIn(2000);
+  //  $('.carousel-inner').add('height',window.innerHeight);
+  //  $('.carousel-indicators').fadeIn(2000);
+  //  $("#login").fadeIn(2000);
+  //  $(".header").fadeIn(1000);
+  //  $("#header").fadeIn(1000);
+  //  $("#h2").fadeIn(1000);
+  //  $("#register").fadeIn(2000);
+  //  $("#Home").fadeIn(2000);
 
    $("#Home").click(function(){
         window.location="Main.html";

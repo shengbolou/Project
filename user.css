@@ -1,7 +1,39 @@
 div[class^='col-md']{
 }
 
+body {
 
+  background-color: #e9eaed;
+}
+
+#right{
+  border-radius: 2px;
+  color: #9197a3;
+  border: 1px solid lightgrey;
+  background-color: white;
+  padding-bottom: 10px;
+}
+#right .glyphicon-gift {
+  color:white;
+  background-color: red;
+  padding: 2px;
+  border-radius: 2px;
+}
+
+#right-side-top { margin-top: 20px; margin-bottom: 5px }
+
+#trendinghr1{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#trendinghr2{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#trending-widgetshr{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 
 #main{
   padding-top: 60px;
@@ -42,9 +74,10 @@ box-shadow: none !important;
 border: none;
 }
 .chat{
-  border: 1px solid rgba(117, 117, 117);
+  color:white;
+  border: 1px solid  #3a5795;;
   border-radius: 3px;
-  background: rgba(117, 117, 117, 0.50);
+  background-color: #3a5795;
 }
 
 #suggested{
@@ -56,34 +89,114 @@ border: none;
 #trending-widgets{
   padding-top: 2px;
   padding-bottom: 2px;
-  border-bottom: 1px solid lightgrey;
 }
+
 #trending-widgets .media{
   margin-top: 5px;
+}
+#trending-widgets .glyphicon-flash{
+  color: #5990ff;
+}
+
+.navbar{
+  background-color: #3a5795;
+}
+.navbar #search{
+  background: rgb(245, 245, 245)
+}
+
+.navbar .badge {
+  background-color: red;
+  color: white;
+  border-radius: 3px;
+  padding-left: 4px;
+  padding-right: 4px;
+  border: 1px solid black;
+  /* Offset the badge a bit so it hovers over the glyphicon. */
+  right: 8px;
+  top: -10px;
+}
+
+#dd{
+  background-color: transparent;
+  border: none;
+  /* Removes halo and shadow on button when clicked. */
+  outline: none;
+  box-shadow: none;
+}
+#left a{
+  color:black;
+  background: transparent;
+}
+#left a:hover{
+  background-color: rgb(196, 196, 196);
+}
+#left .badge{
+
+  color:black;
+  background-color: transparent;
+}
+#dd:focus{
+  color: white;
+}
+.navbar button:active,
+.navbar button:focus,
+.navbar button:active:focus {
+  background-color: transparent;
+  color: white;
+  border: none;
+  /* Removes halo and shadow on button when clicked. */
+  outline: none;
+  box-shadow: none;
+}
+.navbar button{
+  background-color: transparent;
+  border:none;
+  color: #343536
+}
+.navbar button:hover {
+  background-color: transparent;
+  color: #22345c;
+  border: none;
+}
+
+#join,#home{
+  color:white;
+}
+#join:hover,#home:hover{
+  background-color: rgb(27, 61, 121)
 }
 
 #title{
   line-height: 24px;
 }
 #trending{
-    border-top: 1px solid lightgrey;
     padding-top: 2px;
-    border-bottom: 1px solid lightgrey;
     padding-bottom: 2px;
 
     margin-top: 2px;
     margin-bottom: 2px;
 }
+
 #trending ul a{
   padding-left: 5px;
   padding-right: 5px;
   padding-top: 2px;
   padding-bottom: 2px;
+  color: inherit;
+  background-color: transparent;
 }
+
+#trending ul li.active{
+   color: #5990ff;
+   background-color: transparent;
+   background: none;
+}
+
 
 .chat{
   position: fixed;
   bottom: 0;
-  right:20px;
+  right:100px;
   width: 300px;
 }

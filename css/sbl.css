@@ -80,6 +80,8 @@
     margin-top: 5px;
     margin-ottom: 5px;
   }
+  #navbar ul a:active,
+  #navbar ul a:focus,
   #navbar ul a:hover{
     line-height: 10px;
     margin-top: 5px;

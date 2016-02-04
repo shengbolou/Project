@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
    $('.navbar').velocity("transition.slideDownIn",{delay:3000});
 
    $('.myheader').velocity("transition.slideRightIn",{delay:3000});
@@ -10,6 +11,12 @@ $(document).ready(function(){
       translateY: "90px"
     },{delay:2900});
   }
+
+
+  $('.glyphicon').velocity({translateY:'10px'},{loop:true}).velocity('reverse');
+
+
+
 
 
   $(window).scroll(function(){
@@ -66,6 +73,10 @@ $(document).ready(function(){
 $("#content-pic").velocity({ blur: 2 },{delay:3000},1200);
   // $.Velocity.hook($('#svg'),"transitionX","-100px");
 
-
+ var distance = $('body').css('padding-top');
+  $('#test').click(function(){
+    $('.mine').velocity("scroll", { duration: 2000, easing: "spring" })
+            .velocity({ opacity: 1 });
+  });
 
 });

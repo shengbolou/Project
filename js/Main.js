@@ -24,6 +24,7 @@ $(document).ready(function(){
       pause:'active'
    });
 
+
    $('.hover').velocity({backgroundColor: '#5C5959' ,backgroundColorAlpha: 0.6});
 
    $('#t1').hover(

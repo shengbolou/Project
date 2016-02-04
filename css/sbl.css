@@ -148,7 +148,7 @@ body{
     font-family: 'windsong';
     color:rgb(255, 255, 255);
     font-size: 40px;
-    right: 100px;
+    right: 80px;
     top: 180px
   }
 
@@ -268,7 +268,7 @@ body{
     top: 300px;
   }
   body{
-    padding-top: 550px;
+    padding-top: 600px;
   }
 
  }

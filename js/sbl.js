@@ -40,7 +40,7 @@ $(document).ready(function(){
     if(width > 992 && width < 1550){
       jQuery(".navbar").wrap('<div class="placeholder"></div>');
       jQuery(".placeholder").height(50);
-      if($(this).scrollTop()>550){
+      if($(this).scrollTop()>600){
         $('.navbar').addClass("navbar-fixed-top");
         $('.navbar').removeClass("before");
       }

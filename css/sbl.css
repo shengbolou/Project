@@ -102,8 +102,7 @@
   font-size: 90px;
 }
 
-
-
+/***for the nav buttons***/
 #navbar ul a{
   font-family: 'Caviar';
   font-size: 20px;
@@ -117,7 +116,7 @@
   background: none;
 }
 
-
+/**for my name svg file**/
 #svg{
   position: absolute;
   z-index: 1;
@@ -125,6 +124,23 @@
   height: 30%;
   top:15%;
   left:10%;
+}
+
+
+.downward{
+  text-align: center;
+  position: relative;
+  z-index: 100;
+}
+
+.mine{
+  padding-top: 50px;
+}
+
+hr{
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 
 

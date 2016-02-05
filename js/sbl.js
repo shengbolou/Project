@@ -28,6 +28,6 @@ $(document).ready(function(){
   },{loop:true}).velocity('reverse');
 
   $('.downward').click(function(){
-    $('.mine').velocity("scroll", { duration: 2000, easing: "spring" })
+    $('.mine').velocity("scroll", { duration: 500, easing: "ease-in-out" });
   });
 });

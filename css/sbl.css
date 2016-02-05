@@ -15,20 +15,13 @@
   font-family: 'windsong';
   src: url('/fonts/Windsong.ttf');
 }
-
-
-.pageheader{
-  position: relative;
-  width: 100%;
-  margin-top: -30px;
-  overflow: hidden;
-  background:url('/imgs/header1.jpg') no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+@font-face {
+  font-family: 'Alex';
+  src: url('/fonts/AlexBrush-Regular.ttf');
 }
 
+/*configure navbar-toggle style*/
+/*******************************/
 .navbar-inverse .navbar-toggle:focus,
 .navbar-inverse .navbar-toggle:active,
 .navbar-inverse .navbar-toggle:hover,
@@ -37,15 +30,12 @@
   background: none;
   float: right;
 }
+/*configure navbar-toggle style END*/
+/*******************************/
+
+
 /**Animate navbar-toggle**
 **************************/
-.navbar-toggle .icon-bar:nth-of-type(2) {
-	  top: 1px;
-}
-
-.navbar-toggle .icon-bar:nth-of-type(3) {
-  	top: 2px;
-}
 
 .navbar-toggle .icon-bar {
 	  position: relative;
@@ -65,19 +55,54 @@
 	  top: -6px;
 	  transform: rotate(-45deg);
 }
+/**Animate navbar-toggle END**
+**************************/
 
 
+
+/**pageheader configure here**/
+.pageheader{
+  position: relative;
+  width: 100%;
+  margin-top: -30px;
+  overflow: hidden;
+  background:url('/imgs/header1.jpg') no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+/** navbar style**/
 .navbar{
-  background: none;
+  display: none;
+  background: rgba(65, 63, 63, 0.9);
+  box-shadow: 5px 5px 30px rgb(75, 75, 75);
   border:none;
   outline: none;
-  position: absolute;
   z-index: 1;
-  top: 30px;
   width: 100%;
   right: 0;
   left: 0;
 }
+
+/** programmer with ......**/
+.myheader{
+  display: none;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  color: white;
+  font-family: 'windsong';
+  bottom: 150px;
+  width: 100%;
+  right: auto;
+  left: auto;
+  font-size: 90px;
+}
+
+
 
 #navbar ul a{
   font-family: 'Caviar';
@@ -92,15 +117,6 @@
   background: none;
 }
 
-#header-pic{
-  position: absolute;
-  z-index: -100px;
-  left:0;
-  right: 0;
-  width: 100%;
-  height:100%;
-  -webkit-filter: blur(2px);
-}
 
 #svg{
   position: absolute;
@@ -111,11 +127,6 @@
   left:10%;
 }
 
-.myheader{
-  position: absolute;
-  z-index: 1;
-  color: white;
-  font-family: 'windsong';
-  bottom: 100px;
-  right: 50px;
-}
+
+/*media queries*/
+/**************/

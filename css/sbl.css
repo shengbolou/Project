@@ -104,14 +104,10 @@
 }
 
 /***for the nav buttons***/
-#navbar ul a{
-  font-family: 'Caviar';
-  font-size: 20px;
-}
-
 #navbae ul a:active,
 #navbar ul a:focus,
-#navbar ul a:hover{
+#navbar ul a:hover,
+#navbar ul a{
   font-family: 'Caviar';
   font-size: 20px;
   background: none;
@@ -129,6 +125,7 @@
 
 
 .downward{
+  display: none;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -138,10 +135,11 @@
   padding-top: 50px;
 }
 
-
+/*the pragraph about me*/
 .about{
+  margin-top: 50px;
   font-family: 'Raleway-Light';
-  line-height: 25px;
+  line-height: 30px;
   font-size: 15px;
 }
 

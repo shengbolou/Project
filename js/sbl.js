@@ -4,9 +4,11 @@ $(document).ready(function(){
 
   $('.pageheader').css('height',myHeight+30);
   $('.downward').css('top',myHeight-50);
+  $('.downward').velocity('transition.slideUpIn',{delay:2500});
   $(".navbar-toggle").on("click", function () {
       $(this).toggleClass("active");
   });
+
 
 
   $(window).scroll(function(){

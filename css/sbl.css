@@ -138,6 +138,13 @@
   padding-top: 50px;
 }
 
+
+.about{
+  font-family: 'Raleway-Light';
+  line-height: 25px;
+  font-size: 15px;
+}
+
 hr{
   border: 0;
   height: 1px;

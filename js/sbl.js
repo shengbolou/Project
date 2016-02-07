@@ -29,7 +29,14 @@ $(document).ready(function(){
     translateY:'10px'
   },{loop:true}).velocity('reverse');
 
+  $('.downward2').velocity({
+    translateY:'10px'
+  },{loop:true}).velocity('reverse');
+
   $('.downward').click(function(){
     $('.mine').velocity("scroll", { duration: 500, easing: "ease-in-out" });
+  });
+  $('.downward2').click(function(){
+    $('.life').velocity("scroll", { duration: 500, easing: "ease-in-out" });
   });
 });

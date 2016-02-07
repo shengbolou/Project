@@ -12,6 +12,10 @@
   src: url('/fonts/Raleway-Light.ttf');
 }
 @font-face {
+  font-family: 'Raleway-Regular';
+  src: url('/fonts/Raleway-Regular.ttf');
+}
+@font-face {
   font-family: 'windsong';
   src: url('/fonts/Windsong.ttf');
 }
@@ -71,6 +75,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  clear: both;
 }
 
 
@@ -131,16 +136,43 @@
   z-index: 1;
 }
 
+.downward2{
+  /*display: none;*/
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+
 .mine{
   padding-top: 50px;
+  position: relative;
+  clear: both;
+}
+
+.life{
+  padding-top: 50px;
+  position: relative;
+  clear: both;
 }
 
 /*the pragraph about me*/
 .about{
-  margin-top: 50px;
-  font-family: 'Raleway-Light';
+  font-family: 'Raleway-Regular';
   line-height: 30px;
   font-size: 15px;
+}
+
+.jumbotron{
+  margin-top: 20px;
+  background:url('/imgs/me4.jpg') no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+
 }
 
 hr{
@@ -279,5 +311,15 @@ hr{
     right: auto;
     left: auto;
     font-size: 40px;
+  }
+  .jumbotron{
+      margin-top: 20px;
+      background:url('/imgs/me5.jpg') no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      width: 100%;
+      height: 0px;
   }
 }

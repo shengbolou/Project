@@ -128,6 +128,10 @@
   left:10%;
 }
 
+.work{
+  padding-top: 50px;
+}
+
 
 .downward{
   display: none;
@@ -144,6 +148,14 @@
   margin-bottom: 20px;
 }
 
+.downward3{
+  /*display: none;*/
+  text-align: center;
+  position: relative;
+  z-index: auto;
+  margin-top: 40px;
+}
+
 
 .carousel-inner img{
   width: 100%;
@@ -154,6 +166,7 @@
 
 .carousel{
   border-radius: 5px;
+  margin-bottom: 40px;
 }
 .carousel-control.left,
 .carousel-control.right {
@@ -165,8 +178,7 @@
 }
 
 #pics{
-  margin-top: 60px;
-  padding-bottom: 40px;
+  margin-top: 100px;
 }
 
 .mine{

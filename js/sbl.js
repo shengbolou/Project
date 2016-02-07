@@ -33,10 +33,17 @@ $(document).ready(function(){
     translateY:'10px'
   },{loop:true}).velocity('reverse');
 
+  $('.downward3').velocity({
+    translateY:'10px'
+  },{loop:true}).velocity('reverse');
+
   $('.downward').click(function(){
     $('.mine').velocity("scroll", { duration: 500, easing: "ease-in-out" });
   });
   $('.downward2').click(function(){
     $('.life').velocity("scroll", { duration: 500, easing: "ease-in-out" });
+  });
+  $('.downward3').click(function(){
+    $('.work').velocity("scroll", { duration: 500, easing: "ease-in-out" });
   });
 });

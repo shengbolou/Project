@@ -313,13 +313,6 @@ hr{
     font-size: 40px;
   }
   .jumbotron{
-      margin-top: 20px;
-      background:url('/imgs/me5.jpg') no-repeat;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      width: 100%;
       height: 0px;
   }
 }

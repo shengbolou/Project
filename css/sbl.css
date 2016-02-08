@@ -109,14 +109,34 @@
 }
 
 /***for the nav buttons***/
-#navbae ul a:active,
+#navbar ul a:active,
 #navbar ul a:focus,
 #navbar ul a:hover,
 #navbar ul a{
+  padding: 10px 10px;
   font-family: 'Caviar';
   font-size: 20px;
-  background: none;
+  background: transparent;
 }
+
+#navbar ul li{
+    margin-top: 5px;
+}
+
+#Contact:hover{
+  background-color: white;
+  border-radius: 5px;
+}
+
+#Contact > a{
+  color:rgb(227, 227, 227);
+  border: 1px solid white;
+  border-radius: 5px;
+}
+#Contact > a:hover{
+  color:black;
+}
+
 
 /**for my name svg file**/
 #svg{
@@ -128,11 +148,13 @@
   left:10%;
 }
 
+/*my project page*/
 .work{
   padding-top: 50px;
 }
 
-
+/**** the downward signs****/
+/**************************/
 .downward{
   display: none;
   text-align: center;
@@ -156,7 +178,10 @@
   margin-top: 40px;
 }
 
+/**** the downward signs END****/
+/**************************/
 
+/*the style of carousel pictures*/
 .carousel-inner img{
   width: 100%;
   height: auto;
@@ -164,29 +189,30 @@
   border-radius: 5px;
 }
 
+/*the style for carousel*/
 .carousel{
+  -webkit-box-shadow: 0px 5px 38px 5px rgba(0,0,0,0.36);
+  -moz-box-shadow: 0px 5px 38px 5px rgba(0,0,0,0.36);
+  box-shadow: 0px 5px 38px 5px rgba(0,0,0,0.36);
+  margin-top: 100px;
   border-radius: 5px;
   margin-bottom: 40px;
 }
+
+/*the style for the controls of carousel*/
 .carousel-control.left,
 .carousel-control.right {
     background-image: none
 }
 
-.lifethumb img{
-  height: 250px;
-}
-
-#pics{
-  margin-top: 100px;
-}
-
+/*the About me page*/
 .mine{
   padding-top: 50px;
   position: relative;
   clear: both;
 }
 
+/*The life moments page*/
 .life{
   padding-top: 50px;
   position: relative;
@@ -200,7 +226,12 @@
   font-size: 15px;
 }
 
+
+/*the About me photo*/
 .me{
+  -webkit-box-shadow: 0px 5px 38px 5px rgba(0,0,0,0.36);
+  -moz-box-shadow: 0px 5px 38px 5px rgba(0,0,0,0.36);
+  box-shadow: 0px 5px 38px 5px rgba(0,0,0,0.36);
   margin-top: 10px;
   background:url('/imgs/me4.jpg') no-repeat;
   -webkit-background-size: cover;
@@ -212,6 +243,104 @@
 }
 
 
+.projects .thumbnail{
+  position: relative;
+  overflow: hidden;
+}
+
+.hover{
+  display: none;
+  color: white;
+	position: absolute;
+  z-index: 10;
+	top: 0;
+	left: 0;
+	background-color: #5C5959;
+  opacity: 0.7;
+	width: 100%;
+	height: 100%;
+}
+
+.hover2{
+  color: white;
+	position: absolute;
+  z-index: 10;
+	top: 0;
+	left: 0;
+	background-color: #5C5959;
+  opacity: 0.7;
+	width: 100%;
+	height: 100%;
+}
+
+.hover3{
+  display: none;
+  color: white;
+	position: absolute;
+  z-index: 10;
+	top: 0;
+	left: 0;
+	/*background-color: #5C5959;*/
+  opacity: 0.7;
+	width: 100%;
+	height: 100%;
+}
+
+.t1h{
+  color: white;
+  padding:5px;
+  text-align: center;
+  font-family: 'Raleway-Light';
+  position: relative;
+  width: 100%;
+  top: 40px;
+}
+
+.t2h{
+  color: white;
+  padding:5px;
+  text-align: center;
+  font-family: 'Raleway-Light';
+  position: relative;
+  width: 100%;
+  top: 40px;
+}
+
+.t3h{
+  color: black;
+  padding:5px;
+  text-align: center;
+  font-family: 'Raleway-Light';
+  position: relative;
+  width: 100%;
+  top: 40px;
+}
+
+#t1b{
+  background:none;
+  margin-top:100px;
+}
+#t1b:hover{
+  color:black;
+  background:white;
+}
+
+#t2b{
+  background:none;
+  margin-top:100px;
+}
+#t2b:hover{
+  color:black;
+  background:white;
+}
+
+.projects{
+  padding-top: 20px;
+  margin-top: 30px;
+  -webkit-box-shadow: 0px 5px 38px 5px rgba(0,0,0,0.36);
+  -moz-box-shadow: 0px 5px 38px 5px rgba(0,0,0,0.36);
+  box-shadow: 0px 5px 38px 5px rgba(0,0,0,0.36);
+}
 
 hr{
   border: 0;

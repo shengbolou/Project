@@ -333,15 +333,20 @@
                 <div class="row">
                   <div class="col-md-12">
 
+                    <div id="success" class="alert alert-success alert-dismissible">
+                      <button type="button" class="close"><span aria-hidden="true">&times;</span></button>
+                        <strong>Thank you</strong> for your letter!
+                    </div>
+
                     <div class="row">
                       <div class="col-md-6">
-                        <div class="form-group">
+                        <div class="form-group lastname">
                           <h6 style="font-family:'Raleway-Regular'" class="pull-left">Last Name*</h6>
                           <input id="lastname" type="text" name="name" class="form-control" placeholder="Last Name"value="">
                         </div>
                       </div>
                       <div class="col-md-6">
-                        <div class="form-group">
+                        <div class="form-group firstname">
                           <h6 style="font-family:'Raleway-Regular'" class="pull-left">First Name*</h6>
                           <input id="firstname"type="text" name="name" class="form-control" placeholder="First Name"value="">
                         </div>
@@ -350,7 +355,7 @@
 
                     <div class="row">
                       <div class="col-md-12">
-                        <div class="form-group">
+                        <div class="form-group email">
                           <h6 style="font-family:'Raleway-Regular'" class="pull-left">Your Email</h6>
                           <input id="email"type="text" name="name" class="form-control" placeholder="Email"value="">
                         </div>
@@ -359,8 +364,8 @@
 
                     <div class="row">
                       <div class="col-md-12">
-                        <div class="form-group">
-                          <h6 style="font-family:'Raleway-Regular'" class="pull-left">Message</h6>
+                        <div class="form-group msg">
+                          <h6 style="font-family:'Raleway-Regular'" class="pull-left">Message*</h6>
                           <textarea style="width: 100%" class="form-control"
                           rows="5" id="msg" placeholder="Say Hello to me"></textarea>
                         </div>
@@ -381,6 +386,7 @@
           </div>
         </div>
       </div>
+
 
 
   </body>

@@ -121,6 +121,7 @@ $('.hover2').css('transform','scale(0)');
   $('.downward3').click(function(){
     $('.work').velocity("scroll", { duration: 500, easing: "ease-in-out" });
   });
+  $('#success').hide();
 });
 
 
@@ -134,20 +135,24 @@ function Go(){
     $('.contact').velocity("callout.shake");
 
     if(lastname == ''){
-      $('#lastname').addClass('has-error');
+      $('.lastname').addClass('has-error');
     }
     if(firstname == ''){
-      $('#firstname').addClass('has-error');
+      $('.firstname').addClass('has-error');
     }
     if(msg == ''){
-      $('#msg').addClass('has-error');
+      $('.msg').addClass('has-error');
     }
   }
   else{
     //AJAx
     $.post('sbl.php',{Go:'yes',lastname:lastname, firstname:firstname, email:email, msg:msg},function(data){
       if(data == 'success'){
-        window.location = "user.html";
+        // window.location = "user.html";
+        $('#success').show();
+        $('.close').click(function(){
+          $('#success').hide();
+        })
       }
     });
   }

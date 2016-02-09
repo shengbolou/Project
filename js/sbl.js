@@ -76,6 +76,13 @@ $('.hover2').css('transform','scale(0)');
     }
   });
 
+  $('#brand').click(function(){
+      $('html').velocity("scroll", { duration: 500, easing: "ease-in-out" });
+  });
+  $('#logo').click(function(){
+      $('html').velocity("scroll", { duration: 500, easing: "ease-in-out" });
+  });
+
   $('.myheader').velocity('transition.slideRightIn',{delay:2500});
 
   $('.downward').velocity({

@@ -23,6 +23,10 @@
   font-family: 'Alex';
   src: url('/fonts/AlexBrush-Regular.ttf');
 }
+@font-face {
+  font-family: 'Silent';
+  src: url('/fonts/Silent-Reaction.ttf');
+}
 
 /*configure navbar-toggle style*/
 /*******************************/
@@ -313,7 +317,7 @@
   font-family: 'Raleway-Light';
   position: relative;
   width: 100%;
-  top: 40px;
+  top: 50px;
 }
 
 #t1b{
@@ -337,9 +341,16 @@
 .projects{
   padding-top: 20px;
   margin-top: 30px;
+  margin-bottom: 50px;
   -webkit-box-shadow: 0px 5px 38px 5px rgba(0,0,0,0.36);
   -moz-box-shadow: 0px 5px 38px 5px rgba(0,0,0,0.36);
   box-shadow: 0px 5px 38px 5px rgba(0,0,0,0.36);
+}
+
+.page-header{
+  height: 200px;
+  margin-bottom: 0px;
+  background-color: rgb(65, 63, 63);
 }
 
 hr{

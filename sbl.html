@@ -321,7 +321,7 @@
             <div class="modal-body">
               <div class="container-fluid contact-info text-center">
                 <h5 style="font-family:'Caviar'">Shengbo Lou</h5>
-                <h6 style="font-family:'Caviar'">loushengbo@hotmail.com</h6>
+                <h6 style="font-family:'Caviar'"><a href="mailto:loushengbo@hotmail.com">loushengbo@hotmail.com</a></h6>
                 <address style="font-family:'Caviar'"class="address">
                   56 Eastman LN
                   <br>Amherst
@@ -329,11 +329,54 @@
                   01003
                 </address>
                 <hr>
+
+                <div class="row">
+                  <div class="col-md-12">
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <h6 style="font-family:'Raleway-Regular'" class="pull-left">Last Name*</h6>
+                          <input id="lastname" type="text" name="name" class="form-control" placeholder="Last Name"value="">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <h6 style="font-family:'Raleway-Regular'" class="pull-left">First Name*</h6>
+                          <input id="firstname"type="text" name="name" class="form-control" placeholder="First Name"value="">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <h6 style="font-family:'Raleway-Regular'" class="pull-left">Your Email</h6>
+                          <input id="email"type="text" name="name" class="form-control" placeholder="Email"value="">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <h6 style="font-family:'Raleway-Regular'" class="pull-left">Message</h6>
+                          <textarea style="width: 100%" class="form-control"
+                          rows="5" id="msg" placeholder="Say Hello to me"></textarea>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
               </div>
 
-              <div class="">
+            </div><!--modal-body-->
 
-              </div>
+
+            <div class="modal-footer">
+                <button id="Close"type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button class="btn btn-success" type="button" name="button">Submit</button>
             </div>
           </div>
         </div>

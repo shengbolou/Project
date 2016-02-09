@@ -77,7 +77,17 @@ $('.hover2').css('transform','scale(0)');
   });
 
 
-  $('.modal-body').css('height',myHeight+30);
+  $('.pdf').css('height',myHeight+30);
+
+  $('#Resume').click(function(){
+    $('#Home').removeClass("active");
+    $(this).addClass("active")
+  });
+
+  $('#Close').click(function(){
+    $('#Home').addClass("active");
+    $('#Resume').removeClass("active")
+  });
 
   $('#brand').click(function(){
       $('html').velocity("scroll", { duration: 500, easing: "ease-in-out" });

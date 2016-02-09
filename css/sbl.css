@@ -118,6 +118,8 @@
 #navbar ul a:hover,
 #navbar ul a{
   padding: 10px 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   font-family: 'Caviar';
   font-size: 20px;
   background: transparent;
@@ -352,6 +354,7 @@
   margin-bottom: 0px;
   background-color: rgb(65, 63, 63);
 }
+
 
 hr{
   border: 0;

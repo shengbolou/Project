@@ -76,6 +76,9 @@ $('.hover2').css('transform','scale(0)');
     }
   });
 
+
+  $('.modal-body').css('height',myHeight+30);
+
   $('#brand').click(function(){
       $('html').velocity("scroll", { duration: 500, easing: "ease-in-out" });
   });

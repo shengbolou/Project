@@ -77,6 +77,8 @@ $('.hover2').css('transform','scale(0)');
   });
 
 
+
+
   $('.pdf').css('height',myHeight+30);
 
   $('#Resume').click(function(){
@@ -120,3 +122,33 @@ $('.hover2').css('transform','scale(0)');
     $('.work').velocity("scroll", { duration: 500, easing: "ease-in-out" });
   });
 });
+
+
+function Go(){
+  var lastname = document.getElementById('lastname').value;
+  var firstname = document.getElementById('firstname').value;
+  var email = document.getElementById('email').value;
+  var msg = document.getElementById('msg').value;
+
+  if(lastname == '' || firstname == '' || msg == ''){
+    $('.contact').velocity("callout.shake");
+
+    if(lastname == ''){
+      $('#lastname').addClass('has-error');
+    }
+    if(firstname == ''){
+      $('#firstname').addClass('has-error');
+    }
+    if(msg == ''){
+      $('#msg').addClass('has-error');
+    }
+  }
+  else{
+    //AJAx
+    $.post('sbl.php',{Go:'yes',lastname:lastname, firstname:firstname, email:email, msg:msg},function(data){
+      if(data == 'success'){
+        window.location = "user.html";
+      }
+    });
+  }
+}

@@ -355,10 +355,6 @@
   background-color: rgb(65, 63, 63);
 }
 
-/*#success{
-  display: none;
-}*/
-
 
 hr{
   border: 0;
@@ -395,6 +391,7 @@ hr{
   }
 }
 
+
 @media (min-width: 1024px) and (max-width: 1366px) {
   #svg{
     position: absolute;
@@ -403,6 +400,49 @@ hr{
     height: 30%;
     top:5%;
     left:10%;
+  }
+
+  .t1h{
+    padding:5px;
+    text-align: center;
+    font-family: 'Raleway-Light';
+    position: relative;
+    width: 100%;
+    top: 10px;
+    font-size: 25px;
+  }
+  #t1b{
+    background:none;
+    margin-top: 80px;
+  }
+
+  .t2h{
+    padding:5px;
+    text-align: center;
+    font-family: 'Raleway-Light';
+    position: relative;
+    width: 100%;
+    top: 10px;
+    font-size: 25px;
+  }
+  #t2b{
+    background:none;
+    margin-top: 80px;
+  }
+
+  .t3h{
+    color: black;
+    padding:5px;
+    text-align: center;
+    font-family: 'Raleway-Light';
+    position: relative;
+    width: 100%;
+    top: 40px;
+    font-size: 25px;
+  }
+
+  .t3hr{
+    width: 250px;
   }
 
   /** programmer with ......**/

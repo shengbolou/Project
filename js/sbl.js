@@ -24,6 +24,8 @@ $(document).ready(function(){
       });
   });
 
+
+
 $('.hover2').css('transform','scale(0)');
   $('.github').hover(
     function(){
@@ -149,9 +151,12 @@ function Go(){
     $.post('sbl.php',{Go:'yes',lastname:lastname, firstname:firstname, email:email, msg:msg},function(data){
       if(data == 'success'){
         // window.location = "user.html";
+        $('input').val("");
+        $('textarea').val("");
         $('#success').show();
         $('.close').click(function(){
           $('#success').hide();
+          $('.contact').modal("hide");
         })
       }
     });

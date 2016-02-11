@@ -46,12 +46,12 @@ $('.hover2').css('transform','scale(0)');
        },"spring",500);
   });
 
- $('.ani').css('width','0');
+ $('.t3hr').css('width','0');
   $('.more').hover(
     function(){
       $(this).find('.hover3').velocity('transition.slideLeftIn',500);
-      $(this).find('.ani').velocity({delay:1000}).velocity({
-        width:'400px'
+      $(this).find('.t3hr').velocity({delay:1000}).velocity({
+        width:'300px'
       });
        $(this).velocity({
          scale:'1.1'
@@ -61,7 +61,7 @@ $('.hover2').css('transform','scale(0)');
       $(this).velocity({
         scale:'1'
       });
-      $(this).find('.ani').velocity({delay:1000}).velocity({
+      $(this).find('.t3hr').velocity({delay:1000}).velocity({
         width:'0px'
       });
   });

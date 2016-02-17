@@ -67,11 +67,15 @@ $('.hover2').css('transform','scale(0)');
   });
 
   $(window).scroll(function(){
+    if($(this).scrollTop() >= $('body').height()-myHeight-30){
+      if(!$('#info').is(':visible'))
+        $('#info').velocity('transition.slideUpIn');
+    }
     if($(this).scrollTop() >= 150 && check==0){
       $('.navbar').velocity('transition.slideDownIn',200);
        check=1;
     }
-    else if($(this).scrollTop() == 0){
+    if($(this).scrollTop() == 0){
       //scroll to top
       $('.navbar').velocity('transition.slideUpOut',200);
       check=0;
@@ -150,7 +154,6 @@ function Go(){
     //AJAx
     $.post('sbl.php',{Go:'yes',lastname:lastname, firstname:firstname, email:email, msg:msg},function(data){
       if(data == 'success'){
-        // window.location = "user.html";
         $('input').val("");
         $('textarea').val("");
         $('#success').show();

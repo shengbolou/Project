@@ -8,16 +8,20 @@
 
     <script src="/js/jquery-2.2.0.min.js" charset="utf-8"></script>
     <script src="/js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="/js/velocity.min.js" charset="utf-8"></script>
+    <script src="/js/velocity.ui.js" charset="utf-8"></script>
+    <script src="/js/Spotify.js" charset="utf-8"></script>
     <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/css/bootflat.min.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="/css/Spotify.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
     <!-- navbar -->
       <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-          <!-- header -->
+
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="false">
+            <button type="button" class="navbar-toggle" aria-expanded="false">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -26,8 +30,7 @@
             <a class="navbar-brand" href="#">Spotify</a>
           </div>
 
-          <!-- nav -->
-          <div class="collapse navbar-collapse" id="collapse1">
+          <div class="collapse navbar-collapse" id="collapse">
             <div class="navbar-right">
               <ul class="nav navbar-nav">
                 <li id="li"><a href="#">Premium</a></li>
@@ -41,6 +44,21 @@
           </div>
 
         </div>
+      </div>
+
+
+      <div class="container collapsed pull-left">
+          <button style="margin-top:10px; color:white" type="button" class="collapsed-close close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <ul style="margin-top:40px"class="nav nav-pills nav-stacked">
+          <li id="li-c"><a href="#">Premium</a></li>
+          <li id="li-c"><a href="#">Help</a></li>
+          <li id="li-c"><a href="#">Download</a></li>
+          <hr id="hr-c">
+          <li id="li-c"><a href="#">Sign up</a></li>
+          <li id="li-c"><a href="#">Sign in</a></li>
+        </ul>
       </div>
 
 

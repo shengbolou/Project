@@ -7,16 +7,18 @@
   height: 80px;
   position: absolute;
   z-index: auto;
+  background-color: black;
 }
 
 .navbar .navbar-toggle{
   top:10px;
 }
 
-.navbar-brand{
+.navbar .navbar-brand{
   position: relative;
   font-size: 25px;
   top:10px;
+  color: white;
   font-family: 'Caviar';
 }
 
@@ -67,4 +69,20 @@
   position: relative;
   height: 20px;
   top:15px;
+}
+
+
+/*page-header*/
+.page-header{
+  border: none;
+  box-shadow: none;
+  position: absolute;
+  height: 600px;
+  z-index: -1;
+  width: 100%;
+  background: url('/imgs/hero-2.jpg') no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

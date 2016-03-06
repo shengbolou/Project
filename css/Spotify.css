@@ -159,5 +159,8 @@
   width: 100%;
   margin-top: 10px;
   background: url('/imgs/bg-premium.jpg') no-repeat;
-  background-position: right;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

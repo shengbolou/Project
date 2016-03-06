@@ -1,6 +1,18 @@
 @font-face {
+  font-family: "CaviarB";
+  src: url("/fonts/Caviar_Dreams_Bold.ttf");
+}
+@font-face {
   font-family: "Caviar";
   src: url("/fonts/CaviarDreams.ttf");
+}
+@font-face {
+  font-family: "RalewayB";
+  src: url("/fonts/Raleway-Bold.ttf");
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/Raleway-Regular.ttf");
 }
 
 .navbar{
@@ -17,9 +29,56 @@
 .navbar .navbar-brand{
   position: relative;
   font-size: 25px;
-  top:10px;
+  top:6px;
   color: white;
-  font-family: 'Caviar';
+  font-family: 'CaviarB';
+}
+
+#ph1{
+  position: relative;
+  top: 28%;
+  font-size: 60px;
+  color: black;
+  word-spacing: -6px;
+  font-family: 'RalewayB'
+}
+
+#ph5{
+  position: relative;
+  top:29%;
+  font-family: 'RalewayB'
+}
+
+#ph_btn{
+  position: relative;
+  top:300px;
+  border: none;
+  border-radius: 50px;
+  padding-left: 60px;
+  padding-right: 60px;
+  font-family: 'RalewayB';
+  background-color: #37ac38;
+}
+
+#ph_btn2{
+  position: relative;
+  top:320px;
+  border: 2px solid black;
+  border-radius: 50px;
+  padding-left: 73px;
+  padding-right: 73px;
+  font-family: 'RalewayB';
+  background-color: #ffffff;
+  color: black;
+}
+
+#ph_p{
+  position: relative;
+  top:330px;
+  word-spacing: -1px;
+  font-size: 8px;
+  font-family: 'Raleway';
+  color: black;
 }
 
 
@@ -28,11 +87,28 @@
   top: 10px;
 }
 
+/*lis for navbar*/
 #li a{
-    font-size: 15px;
+    font-size: 16px;
     color: white;
-    font-family: 'Caviar';
+    font-family: 'CaviarB';
+    margin-right: 10px
 }
+
+#s_up{
+    font-size: 16px;
+    color:#bdbdbd;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'CaviarB';
+}
+#s_in{
+    font-size: 16px;
+    color:rgb(189, 189, 189);
+    margin-right: 10px;
+    font-family: 'CaviarB';
+}
+
 
 /*style for hr*/
 #hr-c {
@@ -80,7 +156,8 @@
   height: 600px;
   z-index: -1;
   width: 100%;
-  background: url('/imgs/hero-2.jpg') no-repeat;
+  margin-top: 10px;
+  background: url('/imgs/bg-premium.jpg') no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

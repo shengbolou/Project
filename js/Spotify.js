@@ -21,7 +21,7 @@ $(document).ready(function(){
         $('.collapsed').velocity("transition.slideLeftOut",200);
     });
 
-    $('.collapsed').css('height',myHeight);
+    $('.collapsed').css('height',myHeight+100);
 
     $('#s_up').hover(function(){
       $(this).velocity({
@@ -32,7 +32,7 @@ $(document).ready(function(){
         color:'#bdbdbd'
       })
     });
-    
+
     $('#s_in').hover(function(){
       $(this).velocity({
         color:'#5bc721'

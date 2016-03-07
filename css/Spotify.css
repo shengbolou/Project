@@ -18,7 +18,7 @@
 .navbar{
   height: 80px;
   position: fixed;
-  z-index: auto;
+  z-index: 100;
   background-color: black;
 }
 
@@ -55,8 +55,10 @@
   top:300px;
   border: none;
   border-radius: 50px;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 80px;
+  padding-right: 80px;
   font-family: 'RalewayB';
   background-color: #37ac38;
 }
@@ -65,9 +67,11 @@
   position: relative;
   top:320px;
   border: 2px solid black;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-radius: 50px;
-  padding-left: 73px;
-  padding-right: 73px;
+  padding-left: 90px;
+  padding-right: 90px;
   font-family: 'RalewayB';
   background-color: #ffffff;
   color: black;
@@ -127,6 +131,7 @@
   width: 300px;
   position: absolute;
   z-index: 100;
+  top:0;
   transform: translateX(-310px);
 }
 /*lis for collapsed*/
@@ -153,14 +158,61 @@
 .page-header{
   border: none;
   box-shadow: none;
-  position: absolute;
-  height: 600px;
-  z-index: -1;
+  position: relative;
   width: 100%;
   margin-top: 10px;
-  background: url('/imgs/bg-premium.jpg') no-repeat;
+  background: url('/imgs/bg-premium.jpg') top no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+/*second page*/
+.second{
+  position: relative;
+  top:-20px;
+  height: 1000px;
+  width: 100%;
+}
+
+.second-left{
+  position: relative;
+  background: url('/imgs/katy-perry.jpg') bottom no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.second-left-context{
+  position: absolute;
+  top:10%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width:50%;
+
+}
+.second-left-context h1{
+  font-family: 'RalewayB';
+  font-size: 70px;
+  word-spacing: -5px;
+  color:rgb(228, 67, 178);
+    text-align: center;
+}
+.second-left-context h4{
+  position: relative;
+  margin-top:20px;
+  font-family: 'Raleway';
+  font-size: 15px;
+  color:rgb(228, 67, 178);
+  text-align: center;
+  line-height: 20px;
+}
+.second-left-context a{
+  font-family: 'RalewayB';
+  font-size: 15px;
+  color:#e443b2;
 }

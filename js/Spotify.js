@@ -5,6 +5,7 @@ $(document).ready(function(){
 
     $('.page-header').css("height",myHeight);
     $('.ph').css("height",myHeight);
+    $('.second-left').css("height",myHeight*1.5);
 
     $('.navbar-toggle').click(function(){
       if(check == 0){
@@ -70,6 +71,16 @@ $(document).ready(function(){
       $(this).velocity({
         color:'#000000',
         backgroundColor:'#ffffff'
+      },200)
+    });
+
+    $('.second-left-context a').hover(function(){
+      $(this).velocity({
+        color:'#000000',
+      },200)
+    },function(){
+      $(this).velocity({
+        color:'#e443b2',
       },200)
     });
 

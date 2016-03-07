@@ -89,7 +89,9 @@
   /*position: absolute;*/
   display: none;
   background: rgba(65, 63, 63, 0.9);
-  box-shadow: 0 15px 6px -6px rgb(56, 55, 55);
+  -webkit-box-shadow: 1px 4px 44px -9px rgba(77,75,77,1);
+  -moz-box-shadow: 1px 4px 44px -9px rgba(77,75,77,1);
+  box-shadow: 1px 4px 44px -9px rgba(77,75,77,1);
   border:none;
   outline: none;
   z-index: 100;
@@ -114,11 +116,12 @@
 }
 
 /***for the nav buttons***/
-#navbar ul a:active,
-#navbar ul a:focus,
-#navbar ul a:hover,
-#navbar ul a{
-  padding: 10px 10px;
+#navbar a:active,
+#navbar a:focus,
+#navbar a{
+  color:#a3a3a3;
+  padding: 8px 8px;
+  margin-top: 5px;
   margin-left: 10px;
   margin-right: 10px;
   font-family: 'Caviar';
@@ -126,22 +129,9 @@
   background: transparent;
 }
 
-#navbar ul li{
-    margin-top: 5px;
-}
-
-#Contact:hover{
-  background-color: white;
-  border-radius: 5px;
-}
-
-#Contact > a{
-  color:rgb(227, 227, 227);
-  border: 1px solid white;
-  border-radius: 5px;
-}
-#Contact > a:hover{
-  color:black;
+/*for brand*/
+#brand{
+  color:#a3a3a3;
 }
 
 

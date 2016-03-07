@@ -9,6 +9,26 @@ $(document).ready(function(){
       $(this).toggleClass("active");
   });
 
+  $('#navbar a').hover(function(){
+    $(this).velocity({
+      color:'#fbfbfb'
+    })
+  },function(){
+    $(this).velocity({
+      color:'#a3a3a3'
+    })
+  });
+
+  $('#brand').hover(function(){
+    $(this).velocity({
+      color:'#fbfbfb'
+    })
+  },function(){
+    $(this).velocity({
+      color:'#a3a3a3'
+    })
+  });
+
   $('.hover').velocity({backgroundColor: '#5C5959' ,backgroundColorAlpha: 0.6});
   $('.hover3').velocity({backgroundColor: 'rgb(255, 255, 255)' ,backgroundColorAlpha: 0.6});
   $('.naptime').hover(

@@ -1,12 +1,44 @@
 $(document).ready(function(){
   var myHeight = $( window ).height();
   var check = 0;
+  var nav_collapsed_check = 0;
 
   $('.pageheader').css('height',myHeight+30);
   $('.downward').css('top',myHeight-50);
   $('.downward').velocity('transition.slideUpIn',{delay:2500});
+  $('.nav-collapsed').css("height",myHeight);
+
   $(".navbar-toggle").on("click", function () {
-      $(this).toggleClass("active");
+    $(this).toggleClass("active");
+    if(nav_collapsed_check == 0){
+      $('.navbar-toggle').velocity({
+        translateX: '-300px'
+      },300);
+      $('.nav-collapsed').velocity("transition.slideRightIn",200);
+      nav_collapsed_check = 1;
+    }
+    else{
+      $('.navbar-toggle').velocity({
+        translateX: '0'
+      },300);
+      $('.nav-collapsed').velocity("transition.slideRightOut",200);
+      nav_collapsed_check = 0;
+    }
+  });
+
+
+  $('.nav-c li a').hover(function(){
+    $(this).velocity({
+      color:'#000000',
+      backgroundColor: '#ffffff',
+      backgroundColorAlpha: '0.6'
+    },200)
+  },function(){
+    $(this).velocity({
+      color:'#ffffff',
+      backgroundColor: '#413f3f',
+      backgroundColorAlpha: '0.1'
+    },200)
   });
 
   $('#navbar a').hover(function(){

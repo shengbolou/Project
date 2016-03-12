@@ -45,6 +45,12 @@
 /**Animate navbar-toggle**
 **************************/
 
+.navbar-toggle{
+  position: absolute;
+  z-index: 200;
+  right: 5px;
+}
+
 .navbar-toggle .icon-bar {
 	  position: relative;
 	  transition: all 0.2s ease-in-out;
@@ -65,6 +71,29 @@
 }
 /**Animate navbar-toggle END**
 **************************/
+
+
+/*style of nav-collapsed*/
+.nav-collapsed{
+  -webkit-box-shadow: 10px 0px 21px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 0px 21px -9px rgba(0,0,0,0.75);
+  box-shadow: 10px 0px 21px -9px rgba(0,0,0,0.75);
+  position: fixed;
+  background: rgba(65, 63, 63, 0.9);
+  z-index: 1;
+  top:0;
+  right: 0;
+  width: 400px;
+  transform: translateX(400px);
+}
+
+
+.nav-c li a{
+  font-family: 'Caviar-B';
+  font-size: 20px;
+  color:white;
+}
+
 
 
 

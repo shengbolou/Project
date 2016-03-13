@@ -3,24 +3,61 @@ $(document).ready(function(){
   var check = 0;
   var nav_collapsed_check = 0;
 
+  var sequence = [
+    {e:$('#Home-c a'),p:{opacity: 1},o:{duration: 100,delay:200}},
+    {e:$('#Resume-c a'),p:{opacity: 1},o:{duration: 100}},
+    {e:$('#Contact-c a'),p:{opacity: 1},o:{duration: 100}}
+  ];
+  var sequence2 = [
+    {e:$('#Home-c a'),p:{opacity: 0}},
+    {e:$('#Resume-c a'),p:{opacity: 0}},
+    {e:$('#Contact-c a'),p:{opacity: 0}}
+  ];
+
+
+
   $('.pageheader').css('height',myHeight+30);
   $('.downward').css('top',myHeight-50);
   $('.downward').velocity('transition.slideUpIn',{delay:2500});
   $('.nav-collapsed').css("height",myHeight);
 
   $(".navbar-toggle").on("click", function () {
-    $(this).toggleClass("active");
+    //$(this).toggleClass("active");
     if(nav_collapsed_check == 0){
+      $.Velocity.RunSequence(sequence);
       $('.navbar-toggle').velocity({
         translateX: '-300px'
-      },300);
+      },200);
+      $('.navbar-toggle .icon-bar:nth-of-type(1)').velocity({
+        marginTop: '7px',
+        rotateZ: '45deg'
+      },200);
+      $('.navbar-toggle .icon-bar:nth-of-type(3)').velocity({
+        marginTop: '-7px',
+        rotateZ: '-45deg'
+      },200);
+      $('.navbar-toggle .icon-bar:nth-of-type(2)').velocity({
+        backgroundColorAlpha: '0'
+      },0);
       $('.nav-collapsed').velocity("transition.slideRightIn",200);
       nav_collapsed_check = 1;
     }
     else{
+      $.Velocity.RunSequence(sequence2);
       $('.navbar-toggle').velocity({
         translateX: '0'
-      },300);
+      },200);
+      $('.navbar-toggle .icon-bar:nth-of-type(1)').velocity({
+        marginTop: '0',
+        rotateZ: '0'
+      },200);
+      $('.navbar-toggle .icon-bar:nth-of-type(3)').velocity({
+        marginTop: '5px',
+        rotateZ: '0'
+      },200);
+      $('.navbar-toggle .icon-bar:nth-of-type(2)').velocity({
+        backgroundColorAlpha: '1'
+      },0);
       $('.nav-collapsed').velocity("transition.slideRightOut",200);
       nav_collapsed_check = 0;
     }

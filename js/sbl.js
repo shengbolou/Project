@@ -1,5 +1,6 @@
 $(document).ready(function(){
   var myHeight = $( window ).height();
+  var window_width = $(window).width();
   var check = 0;
   var nav_collapsed_check = 0;
 
@@ -22,12 +23,13 @@ $(document).ready(function(){
   $('.nav-collapsed').css("height",myHeight);
 
   $(".navbar-toggle").on("click", function () {
-    //$(this).toggleClass("active");
     if(nav_collapsed_check == 0){
       $.Velocity.RunSequence(sequence);
-      $('.navbar-toggle').velocity({
-        translateX: '-300px'
-      },200);
+      if(window_width > 450){
+        $('.navbar-toggle').velocity({
+          translateX: '-300px'
+        },200);
+      }
       $('.navbar-toggle .icon-bar:nth-of-type(1)').velocity({
         marginTop: '7px',
         rotateZ: '45deg'

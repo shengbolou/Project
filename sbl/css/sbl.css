@@ -1,33 +1,3 @@
-@font-face {
-  font-family: 'Caviar';
-  src: url('/fonts/CaviarDreams.ttf');
-}
-@font-face {
-  font-family: 'Caviar-B';
-  src: url('/fonts/Caviar_Dreams_Bold.ttf');
-}
-
-@font-face {
-  font-family: 'Raleway-Light';
-  src: url('/fonts/Raleway-Light.ttf');
-}
-@font-face {
-  font-family: 'Raleway-Regular';
-  src: url('/fonts/Raleway-Regular.ttf');
-}
-@font-face {
-  font-family: 'windsong';
-  src: url('/fonts/Windsong.ttf');
-}
-@font-face {
-  font-family: 'Alex';
-  src: url('/fonts/AlexBrush-Regular.ttf');
-}
-@font-face {
-  font-family: 'Silent';
-  src: url('/fonts/Silent-Reaction.ttf');
-}
-
 /*configure navbar-toggle style*/
 /*******************************/
 .navbar-inverse .navbar-toggle:focus,
@@ -66,7 +36,7 @@
   transform: translateX(400px);
 }
 .nav-c li a{
-  font-family: 'Caviar-B';
+  font-family: 'Oxygen';
   font-size: 20px;
   color:white;
 }
@@ -82,7 +52,7 @@
   width: 100%;
   margin-top: -30px;
   overflow: hidden;
-  background:url('/imgs/header1.jpg') no-repeat;
+  background:url('../imgs/header.png') no-repeat;
   background-color: rgb(96, 96, 96);
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -114,7 +84,7 @@
   position: absolute;
   z-index: 1;
   color: white;
-  font-family: 'windsong';
+  font-family: "Pinyon Script";
   bottom: 150px;
   width: 100%;
   right: auto;
@@ -131,7 +101,7 @@
   margin-top: 5px;
   margin-left: 10px;
   margin-right: 10px;
-  font-family: 'Caviar';
+  font-family: 'Oxygen';
   font-size: 20px;
   background: transparent;
 }
@@ -225,7 +195,8 @@
 
 /*the pragraph about me*/
 .about{
-  font-family: 'Raleway-Regular';
+  font-family: 'Raleway';
+  font-weight: 500;
   line-height: 30px;
   font-size: 15px;
 }
@@ -237,7 +208,7 @@
   -moz-box-shadow: 0px 5px 38px 5px rgba(0,0,0,0.36);
   box-shadow: 0px 5px 38px 5px rgba(0,0,0,0.36);
   margin-top: 10px;
-  background:url('/imgs/me4.jpg') no-repeat;
+  background:url('../imgs/me4.jpg') no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -294,7 +265,8 @@
   color: white;
   padding:5px;
   text-align: center;
-  font-family: 'Raleway-Light';
+  font-family: 'Raleway';
+  font-weight: 300;
   position: relative;
   width: 100%;
   top: 40px;
@@ -304,7 +276,8 @@
   color: white;
   padding:5px;
   text-align: center;
-  font-family: 'Raleway-Light';
+  font-family: 'Raleway';
+  font-weight: 300;
   position: relative;
   width: 100%;
   top: 40px;
@@ -314,7 +287,8 @@
   color: black;
   padding:5px;
   text-align: center;
-  font-family: 'Raleway-Light';
+  font-family: 'Raleway';
+  font-weight: 300;
   position: relative;
   width: 100%;
   top: 50px;
@@ -350,7 +324,7 @@
 #info{
   position: relative;
   bottom: -50px;
-  font-family: 'Caviar';
+  font-family: 'Oxygen';
   display: none;
 }
 
@@ -387,7 +361,7 @@ hr{
     position: absolute;
     z-index: 1;
     color: white;
-    font-family: 'windsong';
+    font-family: "Pinyon Script";
     bottom: 150px;
     width: 100%;
     right: auto;
@@ -410,7 +384,7 @@ hr{
   .t1h{
     padding:5px;
     text-align: center;
-    font-family: 'Raleway-Light';
+    font-family: 'Raleway';
     position: relative;
     width: 100%;
     top: 10px;
@@ -424,7 +398,7 @@ hr{
   .t2h{
     padding:5px;
     text-align: center;
-    font-family: 'Raleway-Light';
+    font-family: 'Raleway';
     position: relative;
     width: 100%;
     top: 10px;
@@ -439,7 +413,7 @@ hr{
     color: black;
     padding:5px;
     text-align: center;
-    font-family: 'Raleway-Light';
+    font-family: 'Raleway';
     position: relative;
     width: 100%;
     top: 40px;
@@ -454,7 +428,7 @@ hr{
     position: absolute;
     z-index: 1;
     color: white;
-    font-family: 'windsong';
+    font-family: "Pinyon Script";
     bottom: 100px;
     width: 100%;
     right: auto;
@@ -480,7 +454,7 @@ hr{
     position: absolute;
     z-index: 1;
     color: white;
-    font-family: 'windsong';
+    font-family: "Pinyon Script";
     bottom: 150px;
     width: 100%;
     right: auto;
@@ -506,7 +480,7 @@ hr{
     position: absolute;
     z-index: 1;
     color: white;
-    font-family: 'windsong';
+    font-family: "Pinyon Script";
     bottom: 80px;
     width: 100%;
     right: auto;
@@ -532,7 +506,7 @@ hr{
     position: absolute;
     z-index: 1;
     color: white;
-    font-family: 'windsong';
+    font-family: "Pinyon Script";
     bottom: 60px;
     width: 100%;
     right: auto;

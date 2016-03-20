@@ -21,7 +21,7 @@ $(document).ready(function(){
     translateX: '10px',
     opacity: 0
   });
-  $('.bground').velocity("fadeIn",{delay:300,duration:300});
+  $('.bground').velocity("fadeIn",{delay:350,duration:300});
   $('.pageheader').css('height',myHeight+30);
   $('.downward').css('top',myHeight-50);
   $('.downward').velocity('transition.slideUpIn',{delay:2500});

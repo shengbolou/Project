@@ -139,6 +139,7 @@
 /*my project page*/
 .work{
   padding-top: 50px;
+  opacity: 0;
 }
 
 /**** the downward signs****/
@@ -198,6 +199,7 @@
   padding-top: 50px;
   position: relative;
   clear: both;
+  opacity: 0;
 }
 
 /*The life moments page*/
@@ -205,6 +207,7 @@
   padding-top: 50px;
   position: relative;
   clear: both;
+  opacity: 0;
 }
 
 /*the pragraph about me*/
@@ -229,7 +232,6 @@
   background-size: cover;
   width: 100%;
   height: 500px;
-  display: none;
 }
 
 

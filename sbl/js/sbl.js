@@ -21,6 +21,7 @@ $(document).ready(function(){
     translateX: '10px',
     opacity: 0
   });
+  $('.bground').velocity("fadeIn",{delay:300,duration:300});
   $('.pageheader').css('height',myHeight+30);
   $('.downward').css('top',myHeight-50);
   $('.downward').velocity('transition.slideUpIn',{delay:2500});
@@ -72,7 +73,7 @@ $(document).ready(function(){
 
   $('.nav-c li a').hover(function(){
     $(this).velocity({
-      color:'#a77777'
+      color:'#bfd8df'
     },100)
   },function(){
     $(this).velocity({

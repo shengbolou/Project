@@ -37,7 +37,7 @@ if(isset($_POST['RegisterSubmit'])){
   $passwordConfirm = strip_tags($_POST['passwordConfirm']);
 
 
-  $query = "INSERT INTO users(Name,UserName,Password) VALUES('$name','$name','$password')";
+  // $query = "INSERT INTO users(Name,UserName,Password) VALUES('$name','$name','$password')";
 
   $result = mysqli_query($conn,$query);
 

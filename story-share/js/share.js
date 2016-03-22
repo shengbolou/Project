@@ -28,7 +28,7 @@ function Sign_in(){
     $('#s_r_password').parent().addClass('has-error');
   }
   else{
-    $.post('./php/register.php',{Sign:'yes',username:username,email:email,password:password},function(data){
+    $.post('php/register.php',{Sign:'yes',username:username,email:email,password:password},function(data){
       switch (data.substring(2)) {
         case "success":
           window.location="User.php";
@@ -38,6 +38,33 @@ function Sign_in(){
           $('#s_username').parent().addClass('has-error');
           $('[data-toggle="tooltip"]').tooltip();
           break;
+      }
+    });
+  }
+}
+
+function Log_in(){
+  var username = document.getElementById('l-username').value;
+  var password = document.getElementById('l-password').value;
+
+  if(username == '' || password == ''){
+    $('#log-in-modal').velocity("callout.shake",350);
+
+    if (username == '') {
+      $('#l-username').parent().addClass('has-error');
+    }
+    if (password == '') {
+      $('#l-password').parent().addClass('has-error');
+    }
+  }
+  else {
+    $.post('php/login.php',{Login:'yes',username:username, password:password},function(data){
+      switch (data) {
+        case "success":
+          window.location='user.php';
+          break;
+        case 'failed':
+        $('#log-in-modal').velocity("callout.shake",350);
       }
     });
   }

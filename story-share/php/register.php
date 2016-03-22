@@ -4,6 +4,8 @@
 if(isset($_POST['Sign'])){
   header('Cache-Control: no-cache,must-revalidate',true);
   include 'conn.php';
+
+  
   $username = strip_tags($_POST['username']);
   $email = strip_tags($_POST['email']);
   $password = strip_tags($_POST['password']);
@@ -23,6 +25,9 @@ if(isset($_POST['Sign'])){
         echo "success";
       }
     }
+  }
+  else {
+    echo "failed";
   }
 
 

@@ -1,5 +1,9 @@
 <?php
 
+  include 'php/register.php';
+  include 'php/login.php';
+
+  $UserName = $_COOKIE['UserName'];
 
  ?>
 
@@ -25,6 +29,6 @@
 
   </head>
   <body>
-    Welcome <?php include 'php/register.php'; echo $_COOKIE['UserName'] ?>
+    <h4 class="text-center">Welcome <?php echo $UserName ?></h4>
   </body>
 </html>

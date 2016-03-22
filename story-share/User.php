@@ -1,3 +1,9 @@
+<?php
+
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,6 +25,6 @@
 
   </head>
   <body>
-    User
+    Welcome <?php include 'php/register.php'; echo $_COOKIE['UserName'] ?>
   </body>
 </html>

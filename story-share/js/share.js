@@ -31,7 +31,7 @@ function Sign_in(){
     $.post('php/register.php',{Sign:'yes',username:username,email:email,password:password},function(data){
       switch (data.substring(2)) {
         case "success":
-          window.location="User.php";
+          window.location="User.html";
           break;
         case "duplicate":
           $('#sign-in-modal').velocity("callout.shake",350);
@@ -61,7 +61,7 @@ function Log_in(){
     $.post('php/login.php',{Login:'yes',username:username, password:password},function(data){
       switch (data) {
         case "success":
-          window.location='user.php';
+          window.location='User.html';
           break;
         case 'failed':
         $('#log-in-modal').velocity("callout.shake",350);

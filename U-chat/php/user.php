@@ -27,9 +27,9 @@
     $msg =  $row[3];
     $update = "UPDATE msg SET getted=1 WHERE ID='$ID'";
     $updateit = mysqli_query($conn,$update);
-
+    if($msg != '')
     echo  $msg;
-
+    else echo 'none';
 
 
 

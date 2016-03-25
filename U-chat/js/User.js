@@ -60,6 +60,7 @@ function Submit(){
   else{
     if(F.charAt(2).toLowerCase() == 'b') var name='a';
     else var name= 'b';
+    var curr_time = new Date();
     $.post('php/user.php',{msg:'yes', F:F.charAt(2), T:name, message:message.replace("'","''")},function(data){
       $('.panel-body').append(
 
@@ -75,6 +76,13 @@ function Submit(){
               <p style="margin-top:5px; margin-bottom:5px; font-family:Roboto" align='justify'>
               `+message+`
               </p>
+
+              <span style="
+              margin-bottom:5px;
+              background: #F5F7FA;
+              color: black
+              "class="badge pull-right">`+curr_time.getHours()+':'+curr_time.getMinutes()+`</span>
+
             </div>
           </div>
         </div>`

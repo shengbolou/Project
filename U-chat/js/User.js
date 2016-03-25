@@ -29,10 +29,10 @@ function retrivemsg(){
         `<div class='container-fluid'>
             <div class='row'>
             <div style="margin-top:10px; position:relative;" class='col-md-1 pull-left'>
-              <h4>from</h4>
+              <h4>F</h4>
             </div>
               <div style="margin-top:20px; position:relative; left:-4%;" class='col-md-2 msg-body pull-left'>
-                <p style="margin-top:5px; margin-bottom:5px; font-family:Didact Gothic" align='justify'>
+                <p style="margin-top:5px; margin-bottom:5px; font-family:Roboto" align='justify'>
                   `+(data2.substring(2))+`
                 </p>
               </div>
@@ -40,7 +40,8 @@ function retrivemsg(){
           </div>`
 
         );
-
+        //animation scroll the message
+        $('.panel-body').velocity('scroll',{duration:500,container: $('.panel-body')[0],offset:500});
       }
     });
   });
@@ -64,13 +65,14 @@ function Submit(){
 
         `<div class='container-fluid'>
           <div class='row'>
-            <div style="margin-top:10px; margin-bottom:5px; position:relative; right:-4%;"class="col-md-1 pull-right">
+            <div style="
+            margin-top:10px; margin-bottom:5px; position:relative; right:-4%;"class="col-md-1 pull-right">
               <h4>
               `+F.charAt(2)+`
               </h4>
             </div>
             <div style="margin-top:20px;position:relative; right:-4%;" class='col-md-2 msg-body pull-right'>
-              <p style="margin-top:5px; margin-bottom:5px; font-family:Didact Gothic" align='justify'>
+              <p style="margin-top:5px; margin-bottom:5px; font-family:Roboto" align='justify'>
               `+message+`
               </p>
             </div>
@@ -78,6 +80,11 @@ function Submit(){
         </div>`
 
       );
+      $('#msg').focus();
+      //animation scroll the message
+      $('.panel-body').velocity('scroll',{duration:500,container: $('.panel-body')[0],offset:500});
     });
   }
+
+
 }

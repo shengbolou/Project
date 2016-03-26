@@ -37,34 +37,6 @@
       font-weight:300
       " class=""> Welcome <strong id="header"></strong></h4>
 
-
-      <div class="row">
-        <div style="height:100px;"class="col-md-2 col-sm-2 col-xs-4">
-
-          <div class="search">
-            <input type="text" class="form-control" onkeyup="search(this.value)" placeholder="Search for friends">
-
-            <div class="alert alert-info send_r">
-              <p id="content">
-              </p>
-              <button class="btn btn-primary send" type="button" name="button">send</button>
-            </div>
-
-            <div class="alert alert-success send_s">
-              <p>
-                success!
-              </p>
-            </div>
-
-            <ul class="list-group friends">
-            </ul>
-          </div>
-
-        </div>
-      </div>
-
-
-
     </div>
 
     <div class="container-fluid center-block">
@@ -74,12 +46,42 @@
         <div style="  padding-right: 0;
           padding-left: 0;"class="col-md-2">
 
+          <!-- serach bar -->
+          <div class="row">
+            <div class="col-md-12">
+
+              <div class="search">
+                <input type="text" class="form-control" onkeyup="search(this.value)" placeholder="Search for friends">
+
+                <div class="alert alert-info send_r">
+                  <p id="content">
+                  </p>
+                  <button class="btn btn-primary send" type="button" name="button">send</button>
+                </div>
+
+                <div class="alert alert-success send_s">
+                  <p>
+                    success!
+                  </p>
+                </div>
+
+                <ul class="list-group friends">
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+
+
+
+          <!-- nav tabs -->
           <div class="row">
             <div class="col-md-12">
 
               <ul class="nav nav-tabs nav-justified my_nav">
                 <li role="presentation"><a href="#">Friends</a></li>
-                <li role="presentation"><a href="#">Requests
+                <li role="presentation"><a href="#" onclick="load_friend_request()">Requests
                   <span style="background: rgb(223, 118, 95);"class="badge" id="request_num"></span>
                 </a></li>
                 <li role="presentation"><a href="#">Messages</a></li>
@@ -91,14 +93,8 @@
           <div class="row">
             <div class="col-md-12">
 
-              <div class="side_bar_content side_bar">
+              <div class="side_bar">
 
-                <div style="position:relative; width:100%; left:0;z-index:-1"class="alert alert-info friend_alert">
-                  <p style="margin-bottom:20px" id="friend_request_context">
-                  </p>
-                  <button class="btn btn-success"type="button" name="button">Accept</button>
-                  <button class="btn btn-danger"type="button" name="button">cancel</button>
-                </div>
 
 
               </div>

@@ -4,10 +4,9 @@ var mins = -100;
 var username;
 var to  = "";
 $(document).ready(function(){
-
   var myHeight = $(window).height();
 
-  $('.side_bar').css("height",myHeight-160);
+  $('.side_bar').css("height",myHeight-200);
 
   $(document).keypress(function(event){
 
@@ -42,6 +41,7 @@ $(document).ready(function(){
 
 })
 
+// search friends
 function search(name){
   $('.friends').empty();
   $('.send_r').velocity("transition.slideUpOut",300);
@@ -60,13 +60,14 @@ function search(name){
   }
 }
 
+// send friend request
 function friend(name){
   to = name;
   document.getElementById('content').innerHTML = "Send friend request to "+name+" ?";
   $('.send_r').velocity("transition.slideUpIn",300);
 }
 
-
+// check if there is friend request
 function query_friend_request(){
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function(){
@@ -79,9 +80,46 @@ function query_friend_request(){
   xmlhttp.open('GET','php/user.php?request='+username,true);
   xmlhttp.send();
   setTimeout(query_friend_request,1000);
-
 }
 
+
+// load friend request tab
+function load_friend_request(){
+  $('.side_bar').empty();
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function(){
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+      var msg = xmlhttp.responseText.substring(2).split(",");
+      for(i = 0; i<msg.length-1;i++){
+        var tmp = msg[i];
+        $('.side_bar').append(
+
+          `<div style="position:relative; width:100%; left:0; margin-bottom:20px"class="alert alert-info friend_alert">
+          <p style="margin-bottom:20px">
+          Friend request from <strong>`+tmp+`</strong>
+          </p>
+          <button class="btn btn-success"type="button" name="button">Accept</button>
+          <button id="`+tmp+`" class="btn btn-danger"type="button" onclick="cancel(this.id)" name="button">cancel</button>
+          </div>`
+
+        )
+      }
+    }
+  };
+
+  xmlhttp.open('GET','php/user.php?load='+username,true);
+  xmlhttp.send();
+}
+
+// cancel friend request
+function cancel(data){
+  $('#'+data).parent().velocity('transition.slideUpOut',200);
+  $.post('php/user.php',{cancel:'yes',F:data},function(data){
+  });
+}
+
+
+// get message
 function retrivemsg(){
   $.post('php/user.php',{UserName:'yes'},function(data){
     $.post('php/user.php',{get:'yes',name:data.substring(2)},function(data2){

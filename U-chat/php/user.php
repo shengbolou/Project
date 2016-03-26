@@ -67,17 +67,54 @@
 
     $result = mysqli_query($conn,$query);
 
-    $rows = mysqli_fetch_assoc($result);
-
-    if(count($rows)>0)
-        echo count($rows);
+    $count = 0;
+    while ($rows = mysqli_fetch_assoc($result)) {
+      $count++;
+    }
+    if($count>0)
+        echo $count;
     else {
       echo '';
     }
   }
 
+  // load friend request
+  if(isset($_REQUEST['load'])){
+    include 'conn.php';
+
+    $request = $_REQUEST['load'];
+    $query = "SELECT F FROM friend_request WHERE T='$request' AND decided = '0'";
+
+    $result = mysqli_query($conn,$query);
+
+    $msg='';
+
+    while ($row = mysqli_fetch_assoc($result)) {
+      $msg.= $row['F'].',';
+    }
+
+    echo $msg;
+  }
+
+  //cancel friend request
+  if(isset($_POST['cancel'])){
+    include 'conn.php';
+
+    $F = $_POST['F'];
+
+    $query = "UPDATE friend_request SET decided = '1' WHERE F='$F'";
+
+    if ($result = mysqli_query($conn,$query)) {
+      echo "success";
+    }
+    else {
+      echo "failed";
+    }
+
+  }
 
 
+  // handle retrivemsg
   if(isset($_POST['get'])){
 
     include 'conn.php';
@@ -122,8 +159,4 @@
     }
 
   }
-
-
-
-
  ?>

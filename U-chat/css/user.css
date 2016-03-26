@@ -9,8 +9,8 @@ body{
 
 .search{
   position: relative;
-  margin-top: 50px;
   z-index: 20;
+  margin-bottom: -20px;
 }
 .send_r{
   display: none;
@@ -32,9 +32,9 @@ body{
   overflow-x: hidden;
   padding-right: 0;
   padding-left: 0;
-  -webkit-box-shadow: inset 0 10px 10px -10px rgba(168,168,168,1);
-  -moz-box-shadow: inset 0 10px 10px -10px rgba(168,168,168,1);
-  box-shadow: inset 0 10px 10px -10px rgba(168,168,168,1);
+  -webkit-box-shadow: 2px 0px 35px -9px rgba(168,168,168,1);
+  -moz-box-shadow: 2px 0px 35px -9px rgba(168,168,168,1);
+  box-shadow: 2px 0px 35px -9px rgba(168,168,168,1);
 }
 
 .my_nav{
@@ -43,8 +43,10 @@ body{
   -webkit-box-shadow: 0px 7px 18px -5px rgba(168,168,168,1);
   -moz-box-shadow: 0px 7px 18px -5px rgba(168,168,168,1);
   box-shadow: 0px 7px 18px -5px rgba(168,168,168,1);
-  z-index: 10;
+  z-index: 2;
+  position: relative;
 }
+
 .my_nav>li>a{
   border-radius: 0px 0px 0px 0px;
   height: 60px;

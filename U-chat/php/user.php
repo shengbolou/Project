@@ -10,6 +10,25 @@
     echo $UserName;
   }
 
+  if (isset($_POST['send'])) {
+    include 'conn.php';
+
+    $F = strip_tags($_POST['F']);
+    $T = strip_tags($_POST['T']);
+
+
+    $query = "INSERT INTO friend_request(F,T) VALUES('$F','$T')";
+
+    $result = mysqli_query($conn,$query);
+
+    if ($result) {
+      echo "success";
+    }
+    else {
+      echo "failed";
+    }
+
+  }
 
   if(isset($_REQUEST['q'])){
     include 'conn.php';
@@ -36,6 +55,16 @@
       }
 
     }
+  }
+
+  if(isset($_REQUEST['request'])){
+    include 'conn.php';
+
+      $request = $_REQUEST['request'];
+      $query = "SELECT F FROM friend_request WHERE T='$request'";
+
+      $result = mysqli_query($conn,$query);
+
   }
 
 

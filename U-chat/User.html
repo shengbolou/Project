@@ -27,6 +27,13 @@
 
     <div class="page_header container-fluid">
 
+      <div style="position:absolute; width:100%; left:0; z-index:50"class="alert alert-info friend_alert">
+        <p style="margin-bottom:20px" id="friend_request_context">
+        </p>
+        <button class="btn btn-success"type="button" name="button">Accept</button>
+        <button class="btn btn-danger"type="button" name="button">cancel</button>
+      </div>
+
       <h4 style="color:white;
       position: absolute;
       margin:0;
@@ -39,15 +46,23 @@
 
 
       <div class="row">
-        <div style="height:100px;"class="col-md-2">
+        <div style="height:100px;"class="col-md-2 col-sm-2 col-xs-4">
 
           <div class="search">
             <input type="text" class="form-control" onkeyup="search(this.value)" placeholder="Search for friends">
+
             <div class="alert alert-info send_r">
               <p id="content">
               </p>
               <button class="btn btn-primary send" type="button" name="button">send</button>
             </div>
+
+            <div class="alert alert-success send_s">
+              <p>
+                success!
+              </p>
+            </div>
+
             <ul class="list-group friends">
             </ul>
           </div>
@@ -59,9 +74,23 @@
 
     </div>
 
-    <div class="container center-block">
+    <div class="container-fluid center-block">
+
       <div class="row">
-        <div class="col-md-12">
+
+        <div class="col-md-2 side_bar">
+
+
+          <ul class="nav nav-tabs nav-justified my_nav">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">Profile</a></li>
+            <li role="presentation"><a href="#">Messages</a></li>
+          </ul>
+
+        </div>
+
+
+        <div class="col-md-6 col-md-offset-2">
 
           <div class="panel panel-primary chat-box">
 
@@ -86,6 +115,9 @@
           </div>
 
         </div>
+
+
+
       </div>
     </div>
 

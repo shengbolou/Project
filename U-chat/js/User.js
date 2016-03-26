@@ -2,8 +2,12 @@
 var hour = -100;
 var mins = -100;
 var username;
-var to;
+var to  = "";
 $(document).ready(function(){
+
+  var myHeight = $(window).height();
+
+  $('.side_bar').css("height",myHeight-100);
 
   $(document).keypress(function(event){
 
@@ -22,14 +26,59 @@ $(document).ready(function(){
   });
 
   retrivemsg();
-
+  query_friend_request();
 
   $('.send').click(function(){
-    alert(username);
+    $('.send_r').velocity("transition.slideUpOut",300);
+
+    $.post('php/user.php',{send:'yes',F:username.substring(2),T:to},function(data){
+      switch (data.substring(2)) {
+        case 'success':
+        $('.send_s').velocity('transition.slideUpIn',600).velocity('transition.slideUpOut');
+        break;
+      }
+    });
   });
 
 })
 
+function search(name){
+  $('.friends').empty();
+  $('.send_r').velocity("transition.slideUpOut",300);
+  if(name.length != 0){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        $('.friends').append(xmlhttp.responseText);
+      }
+    };
+    xmlhttp.open("GET", "php/user.php?q=" + name, true);
+    xmlhttp.send();
+  }
+  else{
+    $('.friends').empty();
+  }
+}
+
+function friend(name){
+  to = name;
+  document.getElementById('content').innerHTML = "Send friend request to "+name+" ?";
+  $('.send_r').velocity("transition.slideUpIn",300);
+}
+
+
+function query_friend_request(){
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function(){
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+      // alert(xmlhttp.responseText);
+    }
+  };
+  xmlhttp.open('GET','php/user.php?request='+username,true);
+  xmlhttp.send();
+  setTimeout(query_friend_request,1000);
+
+}
 
 function retrivemsg(){
   $.post('php/user.php',{UserName:'yes'},function(data){
@@ -161,29 +210,4 @@ function Submit(){
   }
 
 
-}
-
-
-function search(name){
-  $('.friends').empty();
-  $('.send_r').velocity("fadeOut",300);
-  if(name.length != 0){
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        $('.friends').append(xmlhttp.responseText);
-      }
-    };
-    xmlhttp.open("GET", "php/user.php?q=" + name, true);
-    xmlhttp.send();
-  }
-  else{
-    $('.friends').empty();
-  }
-}
-
-function friend(name){
-  document.getElementById('content').innerHTML = "Send friend request to "+name+" ?";
-  $('.send_r').velocity("fadeIn",300);
-  to = name;
 }

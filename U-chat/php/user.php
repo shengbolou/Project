@@ -30,6 +30,7 @@
 
   }
 
+  // search friends
   if(isset($_REQUEST['q'])){
     include 'conn.php';
 
@@ -57,15 +58,24 @@
     }
   }
 
+  // query friend requests
   if(isset($_REQUEST['request'])){
     include 'conn.php';
 
-      $request = $_REQUEST['request'];
-      $query = "SELECT F FROM friend_request WHERE T='$request'";
+    $request = $_REQUEST['request'];
+    $query = "SELECT F FROM friend_request WHERE T='$request' AND decided = '0'";
 
-      $result = mysqli_query($conn,$query);
+    $result = mysqli_query($conn,$query);
 
+    $rows = mysqli_fetch_assoc($result);
+
+    if(count($rows)>0)
+        echo count($rows);
+    else {
+      echo '';
+    }
   }
+
 
 
   if(isset($_POST['get'])){

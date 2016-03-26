@@ -7,7 +7,7 @@ $(document).ready(function(){
 
   var myHeight = $(window).height();
 
-  $('.side_bar').css("height",myHeight-100);
+  $('.side_bar').css("height",myHeight-160);
 
   $(document).keypress(function(event){
 
@@ -71,7 +71,9 @@ function query_friend_request(){
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function(){
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-      // alert(xmlhttp.responseText);
+      if (xmlhttp.responseText.substring(2) != '') {
+        document.getElementById('request_num').innerHTML = xmlhttp.responseText;
+      }
     }
   };
   xmlhttp.open('GET','php/user.php?request='+username,true);

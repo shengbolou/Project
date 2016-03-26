@@ -11,6 +11,34 @@
   }
 
 
+  if(isset($_REQUEST['q'])){
+    include 'conn.php';
+
+    $request = $_REQUEST['q'];
+
+    if($request != ''){
+      $query = "SELECT UserName FROM users";
+
+      $result = mysqli_query($conn,$query);
+
+      $length = strlen($request);
+
+      while ($row = mysqli_fetch_assoc($result)) {
+
+        if($length > strlen($row["UserName"])){
+          continue;
+        }
+
+        if (stristr($request, substr($row["UserName"],0,$length))) {
+          echo "<a id='".$row["UserName"]."' onclick='friend(this.id)' class='list-group-item'>".$row["UserName"]."</a>";
+        }
+
+      }
+
+    }
+  }
+
+
   if(isset($_POST['get'])){
 
     include 'conn.php';
@@ -43,7 +71,6 @@
     $F = strip_tags($_POST['F']);
     $T = strip_tags($_POST['T']);
     $message = strip_tags($_POST['message']);
-
     $query = "INSERT INTO msg(F,T,message) VALUES('$F','$T','$message')";
 
     $result = mysqli_query($conn,$query);

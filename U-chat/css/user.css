@@ -6,6 +6,17 @@ body{
   background: #E6E9ED
 }
 
+
+.search{
+  position: relative;
+  margin-top: 50px;
+  z-index: 20;
+}
+.send_r{
+  display: none;
+}
+
+
 .page_header{
   position: relative;
   height: 100px;

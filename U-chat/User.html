@@ -26,6 +26,7 @@
   <body>
 
     <div class="page_header container-fluid">
+
       <h4 style="color:white;
       position: absolute;
       margin:0;
@@ -35,6 +36,27 @@
       font-family:Roboto;
       font-weight:300
       " class=""> Welcome <strong id="header"></strong></h4>
+
+
+      <div class="row">
+        <div style="height:100px;"class="col-md-2">
+
+          <div class="search">
+            <input type="text" class="form-control" onkeyup="search(this.value)" placeholder="Search for friends">
+            <div class="alert alert-info send_r">
+              <p id="content">
+              </p>
+              <button class="btn btn-primary send" type="button" name="button">send</button>
+            </div>
+            <ul class="list-group friends">
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+
+
     </div>
 
     <div class="container center-block">
@@ -49,27 +71,6 @@
 
             <div style="height:500px"class="panel-body">
 
-              <!-- <div class='container-fluid'>
-                  <div class='row'>
-
-                    <div style="
-
-                    position:relative;
-                    width:30px;
-                    height:30px;
-                    margin:20px 10px -10px 0px"class="col-md-2 user_img pull-left">
-                      <img style="position:relative; margin-left:-15px"src="imgs/test.png" width="30px" height="30px"alt="" />
-
-                    </div>
-
-                    <div style="margin-top:20px;" class='col-md-2 msg-body pull-left'>
-                      <p style="margin-top:5px; margin-bottom:5px; font-family:Roboto" align='justify'>
-                        `+(data2.substring(2))+`
-                      </p>
-                    </div>
-
-                  </div>
-                </div> -->
 
             </div>
 

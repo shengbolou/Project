@@ -1,3 +1,8 @@
+//initialize time
+var hour = -100;
+var mins = -100;
+var username;
+var to;
 $(document).ready(function(){
 
   $(document).keypress(function(event){
@@ -13,16 +18,18 @@ $(document).ready(function(){
 
   $.post('php/user.php',{UserName:'yes'},function(data){
     $('#header').append(data);
+    username = data;
   });
 
   retrivemsg();
 
+
+  $('.send').click(function(){
+    alert(username);
+  });
+
 })
 
-
-//initialize time
-var hour = -100;
-var mins = -100;
 
 function retrivemsg(){
   $.post('php/user.php',{UserName:'yes'},function(data){
@@ -52,6 +59,7 @@ function retrivemsg(){
                 -moz-border-radius: 20px 20px 20px 20px;
                 -webkit-border-radius: 20px 20px 20px 20px;
                 border: 0px solid #000000;
+                opacity:0.6
                 "class="label label-default time">`+curr_hour+':'+curr_mins+`</div>
               </div>`
             )
@@ -90,10 +98,8 @@ function retrivemsg(){
 }
 
 function Submit(){
-
-
   var message  = document.getElementById("msg").value;
-  var F = document.getElementById("header").innerHTML.toLowerCase();
+  // var F = document.getElementById("header").innerHTML.toLowerCase();
   $('#msg').val('');
   if(message == ''){
     $('#msg').parent().addClass('has-error');
@@ -122,14 +128,15 @@ function Submit(){
             -moz-border-radius: 20px 20px 20px 20px;
             -webkit-border-radius: 20px 20px 20px 20px;
             border: 0px solid #000000;
+            opacity:0.6
             "class="label label-default time">`+curr_hour+':'+curr_mins+`</div>
           </div>`
         )
     }
 
-    if(F.charAt(2).toLowerCase() == 'b') var name='a';
+    if(username.substring(2).toLowerCase() == 'b') var name='a';
     else var name= 'b';
-    $.post('php/user.php',{msg:'yes', F:F.charAt(2), T:name, message:message.replace("'","''")},function(data){
+    $.post('php/user.php',{msg:'yes', F:username.substring(2), T:name, message:message.replace("'","''")},function(data){
       $('.panel-body').append(
 
         `<div class='container-fluid'>
@@ -154,4 +161,29 @@ function Submit(){
   }
 
 
+}
+
+
+function search(name){
+  $('.friends').empty();
+  $('.send_r').velocity("fadeOut",300);
+  if(name.length != 0){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        $('.friends').append(xmlhttp.responseText);
+      }
+    };
+    xmlhttp.open("GET", "php/user.php?q=" + name, true);
+    xmlhttp.send();
+  }
+  else{
+    $('.friends').empty();
+  }
+}
+
+function friend(name){
+  document.getElementById('content').innerHTML = "Send friend request to "+name+" ?";
+  $('.send_r').velocity("fadeIn",300);
+  to = name;
 }

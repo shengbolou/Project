@@ -2,13 +2,13 @@
 var hour = -100;
 var mins = -100;
 var username;
-var to  = "";
+var send_friend_reques_to  = "";
 var send_msg_to = "";
 
 $(document).ready(function(){
   var myHeight = $(window).height();
 
-  $('.side_bar').css("height",myHeight-140);
+  $('.side_bar').css("height",myHeight);
   $('.panel-body').css("height",myHeight/2);
 
 
@@ -39,7 +39,7 @@ $(document).ready(function(){
 function send_friend_request(){
   $('.send_r').velocity("transition.slideUpOut",300);
 
-  $.post('php/user.php',{send:'yes',F:username.substring(2),T:to},function(data){
+  $.post('php/user.php',{send:'yes',F:username.substring(2),T:send_friend_reques_to},function(data){
     switch (data.substring(2)) {
       case 'success':
       $('.send_s').velocity('transition.slideUpIn',600).velocity('transition.slideUpOut');
@@ -69,7 +69,7 @@ function search(name){
 
 // send friend request
 function friend(name){
-  to = name;
+  send_friend_reques_to = name;
   document.getElementById('content').innerHTML = "Send friend request to "+name+" ?";
   $('.send_r').velocity("transition.slideUpIn",300);
 }
@@ -104,7 +104,7 @@ function load_friend_request(){
         document.getElementById('request_num').innerHTML = '';
         $('.side_bar').append(
 
-          `<div style="position:relative; width:100%; left:0; margin-bottom:20px"class="alert alert-info friend_alert">
+          `<div style="position:relative; width:100%; left:0; margin-bottom:20px; border-radius:0px 0px 0px 0px"class="alert alert-info friend_alert">
           <p style="margin-bottom:20px">
             <strong>No request</strong>
           </p>
@@ -116,7 +116,7 @@ function load_friend_request(){
         var tmp = requests[i];
         $('.side_bar').append(
 
-          `<div style="position:relative; width:100%; left:0; margin-bottom:20px"class="alert alert-info friend_alert">
+          `<div style="position:relative; width:100%; left:0; margin-bottom:20px;border-radius:0px 0px 0px 0px"class="alert alert-info friend_alert">
           <p style="margin-bottom:20px">
           Friend request from <strong>`+tmp+`</strong>
           </p>
@@ -158,7 +158,7 @@ function load_friends(){
 
     for(i=0; i<friends.length-1;i++){
       $('.xx').append(
-         `<a href="#" id="`+friends[i]+`" onclick="startChat(this.id)" class="list-group-item">`+friends[i]+`
+         `<a style="border-radius:0px 0px 0px 0px"href="#" id="`+friends[i]+`" onclick="startChat(this.id)" class="list-group-item">`+friends[i]+`
          <span style="
          font-size:30px;
          color:rgb(223, 118, 95); display:none;
@@ -204,7 +204,7 @@ function search_friends(){
       <div class="col-md-12">
 
         <div class="search">
-          <input type="text" class="form-control" onkeyup="search(this.value)" placeholder="Search for more friends..">
+          <input type="text" style="border-radius:0px 0px 0px 0px"class="form-control" onkeyup="search(this.value)" placeholder="Search for more friends..">
 
           <div class="alert alert-info send_r">
             <p id="content">

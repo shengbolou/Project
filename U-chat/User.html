@@ -24,6 +24,47 @@
 
   </head>
   <body>
+    <!-- side nav bar -->
+    <div class="row side_nav">
+      <div class="col-md-12 col-md-12 col-xs-12 col-lg-12">
+
+
+        <!-- nav tabs -->
+        <div class="row">
+          <div class="col-md-12 col-md-12 col-xs-12 col-lg-12">
+
+            <ul class="nav nav-tabs my_nav">
+              <li role="presentation" id="first_tab"class="active"><a href="#" onclick="load_friends()">Friends <span class="badge" id="friends_num"></span></a></li>
+              <li role="presentation"><a href="#" onclick="load_friend_request()">Requests
+                <span style="background: rgb(223, 118, 95);"class="badge" id="request_num"></span>
+              </a></li>
+              <li role="presentation"><a href="#" onclick="search_friends()">Search Friends</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+
+            <div class="side_bar">
+
+
+            </div>
+
+
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+<!-- everything but the side navbar -->
+<div class="rest">
+
+
 
     <div class="page_header container-fluid">
 
@@ -37,49 +78,23 @@
       font-weight:300
       " class=""> Welcome <strong id="header"></strong></h4>
 
+
     </div>
+
 
     <div class="container-fluid center-block">
 
       <div class="row">
 
-        <div style="  padding-right: 0;
+        <!-- <div style="  padding-right: 0;
           padding-left: 0;"class="col-md-2 col-sm-4">
 
 
 
 
 
-          <!-- nav tabs -->
-          <div class="row">
-            <div class="col-md-12 col-md-12 col-xs-12 col-lg-12">
 
-              <ul class="nav nav-tabs nav-justified my_nav">
-                <li role="presentation" id="first_tab"class="active"><a href="#" onclick="load_friends()">Friends <span class="badge" id="friends_num"></span></a></li>
-                <li role="presentation"><a href="#" onclick="load_friend_request()">Requests
-                  <span style="background: rgb(223, 118, 95);"class="badge" id="request_num"></span>
-                </a></li>
-                <li role="presentation"><a href="#" onclick="search_friends()">Search Friends</a></li>
-              </ul>
-
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12">
-
-              <div class="side_bar">
-
-
-              </div>
-
-
-            </div>
-          </div>
-
-
-
-        </div>
+        </div> -->
 
 
         <div class="col-md-6 col-sm-6 col-md-offset-2">
@@ -115,7 +130,7 @@
 
 
 
-
+  </div>
 
   </body>
 </html>

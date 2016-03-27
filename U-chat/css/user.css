@@ -4,6 +4,7 @@
 
 body{
   background: #E6E9ED;
+  overflow-x: hidden;
 }
 
 
@@ -30,6 +31,7 @@ body{
 }
 
 .side_bar{
+  border-radius: 0px 0px 0px 0px;
   overflow: scroll;
   overflow-x: hidden;
   padding-right: 0;
@@ -37,6 +39,16 @@ body{
   -webkit-box-shadow: 2px 0px 35px -9px rgba(168,168,168,1);
   -moz-box-shadow: 2px 0px 35px -9px rgba(168,168,168,1);
   box-shadow: 2px 0px 35px -9px rgba(168,168,168,1);
+}
+.side_nav{
+  position: fixed;
+  width: 400px;
+  z-index: 200;
+  transform: translateX(-400px);
+}
+
+.rest{
+  /*transform: translateX(350px);*/
 }
 
 .my_nav{
@@ -49,10 +61,13 @@ body{
   position: relative;
 }
 
+
 .my_nav>li>a{
   border-radius: 0px 0px 0px 0px;
   height: 60px;
+  width: 122px;
 }
+
 
 
 .page_header{

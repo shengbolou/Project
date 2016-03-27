@@ -33,6 +33,7 @@ body{
 .side_bar{
   border-radius: 0px 0px 0px 0px;
   overflow: scroll;
+  overflow: auto;
   overflow-x: hidden;
   padding-right: 0;
   padding-left: 0;
@@ -44,16 +45,46 @@ body{
   position: fixed;
   width: 400px;
   z-index: 200;
-  transform: translateX(-400px);
 }
 
-.rest{
-  /*transform: translateX(350px);*/
+/*configure the side nav toggle*/
+.hamburger:focus,
+.hamburger:active,
+.hamburger:visited,
+.hamburger:link,
+.hamburger{
+  position: relative;
+  height: 40px;
+  width: 40px;
+  top:25px;
+  left: 20px;
+  background: transparent;
+  border:none;
+  outline: none;
 }
+
+.menu-global {
+  position: absolute;
+  left: 0;
+  border-top: 2px solid white;
+  width: 100%;
+}
+
+.menu-top {
+  top: 0;
+}
+.menu-middle {
+  top: 12px;
+}
+.menu-bottom {
+  top: 24px;
+}
+
 
 .my_nav{
   border-radius: 0px 0px 0px 0px;
   height: 60px;
+  width: 370px;
   -webkit-box-shadow: 0px 7px 18px -5px rgba(168,168,168,1);
   -moz-box-shadow: 0px 7px 18px -5px rgba(168,168,168,1);
   box-shadow: 0px 7px 18px -5px rgba(168,168,168,1);
@@ -67,7 +98,6 @@ body{
   height: 60px;
   width: 122px;
 }
-
 
 
 .page_header{

@@ -167,10 +167,13 @@
 
     $name = strip_tags($_POST['name']);
     $from = strip_tags($_POST['from']);
+    $time = strip_tags($_POST['time']);
 
     $query = "SELECT * FROM msg WHERE T='$name' AND getted=0 AND F='$from'";
+    $query2 = "DELETE FROM msg WHERE getted=1";
 
     $result = mysqli_query($conn,$query);
+    $result2 = mysqli_query($conn,$query2);
 
     $row = mysqli_fetch_row($result);
 
@@ -178,9 +181,49 @@
     $msg =  $row[3];
     $update = "UPDATE msg SET getted=1 WHERE ID='$ID'";
     $updateit = mysqli_query($conn,$update);
-    if($msg != '')
-    echo  $msg;
+    if($msg != ''){
+      echo  $msg;
+      $myfile = fopen("../"."history/".$name."and".$from.".txt", "a") or die("Unable to open file!");
+      if ($time !='') {
+        $time_div =     "<div class='text-center'>
+                        <div style='
+                        margin-bottom:5px;
+                        background: #434A54;
+                        color: white;
+                        border-radius: 20px 20px 20px 20px;
+                        -moz-border-radius: 20px 20px 20px 20px;
+                        -webkit-border-radius: 20px 20px 20px 20px;
+                        border: 0px solid #000000;
+                        opacity:0.6
+                        'class='label label-default time'>".$time."</div>
+                      </div>";
+        fwrite($myfile,$time_div."\n");
+      }
+      $msg_div=        "<div class='container-fluid'>
+                  <div class='row'>
+
+                    <div style='
+
+                      position:relative;
+                      width:30px;
+                      height:30px;
+                      margin:20px 10px -10px 0px'class='col-md-2 user_img pull-left'>
+
+                      <img style='position:relative; margin-left:-15px' src='./imgs/test.png' width='30px' height='30px'alt='' />
+                  </div>
+
+                    <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>
+                      <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
+                        ".$msg."
+                      </p>
+                    </div>
+                  </div>
+                </div>";
+      fwrite($myfile,$msg_div."\n");
+      fclose($myfile);
+    }
     else echo 'none';
+
   }
 
   //check msgs
@@ -210,12 +253,48 @@
 
     $F = strip_tags($_POST['F']);
     $T = strip_tags($_POST['T']);
+    $time = strip_tags($_POST['time']);
+
     $message = strip_tags($_POST['message']);
     $query = "INSERT INTO msg(F,T,message) VALUES('$F','$T','$message')";
+
 
     $result = mysqli_query($conn,$query);
 
     if ($result) {
+
+      $myfile = fopen("../"."history/".$F."and".$T.".txt", "a") or die("Unable to open file!");
+      if ($time != '') {
+        $time_div =     "<div class='text-center'>
+                        <div style='
+                        margin-bottom:5px;
+                        background: #434A54;
+                        color: white;
+                        border-radius: 20px 20px 20px 20px;
+                        -moz-border-radius: 20px 20px 20px 20px;
+                        -webkit-border-radius: 20px 20px 20px 20px;
+                        border: 0px solid #000000;
+                        opacity:0.6
+                        'class='label label-default time'>".$time."</div>
+                      </div>";
+        fwrite($myfile,$time_div."\n");
+      }
+      $message = str_replace("''","'",$message);
+      $msg_div =         "<div class='container-fluid'>
+                <div class='row'>
+
+                  <div style='margin-top:20px;' class='col-md-2 msg-body pull-right'>
+
+                    <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
+                    ".$message."
+                    </p>
+
+                  </div>
+
+                </div>
+              </div>";
+      fwrite($myfile,$msg_div."\n");
+      fclose($myfile);
       echo "success";
     }
     else {
@@ -223,4 +302,28 @@
     }
 
   }
+
+  //load history
+  if(isset($_POST['load_history'])){
+
+    include 'conn.php';
+
+    $F = strip_tags($_POST['F']);
+    $T = strip_tags($_POST['T']);
+
+    if (file_exists("../"."history/".$F."and".$T.".txt")) {
+      $myfile = fopen("../"."history/".$F."and".$T.".txt", "r");
+      while(!feof($myfile)) {
+        echo fgets($myfile);
+      }
+      fclose($myfile);
+    }
+    else {
+      echo "no history";
+    }
+
+
+
+  }
+
  ?>

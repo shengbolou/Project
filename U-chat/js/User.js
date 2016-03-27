@@ -4,12 +4,16 @@ var mins = -100;
 var username;
 var send_friend_reques_to  = "";
 var send_msg_to = "";
+var side_nav_shown = 0;
 
 $(document).ready(function(){
   var myHeight = $(window).height();
 
   $('.side_bar').css("height",myHeight);
   $('.panel-body').css("height",myHeight/2);
+  $('.side_nav').velocity({
+    translateX: '-400px'
+  },0);
 
 
   $(document).keypress(function(event){
@@ -24,14 +28,68 @@ $(document).ready(function(){
 
 
   $.post('php/user.php',{UserName:'yes'},function(data){
-    $('#header').append(data);
     username = data;
     load_friends();
     check_msgs();
+    $('#header').append(username);
   });
 
   retrivemsg();
   query_friend_request();
+
+  // handle nav bar toggle
+  $('.hamburger').click(function(){
+
+    if(side_nav_shown == 0){
+
+      $('.menu-top').velocity({
+        rotateZ: '45deg',
+        top: '10px'
+      },300);
+      $('.menu-middle').velocity({
+        rotateX: '90deg'
+      },100);
+      $('.menu-bottom').velocity({
+        rotateZ: '-45deg',
+        top: '10px'
+      },300);
+
+
+
+
+      $('.side_nav').velocity({
+        translateX: '0'
+      },300);
+      $('.rest').velocity({
+        translateX: '360px'
+      },300);
+      side_nav_shown = 1
+    }
+    else{
+
+      $('.menu-top').velocity({
+        rotateZ: '0',
+        top: '0'
+      },300);
+      $('.menu-middle').velocity({
+        rotateX: '0',
+        top: '12px'
+      },100);
+      $('.menu-bottom').velocity({
+        rotateZ: '0',
+        top: '24px'
+      },300);
+
+      $('.side_nav').velocity({
+        translateX: '-400px'
+      },300);
+      $('.rest').velocity({
+        translateX: '0'
+      },300);
+      side_nav_shown = 0;
+    }
+
+  });
 
 });
 
@@ -189,10 +247,21 @@ function check_msgs(){
 
 //start chat function
 function startChat(data){
+  load_history(data);
   document.getElementById('chat_header').innerHTML = data;
   send_msg_to = data;
   $('.chat-box').velocity('transition.slideLeftIn',300);
   $('#'+data+' span').velocity('fadeOut',300);
+  $('.panel-body').empty();
+}
+
+function load_history(data) {
+  $.post('php/user.php',{load_history:'yes',F:username.substring(2),T:data},function(data){
+    if (data.substring(2)!= 'no history') {
+      $('.panel-body').append(data);
+      $('.panel-body').velocity('scroll',{duration:500,container: $('.panel-body')[0],offset:500});
+    }
+  });
 }
 
 
@@ -229,12 +298,29 @@ function search_friends(){
 
 // get message
 function retrivemsg(){
+
+  var curr_time = new Date();
+  var curr_hourx = curr_time.getHours();
+  var curr_minsx = curr_time.getMinutes();
+  var time;
+  if(curr_hourx!=hour || curr_minsx!=mins){
+    if (curr_minsx < 10) {
+      curr_minsx = '0'+curr_minsx;
+    }
+    if (curr_hourx < 10) {
+      curr_hourx = '0'+curr_hourx;
+    }
+    time = curr_hourx+':'+curr_minsx;
+  }
+  else {
+    time = '';
+  }
+
   $.post('php/user.php',{UserName:'yes'},function(data){
-    $.post('php/user.php',{get:'yes',name:data.substring(2),from:send_msg_to},function(data2){
+    $.post('php/user.php',{get:'yes',name:data.substring(2),from:send_msg_to,time:time},function(data2){
       // alert(data2)
       if(data2.substring(2) !='none'){
         //show time
-        var curr_time = new Date();
         var curr_hour = curr_time.getHours();
         var curr_mins = curr_time.getMinutes();
         if(curr_hour!=hour || curr_mins!=mins){
@@ -296,6 +382,7 @@ function retrivemsg(){
 
 function Submit(){
   var message  = document.getElementById("msg").value;
+  var time;
   // var F = document.getElementById("header").innerHTML.toLowerCase();
   $('#msg').val('');
   if(message == ''){
@@ -329,9 +416,13 @@ function Submit(){
             "class="label label-default time">`+curr_hour+':'+curr_mins+`</div>
           </div>`
         )
+        time = curr_hour+':'+curr_mins;
+    }
+    else {
+      time = '';
     }
 
-    $.post('php/user.php',{msg:'yes', F:username.substring(2), T:send_msg_to, message:message.replace("'","''")},function(data){
+    $.post('php/user.php',{msg:'yes', F:username.substring(2), T:send_msg_to, message:message.replace("'","''"),time:time},function(data){
       $('.panel-body').append(
 
         `<div class='container-fluid'>

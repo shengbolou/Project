@@ -91,6 +91,8 @@ $(document).ready(function(){
 
   });
 
+  var $draggable = $('.draggable').draggabilly({
+  })
 });
 
 //send_friend_request

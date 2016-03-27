@@ -181,9 +181,14 @@
     $msg =  $row[3];
     $update = "UPDATE msg SET getted=1 WHERE ID='$ID'";
     $updateit = mysqli_query($conn,$update);
+
     if($msg != ''){
       echo  $msg;
-      $myfile = fopen("../"."history/".$name."and".$from.".txt", "a") or die("Unable to open file!");
+      $myfile;
+      if (file_exists("../"."history/".$from."and".$name.".txt")) {
+        $myfile = fopen("../"."history/".$from."and".$name.".txt", "a") or die("Unable to open file!");
+      }
+      else $myfile = fopen("../"."history/".$name."and".$from.".txt", "a") or die("Unable to open file!");
       if ($time !='') {
         $time_div =     "<div class='text-center'>
                         <div style='
@@ -262,8 +267,11 @@
     $result = mysqli_query($conn,$query);
 
     if ($result) {
-
-      $myfile = fopen("../"."history/".$F."and".$T.".txt", "a") or die("Unable to open file!");
+      $myfile;
+      if (file_exists("../"."history/".$T."and".$F.".txt")) {
+        $myfile = fopen("../"."history/".$T."and".$F.".txt", "a") or die("Unable to open file!");
+      }
+      else $myfile = fopen("../"."history/".$F."and".$T.".txt", "a") or die("Unable to open file!");
       if ($time != '') {
         $time_div =     "<div class='text-center'>
                         <div style='
@@ -311,7 +319,14 @@
     $F = strip_tags($_POST['F']);
     $T = strip_tags($_POST['T']);
 
-    if (file_exists("../"."history/".$F."and".$T.".txt")) {
+    if (file_exists("../"."history/".$T."and".$F.".txt")) {
+      $myfile = fopen("../"."history/".$T."and".$F.".txt", "r");
+      while(!feof($myfile)) {
+        echo fgets($myfile);
+      }
+      fclose($myfile);
+    }
+    else if (file_exists("../"."history/".$F."and".$T.".txt")) {
       $myfile = fopen("../"."history/".$F."and".$T.".txt", "r");
       while(!feof($myfile)) {
         echo fgets($myfile);

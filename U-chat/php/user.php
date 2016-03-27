@@ -113,6 +113,52 @@
 
   }
 
+  // accept friend request
+  if(isset($_POST['accept'])){
+    include 'conn.php';
+
+    $F = $_POST['Friend'];
+    $This = $_POST['This'];
+
+    $query = "UPDATE friend_request SET decided = '1' WHERE F='$F'";
+
+    $add_friend = "INSERT INTO $This(Friend) VALUES('$F')";
+    $add_friend2 = "INSERT INTO $F(Friend) VALUES('$This')";
+
+    $update = mysqli_query($conn,$query);
+    $result = mysqli_query($conn,$add_friend);
+    $result2 = mysqli_query($conn,$add_friend2);
+
+    if ($result && $result2) {
+      # code...
+      echo "success";
+    }
+    else {
+      echo "failed";
+    }
+
+  }
+
+  //load friends
+  if(isset($_POST['load_friends'])){
+    include 'conn.php';
+
+    $user = $_POST['user'];
+
+    $query = "SELECT Friend From $user";
+
+    $update = mysqli_query($conn,$query);
+
+    $users = '';
+
+    while ($row = mysqli_fetch_assoc($update)) {
+      $users.=$row['Friend'].",";
+    }
+
+    echo $users;
+
+  }
+
 
   // handle retrivemsg
   if(isset($_POST['get'])){
@@ -120,8 +166,9 @@
     include 'conn.php';
 
     $name = strip_tags($_POST['name']);
+    $from = strip_tags($_POST['from']);
 
-    $query = "SELECT * FROM msg WHERE T='$name' AND getted=0";
+    $query = "SELECT * FROM msg WHERE T='$name' AND getted=0 AND F='$from'";
 
     $result = mysqli_query($conn,$query);
 
@@ -134,12 +181,29 @@
     if($msg != '')
     echo  $msg;
     else echo 'none';
+  }
 
+  //check msgs
+  if(isset($_REQUEST['check_msg'])){
 
+    include 'conn.php';
 
+    $name = $_REQUEST['check_msg'];
+
+    $query = "SELECT F FROM msg WHERE T='$name' AND getted=0";
+
+    $result = mysqli_query($conn,$query);
+
+    $msgarray = '';
+    while ($row = mysqli_fetch_assoc($result)) {
+      $msgarray.=$row['F'].",";
+    }
+
+    echo $msgarray;
   }
 
 
+  //insert msg to db
   if(isset($_POST['msg'])){
 
     include 'conn.php';

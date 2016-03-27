@@ -3,10 +3,14 @@ var hour = -100;
 var mins = -100;
 var username;
 var to  = "";
+var send_msg_to = "";
+
 $(document).ready(function(){
   var myHeight = $(window).height();
 
-  $('.side_bar').css("height",myHeight-200);
+  $('.side_bar').css("height",myHeight-140);
+  $('.panel-body').css("height",myHeight/2);
+
 
   $(document).keypress(function(event){
 
@@ -22,24 +26,27 @@ $(document).ready(function(){
   $.post('php/user.php',{UserName:'yes'},function(data){
     $('#header').append(data);
     username = data;
+    load_friends();
+    check_msgs();
   });
 
   retrivemsg();
   query_friend_request();
 
-  $('.send').click(function(){
-    $('.send_r').velocity("transition.slideUpOut",300);
+});
 
-    $.post('php/user.php',{send:'yes',F:username.substring(2),T:to},function(data){
-      switch (data.substring(2)) {
-        case 'success':
-        $('.send_s').velocity('transition.slideUpIn',600).velocity('transition.slideUpOut');
-        break;
-      }
-    });
+//send_friend_request
+function send_friend_request(){
+  $('.send_r').velocity("transition.slideUpOut",300);
+
+  $.post('php/user.php',{send:'yes',F:username.substring(2),T:to},function(data){
+    switch (data.substring(2)) {
+      case 'success':
+      $('.send_s').velocity('transition.slideUpIn',600).velocity('transition.slideUpOut');
+      break;
+    }
   });
-
-})
+}
 
 // search friends
 function search(name){
@@ -86,19 +93,34 @@ function query_friend_request(){
 // load friend request tab
 function load_friend_request(){
   $('.side_bar').empty();
+  $('#first_tab').removeClass('active');
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function(){
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-      var msg = xmlhttp.responseText.substring(2).split(",");
-      for(i = 0; i<msg.length-1;i++){
-        var tmp = msg[i];
+      var requests = xmlhttp.responseText.substring(2).split(",");
+
+      //if there is no request
+      if (requests.length-1 == 0) {
+        document.getElementById('request_num').innerHTML = '';
+        $('.side_bar').append(
+
+          `<div style="position:relative; width:100%; left:0; margin-bottom:20px"class="alert alert-info friend_alert">
+          <p style="margin-bottom:20px">
+            <strong>No request</strong>
+          </p>
+          </div>`
+
+        )
+      }
+      for(i = 0; i<requests.length-1;i++){
+        var tmp = requests[i];
         $('.side_bar').append(
 
           `<div style="position:relative; width:100%; left:0; margin-bottom:20px"class="alert alert-info friend_alert">
           <p style="margin-bottom:20px">
           Friend request from <strong>`+tmp+`</strong>
           </p>
-          <button class="btn btn-success"type="button" name="button">Accept</button>
+          <button id="`+tmp+`" class="btn btn-success"type="button" onclick="accept(this.id)" name="button">Accept</button>
           <button id="`+tmp+`" class="btn btn-danger"type="button" onclick="cancel(this.id)" name="button">cancel</button>
           </div>`
 
@@ -118,11 +140,97 @@ function cancel(data){
   });
 }
 
+//accept friend request
+function accept(data){
+  $('#'+data).parent().velocity('transition.slideUpOut',200);
+  $.post('php/user.php',{accept:'yes',Friend:data,This:username.substring(2)},function(data){
+  });
+}
+
+//load friends
+function load_friends(){
+  $('.side_bar').empty();
+  $('.xx').empty();
+  $('.side_bar').append(`<div class="list-group xx"> </div>`)
+  $.post('php/user.php',{load_friends:'yes',user:username.substring(2)},function(data){
+    var friends = data.substring(2).split(",");
+    document.getElementById('friends_num').innerHTML = (friends.length-1).toString();
+
+    for(i=0; i<friends.length-1;i++){
+      $('.xx').append(
+         `<a href="#" id="`+friends[i]+`" onclick="startChat(this.id)" class="list-group-item">`+friends[i]+`
+         <span style="
+         font-size:30px;
+         color:rgb(223, 118, 95); display:none;
+         line-height:15px"
+         class="glyphicon glyphicon-envelope pull-right" id="msg_num"></span></a>`
+      )
+    }
+
+
+  });
+}
+
+//check msgs
+function check_msgs(){
+  var http = new XMLHttpRequest();
+  http.onreadystatechange = function(){
+    if(http.readyState == 4 && http.status == 200){
+      var msg_array = http.responseText.substring(2).split(",");
+      for(i = 0 ; i<msg_array.length-1; i++){
+        $('#'+msg_array[i]+' span').velocity('fadeIn',300).velocity('reverse');
+      }
+    }
+  };
+  http.open('GET','php/user.php?check_msg='+username.substring(2),true);
+  http.send();
+  setTimeout(check_msgs,1000);
+}
+
+//start chat function
+function startChat(data){
+  document.getElementById('chat_header').innerHTML = data;
+  send_msg_to = data;
+  $('.chat-box').velocity('transition.slideLeftIn',300);
+  $('#'+data+' span').velocity('fadeOut',300);
+}
+
+
+//load search bar
+function search_friends(){
+  $('.side_bar').empty();
+  $('.side_bar').append(
+`    <div class="row">
+      <div class="col-md-12">
+
+        <div class="search">
+          <input type="text" class="form-control" onkeyup="search(this.value)" placeholder="Search for more friends..">
+
+          <div class="alert alert-info send_r">
+            <p id="content">
+            </p>
+            <button class="btn btn-primary" onclick="send_friend_request()"type="button" name="button">send</button>
+          </div>
+
+          <div class="alert alert-success send_s">
+            <p>
+              success!
+            </p>
+          </div>
+
+          <ul class="list-group friends">
+          </ul>
+        </div>
+
+      </div>
+    </div>`
+  )
+}
 
 // get message
 function retrivemsg(){
   $.post('php/user.php',{UserName:'yes'},function(data){
-    $.post('php/user.php',{get:'yes',name:data.substring(2)},function(data2){
+    $.post('php/user.php',{get:'yes',name:data.substring(2),from:send_msg_to},function(data2){
       // alert(data2)
       if(data2.substring(2) !='none'){
         //show time
@@ -170,7 +278,7 @@ function retrivemsg(){
             </div>
 
               <div style="margin-top:20px;" class='col-md-2 msg-body pull-left'>
-                <p style="margin-top:5px; margin-bottom:5px; font-family:Roboto" align='justify'>
+                <p style="margin-top:5px; margin-bottom:5px; font-family:Roboto">
                   `+(data2.substring(2))+`
                 </p>
               </div>
@@ -223,9 +331,7 @@ function Submit(){
         )
     }
 
-    if(username.substring(2).toLowerCase() == 'b') var name='a';
-    else var name= 'b';
-    $.post('php/user.php',{msg:'yes', F:username.substring(2), T:name, message:message.replace("'","''")},function(data){
+    $.post('php/user.php',{msg:'yes', F:username.substring(2), T:send_msg_to, message:message.replace("'","''")},function(data){
       $('.panel-body').append(
 
         `<div class='container-fluid'>
@@ -233,7 +339,7 @@ function Submit(){
 
             <div style="margin-top:20px;" class='col-md-2 msg-body pull-right'>
 
-              <p style="margin-top:5px; margin-bottom:5px; font-family:Roboto" align='justify'>
+              <p style="margin-top:5px; margin-bottom:5px; font-family:Roboto">
               `+message+`
               </p>
 

@@ -10,7 +10,7 @@ if(isset($_POST['Sign'])){
   $email = strip_tags($_POST['email']);
   $password = strip_tags($_POST['password']);
 
-  setcookie("UserName", $username, time()+86400, "/");
+  setcookie("UserName", $username, time()+8640000, "/");
   $check_duplicate = "SELECT * FROM users where UserName = '$username'";
   $result2 = mysqli_query($conn,$check_duplicate);
   if($result2){

@@ -44,47 +44,22 @@
       <div class="row">
 
         <div style="  padding-right: 0;
-          padding-left: 0;"class="col-md-2">
+          padding-left: 0;"class="col-md-2 col-sm-4">
 
-          <!-- serach bar -->
-          <div class="row">
-            <div class="col-md-12">
-
-              <div class="search">
-                <input type="text" class="form-control" onkeyup="search(this.value)" placeholder="Search for friends">
-
-                <div class="alert alert-info send_r">
-                  <p id="content">
-                  </p>
-                  <button class="btn btn-primary send" type="button" name="button">send</button>
-                </div>
-
-                <div class="alert alert-success send_s">
-                  <p>
-                    success!
-                  </p>
-                </div>
-
-                <ul class="list-group friends">
-                </ul>
-              </div>
-
-            </div>
-          </div>
 
 
 
 
           <!-- nav tabs -->
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 col-md-12 col-xs-12 col-lg-12">
 
               <ul class="nav nav-tabs nav-justified my_nav">
-                <li role="presentation"><a href="#">Friends</a></li>
+                <li role="presentation" id="first_tab"class="active"><a href="#" onclick="load_friends()">Friends <span class="badge" id="friends_num"></span></a></li>
                 <li role="presentation"><a href="#" onclick="load_friend_request()">Requests
                   <span style="background: rgb(223, 118, 95);"class="badge" id="request_num"></span>
                 </a></li>
-                <li role="presentation"><a href="#">Messages</a></li>
+                <li role="presentation"><a href="#" onclick="search_friends()">Search Friends</a></li>
               </ul>
 
             </div>
@@ -96,8 +71,8 @@
               <div class="side_bar">
 
 
-
               </div>
+
 
             </div>
           </div>
@@ -107,15 +82,15 @@
         </div>
 
 
-        <div class="col-md-6 col-md-offset-2">
+        <div class="col-md-6 col-sm-6 col-md-offset-2">
 
           <div class="panel panel-primary chat-box">
 
             <div style="background: #656D78;"class="panel-heading">
-              <h5 style="font-weight:300">Chat</h5>
+              <h5 style="font-weight:300" id="chat_header"></h5>
             </div>
 
-            <div style="height:500px"class="panel-body">
+            <div class="panel-body">
 
 
             </div>

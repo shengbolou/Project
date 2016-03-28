@@ -30,6 +30,51 @@
 
   }
 
+  //set photo
+  if (isset($_POST['set_photo'])) {
+    include 'conn.php';
+
+    $user = strip_tags($_POST['user']);
+    $url = strip_tags($_POST['url']);
+
+
+    $query = "UPDATE users SET url='$url' WHERE UserName='$user'";
+
+    $result = mysqli_query($conn,$query);
+
+    if ($result) {
+      # code...
+      echo "success";
+    }
+    else {
+      echo "failed";
+    }
+
+  }
+
+  //load photo
+  if (isset($_POST['load_user_photo'])) {
+    include 'conn.php';
+
+    $user = strip_tags($_POST['user']);
+
+
+    $query = "SELECT url FROM users WHERE UserName='$user'";
+
+    $result = mysqli_query($conn,$query);
+
+    if ($result) {
+      $url = mysqli_fetch_assoc($result)["url"];
+      if ($url != "0") {
+        echo $url;
+      }
+    }
+    else {
+      echo "failed";
+    }
+
+  }
+
   // search friends
   if(isset($_REQUEST['q'])){
     include 'conn.php';
@@ -170,10 +215,12 @@
     $time = strip_tags($_POST['time']);
 
     $query = "SELECT * FROM msg WHERE T='$name' AND getted=0 AND F='$from'";
-    $query2 = "DELETE FROM msg WHERE getted=1";
+    $clean_msg = "DELETE FROM msg WHERE getted=1";
+    $clean_request = "DELETE FROM friend_request WHERE decided=1";
 
     $result = mysqli_query($conn,$query);
-    $result2 = mysqli_query($conn,$query2);
+    $result2 = mysqli_query($conn,$clean_msg);
+    $result3 = mysqli_query($conn,$clean_request);
 
     $row = mysqli_fetch_row($result);
 
@@ -184,11 +231,7 @@
 
     if($msg != ''){
       echo  $msg;
-      $myfile;
-      if (file_exists("../"."history/".$from."and".$name.".txt")) {
-        $myfile = fopen("../"."history/".$from."and".$name.".txt", "a") or die("Unable to open file!");
-      }
-      else $myfile = fopen("../"."history/".$name."and".$from.".txt", "a") or die("Unable to open file!");
+      $myfile = fopen("../"."history/".$name."to".$from.".txt", "a") or die("Unable to open file!");
       if ($time !='') {
         $time_div =     "<div class='text-center'>
                         <div style='
@@ -212,9 +255,9 @@
                       position:relative;
                       width:30px;
                       height:30px;
-                      margin:20px 10px -10px 0px'class='col-md-2 user_img pull-left'>
+                      margin:20px 10px -10px 0px'class='col-md-2 friend_photo pull-left'>
 
-                      <img style='position:relative; margin-left:-15px' src='./imgs/test.png' width='30px' height='30px'alt='' />
+                      <img style='position:relative; margin-left:-15px' src='./imgs/user.png' width='30px' height='30px'alt='' />
                   </div>
 
                     <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>
@@ -267,11 +310,7 @@
     $result = mysqli_query($conn,$query);
 
     if ($result) {
-      $myfile;
-      if (file_exists("../"."history/".$T."and".$F.".txt")) {
-        $myfile = fopen("../"."history/".$T."and".$F.".txt", "a") or die("Unable to open file!");
-      }
-      else $myfile = fopen("../"."history/".$F."and".$T.".txt", "a") or die("Unable to open file!");
+      $myfile = fopen("../"."history/".$F."to".$T.".txt", "a") or die("Unable to open file!");
       if ($time != '') {
         $time_div =     "<div class='text-center'>
                         <div style='
@@ -319,15 +358,8 @@
     $F = strip_tags($_POST['F']);
     $T = strip_tags($_POST['T']);
 
-    if (file_exists("../"."history/".$T."and".$F.".txt")) {
-      $myfile = fopen("../"."history/".$T."and".$F.".txt", "r");
-      while(!feof($myfile)) {
-        echo fgets($myfile);
-      }
-      fclose($myfile);
-    }
-    else if (file_exists("../"."history/".$F."and".$T.".txt")) {
-      $myfile = fopen("../"."history/".$F."and".$T.".txt", "r");
+    if (file_exists("../"."history/".$F."to".$T.".txt")) {
+      $myfile = fopen("../"."history/".$F."to".$T.".txt", "r");
       while(!feof($myfile)) {
         echo fgets($myfile);
       }

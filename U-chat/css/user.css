@@ -1,5 +1,5 @@
 *{
-  font-family: Roboto sans-serif;
+  font-family: Roboto;
 }
 
 body{
@@ -8,9 +8,9 @@ body{
 }
 
 .draggable.is-pointer-down {
-  -webkit-box-shadow: 0px 0px 126px 18px rgba(150,150,150,1);
-  -moz-box-shadow: 0px 0px 126px 18px rgba(150,150,150,1);
-  box-shadow: 0px 0px 126px 18px rgba(150,150,150,1);
+  -webkit-box-shadow: 0px 0px 165px -18px rgba(99,99,99,1);
+  -moz-box-shadow: 0px 0px 165px -18px rgba(99,99,99,1);
+  box-shadow: 0px 0px 165px -18px rgba(99,99,99,1);
 }
 
 .search{
@@ -60,7 +60,7 @@ body{
 .hamburger{
   position: relative;
   height: 40px;
-  width: 40px;
+  width: 35px;
   top:25px;
   left: 20px;
   background: transparent;
@@ -105,6 +105,18 @@ body{
 }
 
 
+.portfolio{
+  height: 50px;
+  width: 50px;
+  position: relative;
+  top:15px;
+  right:20px;
+  border-radius: 200px 200px 200px 200px;
+  -moz-border-radius: 200px 200px 200px 200px;
+  -webkit-border-radius: 200px 200px 200px 200px;
+}
+
+
 .page_header{
   position: relative;
   height: 80px;
@@ -115,7 +127,7 @@ body{
 }
 
 
-.chat-box{
+.settings{
   position: relative;
   margin-top: 5%;
   z-index: 200;
@@ -124,9 +136,23 @@ body{
   box-shadow: -1px 4px 22px -5px rgba(117,117,117,0.77);
   display: none;
 }
+.settings > .panel-body{
+  height: 300px;
+}
+
+.chat-box{
+  position: relative;
+  margin-top: 5%;
+  z-index: 100;
+  -webkit-box-shadow: -1px 4px 22px -5px rgba(117,117,117,0.77);
+  -moz-box-shadow: -1px 4px 22px -5px rgba(117,117,117,0.77);
+  box-shadow: -1px 4px 22px -5px rgba(117,117,117,0.77);
+  display: none;
+}
 
 .panel-body{
   overflow: scroll;
+  overflow: auto;
   overflow-x: hidden;
 }
 

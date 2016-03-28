@@ -10,7 +10,7 @@ $(document).ready(function(){
   var myHeight = $(window).height();
 
   $('.side_bar').css("height",myHeight);
-  $('.panel-body').css("height",myHeight/2);
+  $('.chat_content').css("height",myHeight/2);
   $('.side_nav').velocity({
     translateX: '-400px'
   },0);
@@ -26,11 +26,16 @@ $(document).ready(function(){
 
   });
 
+  $('.chose_photo_success_alert').click(function(){
+    $('.photo_success_alert').velocity('transition.slideUpOut',100);
+  });
 
+  //get user anme
   $.post('php/user.php',{UserName:'yes'},function(data){
     username = data;
     load_friends();
     check_msgs();
+    load_user_photo();
     $('#header').append(username);
   });
 
@@ -94,6 +99,47 @@ $(document).ready(function(){
   var $draggable = $('.draggable').draggabilly({
   })
 });
+
+//close the chat box
+function close_chat_box() {
+  $('.chat-box').velocity('transition.slideLeftOut',200);
+}
+//closr setting box
+function close_setting_box() {
+  $('.settings').velocity('fadeOut',200);
+}
+//show settings
+function show_settings(){
+  $('.settings').velocity('fadeIn',200);
+}
+
+//set photo
+function set_photo(data){
+  $.post('php/user.php',{set_photo:'yes',user:username.substring(2),url:data},function(data){
+    if (data.substring(2)=="success") {
+      $('.photo_success_alert').velocity("fadeIn",300);
+    }
+  });
+}
+
+//load user photo
+function load_user_photo(){
+  $.post('php/user.php',{load_user_photo:'yes',user:username.substring(2)},function(data){
+    if (data.substring(2)!='') {
+      document.getElementById('user_photo').src=data.substring(2);
+    }
+  });
+}
+
+//load_friend_photo
+function load_friend_photo(data){
+  $.post('php/user.php',{load_user_photo:'yes',user:data},function(data){
+    if (data.substring(2)!='') {
+      $('.friend_photo img').attr("src",data.substring(2));
+    }
+  });
+}
+
 
 //send_friend_request
 function send_friend_request(){
@@ -254,14 +300,15 @@ function startChat(data){
   send_msg_to = data;
   $('.chat-box').velocity('transition.slideLeftIn',300);
   $('#'+data+' span').velocity('fadeOut',300);
-  $('.panel-body').empty();
+  $('.chat_content').empty();
+  load_friend_photo(data);
 }
 
 function load_history(data) {
   $.post('php/user.php',{load_history:'yes',F:username.substring(2),T:data},function(data){
     if (data.substring(2)!= 'no history') {
-      $('.panel-body').append(data);
-      $('.panel-body').velocity('scroll',{duration:500,container: $('.panel-body')[0],offset:500});
+      $('.chat_content').append(data);
+      $('.chat_content').velocity('scroll',{duration:500,container: $('.chat_content')[0],offset:500});
     }
   });
 }
@@ -334,7 +381,7 @@ function retrivemsg(){
           if (curr_hour < 10) {
             curr_hour = '0'+curr_hour;
           }
-            $('.panel-body').append(
+            $('.chat_content').append(
     `          <div class="text-center">
                 <div style="
                 margin-bottom:5px;
@@ -350,19 +397,20 @@ function retrivemsg(){
             )
         }
 
-        $('.panel-body').append(
+        $('.chat_content').append(
 
         `<div class='container-fluid'>
             <div class='row'>
 
               <div style="
-
                 position:relative;
                 width:30px;
                 height:30px;
-                margin:20px 10px -10px 0px"class="col-md-2 user_img pull-left">
+                margin:20px 10px -10px 0px"
 
-                <img style="position:relative; margin-left:-15px" src="./imgs/test.png" width="30px" height="30px"alt="" />
+                class="col-md-2 friend_photo pull-left">
+
+                <img style="position:relative; margin-left:-15px" src="./imgs/user.png" width="30px" height="30px"alt="" />
             </div>
 
               <div style="margin-top:20px;" class='col-md-2 msg-body pull-left'>
@@ -375,7 +423,8 @@ function retrivemsg(){
 
         );
         //animation scroll the message
-        $('.panel-body').velocity('scroll',{duration:500,container: $('.panel-body')[0],offset:500});
+        $('.chat_content').velocity('scroll',{duration:500,container: $('.chat_content')[0],offset:500});
+        load_friend_photo(send_msg_to);
       }
     });
   });
@@ -404,7 +453,7 @@ function Submit(){
       if (curr_hour < 10) {
         curr_hour = '0'+curr_hour;
       }
-        $('.panel-body').append(
+        $('.chat_content').append(
 `          <div class="text-center">
             <div style="
             margin-bottom:5px;
@@ -425,7 +474,7 @@ function Submit(){
     }
 
     $.post('php/user.php',{msg:'yes', F:username.substring(2), T:send_msg_to, message:message.replace("'","''"),time:time},function(data){
-      $('.panel-body').append(
+      $('.chat_content').append(
 
         `<div class='container-fluid'>
           <div class='row'>
@@ -444,7 +493,7 @@ function Submit(){
       );
       $('#msg').focus();
       //animation scroll the message
-      $('.panel-body').velocity('scroll',{duration:500,container: $('.panel-body')[0],offset:500});
+      $('.chat_content').velocity('scroll',{duration:500,container: $('.chat_content')[0],offset:500});
     });
   }
 

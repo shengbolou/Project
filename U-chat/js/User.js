@@ -5,10 +5,9 @@ var username;
 var send_friend_reques_to  = "";
 var send_msg_to = "";
 var side_nav_shown = 0;
-
+var myHeight;
 $(document).ready(function(){
-  var myHeight = $(window).height();
-
+  myHeight = $(window).height();
   $('.side_bar').css("height",myHeight);
   $('.chat_content').css("height",myHeight/2);
   $('.side_nav').velocity({
@@ -262,6 +261,11 @@ function load_friends(){
     var friends = data.substring(2).split(",");
     document.getElementById('friends_num').innerHTML = (friends.length-1).toString();
 
+    if (friends.length-1==0) {
+      $('.xx').append(
+        `<li style="border-radius:0px 0px 0px 0px"href="#" class="list-group-item"><strong>No friends</strong></li>`
+      )
+    }
     for(i=0; i<friends.length-1;i++){
       $('.xx').append(
          `<a style="border-radius:0px 0px 0px 0px"href="#" id="`+friends[i]+`" onclick="startChat(this.id)" class="list-group-item">`+friends[i]+`
@@ -269,7 +273,7 @@ function load_friends(){
          font-size:30px;
          color:rgb(223, 118, 95); display:none;
          line-height:15px"
-         class="glyphicon glyphicon-envelope pull-right" id="msg_num"></span></a>`
+         class="glyphicon glyphicon-envelope pull-right"></span></a>`
       )
     }
 
@@ -284,7 +288,7 @@ function check_msgs(){
     if(http.readyState == 4 && http.status == 200){
       var msg_array = http.responseText.substring(2).split(",");
       for(i = 0 ; i<msg_array.length-1; i++){
-        $('#'+msg_array[i]+' span').velocity('fadeIn',300).velocity('reverse');
+        $('#'+msg_array[i]+' span').velocity('fadeIn',100).velocity('reverse');
       }
     }
   };
@@ -299,7 +303,7 @@ function startChat(data){
   document.getElementById('chat_header').innerHTML = data;
   send_msg_to = data;
   $('.chat-box').velocity('transition.slideLeftIn',300);
-  $('#'+data+' span').velocity('fadeOut',300);
+  $('#'+data+' span').velocity('fadeOut',100);
   $('.chat_content').empty();
   load_friend_photo(data);
 }
@@ -322,7 +326,11 @@ function search_friends(){
       <div class="col-md-12">
 
         <div class="search">
-          <input type="text" style="border-radius:0px 0px 0px 0px"class="form-control" onkeyup="search(this.value)" placeholder="Search for more friends..">
+          <input type="text"
+          style="border-radius:0px 0px 0px 0px; height:50px;"
+          class="form-control"
+          onkeyup="search(this.value)"
+          placeholder="Search for more friends..">
 
           <div class="alert alert-info send_r">
             <p id="content">

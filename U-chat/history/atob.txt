@@ -8,7 +8,7 @@
                         -webkit-border-radius: 20px 20px 20px 20px;
                         border: 0px solid #000000;
                         opacity:0.6
-                        'class='label label-default time'>22:26</div>
+                        'class='label label-default time'>12:31</div>
                       </div>
 <div class='container-fluid'>
                   <div class='row'>
@@ -25,7 +25,7 @@
 
                     <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>
                       <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
-                        yo
+                        hello
                       </p>
                     </div>
                   </div>
@@ -45,7 +45,227 @@
 
                     <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>
                       <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
-                        what's up
+                        aaa
+                      </p>
+                    </div>
+                  </div>
+                </div>
+<div class='container-fluid'>
+                  <div class='row'>
+
+                    <div style='
+
+                      position:relative;
+                      width:30px;
+                      height:30px;
+                      margin:20px 10px -10px 0px'class='col-md-2 friend_photo pull-left'>
+
+                      <img style='position:relative; margin-left:-15px' src='./imgs/user.png' width='30px' height='30px'alt='' />
+                  </div>
+
+                    <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>
+                      <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
+                        ccccc
+                      </p>
+                    </div>
+                  </div>
+                </div>
+<div class='container-fluid'>
+                  <div class='row'>
+
+                    <div style='
+
+                      position:relative;
+                      width:30px;
+                      height:30px;
+                      margin:20px 10px -10px 0px'class='col-md-2 friend_photo pull-left'>
+
+                      <img style='position:relative; margin-left:-15px' src='./imgs/user.png' width='30px' height='30px'alt='' />
+                  </div>
+
+                    <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>
+                      <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
+                        vvvv
+                      </p>
+                    </div>
+                  </div>
+                </div>
+<div class='container-fluid'>
+                  <div class='row'>
+
+                    <div style='
+
+                      position:relative;
+                      width:30px;
+                      height:30px;
+                      margin:20px 10px -10px 0px'class='col-md-2 friend_photo pull-left'>
+
+                      <img style='position:relative; margin-left:-15px' src='./imgs/user.png' width='30px' height='30px'alt='' />
+                  </div>
+
+                    <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>
+                      <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
+                        z
+                      </p>
+                    </div>
+                  </div>
+                </div>
+<div class='container-fluid'>
+                  <div class='row'>
+
+                    <div style='
+
+                      position:relative;
+                      width:30px;
+                      height:30px;
+                      margin:20px 10px -10px 0px'class='col-md-2 friend_photo pull-left'>
+
+                      <img style='position:relative; margin-left:-15px' src='./imgs/user.png' width='30px' height='30px'alt='' />
+                  </div>
+
+                    <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>
+                      <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
+                        zc
+                      </p>
+                    </div>
+                  </div>
+                </div>
+<div class='container-fluid'>
+                  <div class='row'>
+
+                    <div style='
+
+                      position:relative;
+                      width:30px;
+                      height:30px;
+                      margin:20px 10px -10px 0px'class='col-md-2 friend_photo pull-left'>
+
+                      <img style='position:relative; margin-left:-15px' src='./imgs/user.png' width='30px' height='30px'alt='' />
+                  </div>
+
+                    <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>
+                      <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
+                        asd
+                      </p>
+                    </div>
+                  </div>
+                </div>
+<div class='container-fluid'>
+                  <div class='row'>
+
+                    <div style='
+
+                      position:relative;
+                      width:30px;
+                      height:30px;
+                      margin:20px 10px -10px 0px'class='col-md-2 friend_photo pull-left'>
+
+                      <img style='position:relative; margin-left:-15px' src='./imgs/user.png' width='30px' height='30px'alt='' />
+                  </div>
+
+                    <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>
+                      <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
+                        qwe
+                      </p>
+                    </div>
+                  </div>
+                </div>
+<div class='container-fluid'>
+                  <div class='row'>
+
+                    <div style='
+
+                      position:relative;
+                      width:30px;
+                      height:30px;
+                      margin:20px 10px -10px 0px'class='col-md-2 friend_photo pull-left'>
+
+                      <img style='position:relative; margin-left:-15px' src='./imgs/user.png' width='30px' height='30px'alt='' />
+                  </div>
+
+                    <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>
+                      <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
+                        q
+                      </p>
+                    </div>
+                  </div>
+                </div>
+<div class='container-fluid'>
+                  <div class='row'>
+
+                    <div style='
+
+                      position:relative;
+                      width:30px;
+                      height:30px;
+                      margin:20px 10px -10px 0px'class='col-md-2 friend_photo pull-left'>
+
+                      <img style='position:relative; margin-left:-15px' src='./imgs/user.png' width='30px' height='30px'alt='' />
+                  </div>
+
+                    <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>
+                      <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
+                        we
+                      </p>
+                    </div>
+                  </div>
+                </div>
+<div class='container-fluid'>
+                  <div class='row'>
+
+                    <div style='
+
+                      position:relative;
+                      width:30px;
+                      height:30px;
+                      margin:20px 10px -10px 0px'class='col-md-2 friend_photo pull-left'>
+
+                      <img style='position:relative; margin-left:-15px' src='./imgs/user.png' width='30px' height='30px'alt='' />
+                  </div>
+
+                    <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>
+                      <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
+                        q
+                      </p>
+                    </div>
+                  </div>
+                </div>
+<div class='container-fluid'>
+                  <div class='row'>
+
+                    <div style='
+
+                      position:relative;
+                      width:30px;
+                      height:30px;
+                      margin:20px 10px -10px 0px'class='col-md-2 friend_photo pull-left'>
+
+                      <img style='position:relative; margin-left:-15px' src='./imgs/user.png' width='30px' height='30px'alt='' />
+                  </div>
+
+                    <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>
+                      <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
+                        we
+                      </p>
+                    </div>
+                  </div>
+                </div>
+<div class='container-fluid'>
+                  <div class='row'>
+
+                    <div style='
+
+                      position:relative;
+                      width:30px;
+                      height:30px;
+                      margin:20px 10px -10px 0px'class='col-md-2 friend_photo pull-left'>
+
+                      <img style='position:relative; margin-left:-15px' src='./imgs/user.png' width='30px' height='30px'alt='' />
+                  </div>
+
+                    <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>
+                      <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
+                        qe
                       </p>
                     </div>
                   </div>
@@ -56,7 +276,72 @@
                   <div style='margin-top:20px;' class='col-md-2 msg-body pull-right'>
 
                     <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
-                    jkjljk
+                    hey
+                    </p>
+
+                  </div>
+
+                </div>
+              </div>
+<div class='container-fluid'>
+                <div class='row'>
+
+                  <div style='margin-top:20px;' class='col-md-2 msg-body pull-right'>
+
+                    <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
+                    aa
+                    </p>
+
+                  </div>
+
+                </div>
+              </div>
+<div class='container-fluid'>
+                <div class='row'>
+
+                  <div style='margin-top:20px;' class='col-md-2 msg-body pull-right'>
+
+                    <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
+                    asdasd
+                    </p>
+
+                  </div>
+
+                </div>
+              </div>
+<div class='container-fluid'>
+                <div class='row'>
+
+                  <div style='margin-top:20px;' class='col-md-2 msg-body pull-right'>
+
+                    <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
+                    asd
+                    </p>
+
+                  </div>
+
+                </div>
+              </div>
+<div class='container-fluid'>
+                <div class='row'>
+
+                  <div style='margin-top:20px;' class='col-md-2 msg-body pull-right'>
+
+                    <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
+                    asdas
+                    </p>
+
+                  </div>
+
+                </div>
+              </div>
+<div class='container-fluid'>
+                <div class='row'>
+
+                  <div style='margin-top:20px;' class='col-md-2 msg-body pull-right'>
+
+                    <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
+                    d
                     </p>
 
                   </div>
@@ -73,169 +358,18 @@
                         -webkit-border-radius: 20px 20px 20px 20px;
                         border: 0px solid #000000;
                         opacity:0.6
-                        'class='label label-default time'>22:27</div>
+                        'class='label label-default time'>12:32</div>
                       </div>
 <div class='container-fluid'>
-                  <div class='row'>
-
-                    <div style='
-
-                      position:relative;
-                      width:30px;
-                      height:30px;
-                      margin:20px 10px -10px 0px'class='col-md-2 friend_photo pull-left'>
-
-                      <img style='position:relative; margin-left:-15px' src='./imgs/user.png' width='30px' height='30px'alt='' />
-                  </div>
-
-                    <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>
-                      <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
-                        hey hey
-                      </p>
-                    </div>
-                  </div>
-                </div>
-<div class='container-fluid'>
-                  <div class='row'>
-
-                    <div style='
-
-                      position:relative;
-                      width:30px;
-                      height:30px;
-                      margin:20px 10px -10px 0px'class='col-md-2 friend_photo pull-left'>
-
-                      <img style='position:relative; margin-left:-15px' src='./imgs/user.png' width='30px' height='30px'alt='' />
-                  </div>
-
-                    <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>
-                      <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
-                        finally
-                      </p>
-                    </div>
-                  </div>
-                </div>
-<div class='container-fluid'>
-                  <div class='row'>
-
-                    <div style='
-
-                      position:relative;
-                      width:30px;
-                      height:30px;
-                      margin:20px 10px -10px 0px'class='col-md-2 friend_photo pull-left'>
-
-                      <img style='position:relative; margin-left:-15px' src='./imgs/user.png' width='30px' height='30px'alt='' />
-                  </div>
-
-                    <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>
-                      <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
-                        I did it man
-                      </p>
-                    </div>
-                  </div>
-                </div>
-<div class='container-fluid'>
-                  <div class='row'>
-
-                    <div style='
-
-                      position:relative;
-                      width:30px;
-                      height:30px;
-                      margin:20px 10px -10px 0px'class='col-md-2 friend_photo pull-left'>
-
-                      <img style='position:relative; margin-left:-15px' src='./imgs/user.png' width='30px' height='30px'alt='' />
-                  </div>
-
-                    <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>
-                      <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
-                        haha
-                      </p>
-                    </div>
-                  </div>
-                </div>
-<div class='container-fluid'>
                 <div class='row'>
 
                   <div style='margin-top:20px;' class='col-md-2 msg-body pull-right'>
 
                     <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
-                    yes
+                    a
                     </p>
 
                   </div>
 
                 </div>
               </div>
-<div class='container-fluid'>
-                <div class='row'>
-
-                  <div style='margin-top:20px;' class='col-md-2 msg-body pull-right'>
-
-                    <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
-                    man
-                    </p>
-
-                  </div>
-
-                </div>
-              </div>
-<div class='container-fluid'>
-                <div class='row'>
-
-                  <div style='margin-top:20px;' class='col-md-2 msg-body pull-right'>
-
-                    <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
-                    it's pretty pro
-                    </p>
-
-                  </div>
-
-                </div>
-              </div>
-<div class='container-fluid'>
-                <div class='row'>
-
-                  <div style='margin-top:20px;' class='col-md-2 msg-body pull-right'>
-
-                    <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
-                    good job man!!!!!
-                    </p>
-
-                  </div>
-
-                </div>
-              </div>
-<div class='text-center'>
-                        <div style='
-                        margin-bottom:5px;
-                        background: #434A54;
-                        color: white;
-                        border-radius: 20px 20px 20px 20px;
-                        -moz-border-radius: 20px 20px 20px 20px;
-                        -webkit-border-radius: 20px 20px 20px 20px;
-                        border: 0px solid #000000;
-                        opacity:0.6
-                        'class='label label-default time'>22:28</div>
-                      </div>
-<div class='container-fluid'>
-                  <div class='row'>
-
-                    <div style='
-
-                      position:relative;
-                      width:30px;
-                      height:30px;
-                      margin:20px 10px -10px 0px'class='col-md-2 friend_photo pull-left'>
-
-                      <img style='position:relative; margin-left:-15px' src='./imgs/user.png' width='30px' height='30px'alt='' />
-                  </div>
-
-                    <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>
-                      <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
-                        thanks bro
-                      </p>
-                    </div>
-                  </div>
-                </div>

@@ -92,6 +92,31 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
 }
 
 
+.msg_block{
+  position:absolute;
+  height: 60px;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  margin-top:-8px;
+  width: 70%;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  overflow: auto;
+}
+
+.msg_container{
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 200px 200px 200px 200px;
+  -moz-border-radius: 200px 200px 200px 200px;
+  -webkit-border-radius: 200px 200px 200px 200px;
+}
+
+
 .my_nav{
   border-radius: 0px 0px 0px 0px;
   height: 60px;
@@ -114,7 +139,7 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
 .portfolio{
   height: 50px;
   width: 50px;
-  position: relative;
+  position: absolute;
   top:15px;
   right:20px;
   border-radius: 200px 200px 200px 200px;

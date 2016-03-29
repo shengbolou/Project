@@ -4,7 +4,13 @@
   include 'login.php';
   header('Cache-Control: no-cache,must-revalidate',true);
 
-  $UserName = $_COOKIE['UserName'];
+  if (isset($_COOKIE['UserName'])) {
+    # code...
+    $UserName = $_COOKIE['UserName'];
+  }
+  else {
+    $UserName = '';
+  }
 
   if(isset($_POST['UserName'])){
     echo $UserName;

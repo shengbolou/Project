@@ -7,13 +7,15 @@ var send_msg_to = "";
 var side_nav_shown = 0;
 var myHeight;
 $(document).ready(function(){
+  $('body').velocity({
+    opacity: 0
+  },0);
   myHeight = $(window).height();
   $('.side_bar').css("height",myHeight);
   $('.chat_content').css("height",myHeight/2);
   $('.side_nav').velocity({
     translateX: '-400px'
   },0);
-
 
   $(document).keypress(function(event){
 
@@ -29,8 +31,20 @@ $(document).ready(function(){
     $('.photo_success_alert').velocity('transition.slideUpOut',100);
   });
 
+  $('.logout_btn').click(function(){
+      window.location = "php/logout.php";
+  });
+
   //get user anme
   $.post('php/user.php',{UserName:'yes'},function(data){
+    if (data.substring(2) == '') {
+      window.location = "index.html"
+    }
+    else {
+      $('body').velocity({
+        opacity: 1
+      });
+    }
     username = data;
     load_friends();
     check_msgs();
@@ -97,7 +111,38 @@ $(document).ready(function(){
 
   var $draggable = $('.draggable').draggabilly({
   })
+
+  $('.portfolio').hover(function(){
+    $(this).stop(true,true).velocity({
+      boxShadowBlur: "10",
+    },300)
+  },function(){
+    $(this).stop(true,true).velocity({
+      boxShadowBlur: "0",
+    },300)
+  });
+
+  $('.my_nav li a').hover(function(){
+    $(this).stop(true,true).velocity({
+      backgroundColor: "#F5F7FA"
+    },300)
+  },function(){
+    $(this).stop(true,true).velocity({
+      backgroundColor: '#E6E9ED'
+    },300)
+  });
+  $('.list-group .list-group-item').hover(function(){
+    $(this).stop(true,true).velocity({
+      backgroundColor: "#E6E9ED"
+    },300)
+  },function(){
+    $(this).stop(true,true).velocity({
+      backgroundColor: '#F5F7FA'
+    },300)
+  });
+
 });
+
 
 //close the chat box
 function close_chat_box() {
@@ -312,7 +357,7 @@ function load_history(data) {
   $.post('php/user.php',{load_history:'yes',F:username.substring(2),T:data},function(data){
     if (data.substring(2)!= 'no history') {
       $('.chat_content').append(data);
-      $('.chat_content').velocity('scroll',{duration:500,container: $('.chat_content')[0],offset:500});
+      $('.chat_content').scrollTop($('.chat_content')[0].scrollHeight);
     }
   });
 }
@@ -448,6 +493,7 @@ function Submit(){
     $('#msg').parent().addClass('has-error');
   }
   else{
+    $('#msg').parent().removeClass('has-error');
     //show time
     var curr_time = new Date();
     var curr_hour = curr_time.getHours();

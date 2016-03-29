@@ -8,7 +8,7 @@
     $username = strip_tags($_POST['username']);
     $password = strip_tags($_POST['password']);
 
-    setcookie("UserName", $username, time()+6000, "/");
+    setcookie("UserName", $username, time() + (10 * 365 * 24 * 60 * 60), "/");
 
     $query = "SELECT Password FROM users where username = '$username' ";
 

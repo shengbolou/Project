@@ -190,13 +190,19 @@ function load_friend_photo(data){
 function send_friend_request(){
   $('.send_r').velocity("transition.slideUpOut",300);
 
-  $.post('php/user.php',{send:'yes',F:username.substring(2),T:send_friend_reques_to},function(data){
-    switch (data.substring(2)) {
-      case 'success':
-      $('.send_s').velocity('transition.slideUpIn',600).velocity('transition.slideUpOut');
-      break;
-    }
-  });
+  if (username.substring(2) != send_friend_reques_to) {
+    $.post('php/user.php',{send:'yes',F:username.substring(2),T:send_friend_reques_to},function(data){
+      switch (data.substring(2)) {
+        case 'success':
+        $('.send_s').velocity('transition.slideUpIn',1200).velocity('transition.slideUpOut');
+        break;
+        case 'already friends':
+        $('.send_w').velocity('transition.slideUpIn',1200).velocity('transition.slideUpOut');
+        break;
+      }
+    });
+  }
+
 }
 
 // search friends
@@ -406,6 +412,12 @@ function search_friends(){
           <div class="alert alert-success send_s">
             <p>
               success!
+            </p>
+          </div>
+
+          <div class="alert alert-warning send_w">
+            <p>
+              Already friends!
             </p>
           </div>
 

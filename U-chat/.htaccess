@@ -3,8 +3,8 @@ AddType application/x-httpd-php .html
 RewriteEngine on
 RewriteCond %{HTTP_REFERER} !^http://(www\.)?localhost [NC]
 RewriteCond %{HTTP_REFERER} !^http://(www\.)?localhost.*$ [NC]
-RewriteCond %{HTTP_REFERER} !^http://(www\.)?172.20.10.8:8080.*$ [NC]
-RewriteCond %{HTTP_REFERER} !^http://(www\.)?172.20.10.8:8080 [NC]
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?172.20.10.*:8080.*$ [NC]
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?172.20.10.*:8080 [NC]
 RewriteRule User.html - [F]
 
 

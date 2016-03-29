@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Light.ttf');
+}
+
 *{
   font-family: Roboto;
 }
@@ -27,6 +32,9 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
   display: none;
 }
 .send_s{
+  display: none;
+}
+.send_w{
   display: none;
 }
 
@@ -130,6 +138,7 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
 
 
 .my_nav{
+  font-weight:600;
   border-radius: 0px 0px 0px 0px;
   height: 60px;
   width: 370px;
@@ -171,6 +180,7 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
 
 
 .settings{
+  width: 300px;
   position: relative;
   margin-top: 5%;
   z-index: 200;
@@ -256,9 +266,29 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
 
 .msg_block::-webkit-scrollbar-thumb
 {
-	border-radius: 5px;
+	border-radius: 1px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: #c6c4c4;
+}
+/*srcoll bar style*/
+body::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 1px;
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar
+{
+	width: 5px;
+	background-color:  #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb
+{
+	border-radius: 1px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #434A54;
 }
 
 

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/user.css" media="screen" title="no title" charset="utf-8">
 
     <!-- fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'> -->
 
     <!-- scripts -->
     <script src="js/jquery-2.2.0.min.js" charset="utf-8"></script>
@@ -33,7 +33,7 @@
         <div class="row">
           <div class="col-md-12 col-md-12 col-xs-12 col-lg-12">
 
-            <ul class="nav nav-tabs my_nav">
+            <ul class="nav nav-tabs my_nav text-center">
               <li role="presentation" id="first_tab"class="active"><a href="#" onclick="load_friends()">Friends <span class="badge" id="friends_num"></span></a></li>
               <li role="presentation"><a href="#" onclick="load_friend_request()">Requests
                 <span style="background: rgb(223, 118, 95);"class="badge" id="request_num"></span>
@@ -78,7 +78,6 @@
 
       <div class="msg_block center-block">
 
-
       </div>
 
 
@@ -101,8 +100,13 @@
       <h1 style="
       color:white;
       font-family:Roboto;
-      font-weight:300
-      " class="text-center"> Welcome <strong id="header"></strong> </h1>
+      font-weight:300;
+      margin-top:100px;
+      position:absolute;
+      width:100%;
+      " class="text-center"> Welcome <strong id="header"></strong></h1>
+
+      <h4 style="color:#CCD1D9; margin-top:200px; position:absolute; width:100%"class="text-center">All things here are draggable</h4>
 
 
       <div class="row">

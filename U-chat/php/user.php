@@ -22,17 +22,35 @@
     $F = strip_tags($_POST['F']);
     $T = strip_tags($_POST['T']);
 
+    $check_duplicate = "SELECT * FROM friend_request WHERE F='$F' AND T='$T'";
 
-    $query = "INSERT INTO friend_request(F,T) VALUES('$F','$T')";
+    $duplicate = mysqli_query($conn,$check_duplicate);
 
-    $result = mysqli_query($conn,$query);
+    $already_friends = "SELECT Friend FROM $F WHERE Friend='$T'";
 
-    if ($result) {
-      echo "success";
+    $already_friends_result = mysqli_query($conn,$already_friends);
+
+    if(count(mysqli_fetch_assoc($already_friends_result))>0){
+      echo "already friends";
+    }
+    else if (count(mysqli_fetch_assoc($duplicate))>0) {
+      echo "already sent";
     }
     else {
-      echo "failed";
+      # code...
+      $query = "INSERT INTO friend_request(F,T) VALUES('$F','$T')";
+
+      $result = mysqli_query($conn,$query);
+
+
+      if ($result) {
+        echo "success";
+      }
+      else {
+        echo "failed";
+      }
     }
+
 
   }
 
@@ -196,7 +214,7 @@
 
     $user = $_POST['user'];
 
-    $query = "SELECT Friend From $user";
+    $query = "SELECT DISTINCT Friend From $user";
 
     $update = mysqli_query($conn,$query);
 

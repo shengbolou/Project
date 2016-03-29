@@ -287,7 +287,7 @@
 
     $name = $_REQUEST['check_msg'];
 
-    $query = "SELECT F FROM msg WHERE T='$name' AND getted=0";
+    $query = "SELECT DISTINCT F FROM msg WHERE T='$name' AND getted=0";
 
     $result = mysqli_query($conn,$query);
 

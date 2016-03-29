@@ -52,7 +52,7 @@ $(document).ready(function(){
     $('#header').append(username);
   });
 
-  retrivemsg();
+  // retrivemsg();
   query_friend_request();
 
   // handle nav bar toggle
@@ -146,6 +146,7 @@ $(document).ready(function(){
 
 //close the chat box
 function close_chat_box() {
+  send_msg_to="";
   $('.chat-box').velocity('transition.slideLeftOut',200);
 }
 //closr setting box
@@ -314,11 +315,7 @@ function load_friends(){
     for(i=0; i<friends.length-1;i++){
       $('.xx').append(
          `<a style="border-radius:0px 0px 0px 0px"href="#" id="`+friends[i]+`" onclick="startChat(this.id)" class="list-group-item">`+friends[i]+`
-         <span style="
-         font-size:30px;
-         color:rgb(223, 118, 95); display:none;
-         line-height:15px"
-         class="glyphicon glyphicon-envelope pull-right"></span></a>`
+         </a>`
       )
     }
 
@@ -329,11 +326,33 @@ function load_friends(){
 //check msgs
 function check_msgs(){
   var http = new XMLHttpRequest();
+  // $('.msg_container').empty();
   http.onreadystatechange = function(){
     if(http.readyState == 4 && http.status == 200){
       var msg_array = http.responseText.substring(2).split(",");
       for(i = 0 ; i<msg_array.length-1; i++){
-        $('#'+msg_array[i]+' span').velocity('fadeIn',100).velocity('reverse');
+        // $('#'+msg_array[i]+' span').velocity('fadeIn',100).velocity('reverse');
+        if ($('.msg_block').find('#'+msg_array[i]).length < 1) {
+
+          $('.msg_block').append(
+            `
+            <div style="overflow:hidden" id="`+msg_array[i]+`" onclick="startChat(this.id)" class="msg_container">
+
+            <a href="#">
+            <div style="overflow:hidden" class="cover text-center">
+            <h6 class="cover_name"style="color:white; font-size:25px;">
+            `+msg_array[i]+`
+            </h6>
+            </div>
+            <img src="imgs/user.png" width="60px" height="60px" alt=""/>
+            </a>
+
+            </div>
+            `
+
+          );
+        }
+        $('.msg_block').find('#'+msg_array[i]).velocity('callout.bounce');
       }
     }
   };
@@ -344,6 +363,7 @@ function check_msgs(){
 
 //start chat function
 function startChat(data){
+  retrivemsg();
   load_history(data);
   document.getElementById('chat_header').innerHTML = data;
   send_msg_to = data;

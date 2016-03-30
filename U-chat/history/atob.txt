@@ -460,3 +460,53 @@
                     </div>
                   </div>
                 </div>
+<div class='text-center'>
+                        <div style='
+                        margin-bottom:5px;
+                        background: #434A54;
+                        color: white;
+                        border-radius: 20px 20px 20px 20px;
+                        -moz-border-radius: 20px 20px 20px 20px;
+                        -webkit-border-radius: 20px 20px 20px 20px;
+                        border: 0px solid #000000;
+                        opacity:0.6
+                        'class='label label-default time'>11:09</div>
+                      </div>
+<div class='container-fluid'>
+                <div class='row'>
+
+                  <div style='margin-top:20px;' class='col-md-2 msg-body pull-right'>
+
+                    <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
+                    s k ks ke
+                    </p>
+
+                  </div>
+
+                </div>
+              </div>
+<div class='text-center'>
+                        <div style='
+                        margin-bottom:5px;
+                        background: #434A54;
+                        color: white;
+                        border-radius: 20px 20px 20px 20px;
+                        -moz-border-radius: 20px 20px 20px 20px;
+                        -webkit-border-radius: 20px 20px 20px 20px;
+                        border: 0px solid #000000;
+                        opacity:0.6
+                        'class='label label-default time'>11:10</div>
+                      </div>
+<div class='container-fluid'>
+                <div class='row'>
+
+                  <div style='margin-top:20px;' class='col-md-2 msg-body pull-right'>
+
+                    <p style='margin-top:5px; margin-bottom:5px; font-family:Roboto'>
+                    jsjsjsjs
+                    </p>
+
+                  </div>
+
+                </div>
+              </div>

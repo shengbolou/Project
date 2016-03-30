@@ -121,6 +121,15 @@ $(document).ready(function(){
       boxShadowBlur: "0",
     },300)
   });
+  $('.msg_block .msg_container').hover(function(){
+    $(this).stop(true,true).velocity({
+      boxShadowBlur: "10",
+    },300)
+  },function(){
+    $(this).stop(true,true).velocity({
+      boxShadowBlur: "0",
+    },300)
+  });
 
   $('.my_nav li a').hover(function(){
     $(this).stop(true,true).velocity({
@@ -176,14 +185,6 @@ function load_user_photo(){
   });
 }
 
-//load_friend_photo
-function load_friend_photo(data){
-  $.post('php/user.php',{load_user_photo:'yes',user:data},function(data){
-    if (data.substring(2)!='') {
-      $('.friend_photo img').attr("src",data.substring(2));
-    }
-  });
-}
 
 
 //send_friend_request
@@ -342,7 +343,7 @@ function check_msgs(){
 
           $('.msg_block').append(
             `
-            <div style="overflow:hidden" id="`+msg_array[i]+`" onclick="startChat(this.id)" class="msg_container">
+            <div id="`+msg_array[i]+`" onclick="startChat(this.id)" class="msg_container">
 
             <a href="#">
             <div style="overflow:hidden" class="cover text-center">
@@ -376,7 +377,6 @@ function startChat(data){
   $('.chat-box').velocity('transition.slideLeftIn',300);
   $('#'+data+' span').velocity('fadeOut',100);
   $('.chat_content').empty();
-  load_friend_photo(data);
 }
 
 function load_history(data) {
@@ -451,10 +451,13 @@ function retrivemsg(){
   }
 
   $.post('php/user.php',{UserName:'yes'},function(data){
-    $.post('php/user.php',{get:'yes',name:data.substring(2),from:send_msg_to,time:time},function(data2){
+    $.post('php/user.php',{get:'yes',name:username.substring(2),from:send_msg_to,time:time},function(data2){
       // alert(data2)
       if(data2.substring(2) !='none'){
         //show time
+        var photo_url = data2.split("^&^")[1];
+        data2 = data2.split("^&^")[0];
+
         var curr_hour = curr_time.getHours();
         var curr_mins = curr_time.getMinutes();
         if(curr_hour!=hour || curr_mins!=mins){
@@ -495,7 +498,7 @@ function retrivemsg(){
 
                 class="col-md-2 friend_photo pull-left">
 
-                <img style="position:relative; margin-left:-15px" src="./imgs/user.png" width="30px" height="30px"alt="" />
+                <img style="position:relative; margin-left:-15px" src="`+photo_url+`" width="30px" height="30px"alt="" />
             </div>
 
               <div style="margin-top:20px;" class='col-md-2 msg-body pull-left'>
@@ -509,7 +512,6 @@ function retrivemsg(){
         );
         //animation scroll the message
         $('.chat_content').velocity('scroll',{duration:500,container: $('.chat_content')[0],offset:500});
-        load_friend_photo(send_msg_to);
       }
     });
   });

@@ -7,6 +7,10 @@ $(document).ready(function(){
     $('.failed2').velocity("fadeOut",200);
   });
   $.post('php/table.php');
+
+  $('.main').velocity({
+    translateY: '5px'
+  },{loop:true,duration:1000}).velocity('reverse');
 });
 
 function Sign_in(){

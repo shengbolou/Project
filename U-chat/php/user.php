@@ -241,12 +241,15 @@
     $query = "SELECT * FROM msg WHERE T='$name' AND getted=0 AND F='$from'";
     $clean_msg = "DELETE FROM msg WHERE getted=1";
     $clean_request = "DELETE FROM friend_request WHERE decided=1";
+    $photo_url = "SELECT url FROM users WHERE UserName='$from'";
 
     $result = mysqli_query($conn,$query);
     $result2 = mysqli_query($conn,$clean_msg);
     $result3 = mysqli_query($conn,$clean_request);
+    $url = mysqli_query($conn,$photo_url);
 
     $row = mysqli_fetch_row($result);
+    $url_row = mysqli_fetch_assoc($url)['url'];
 
     $ID = $row[0];
     $msg =  $row[3];
@@ -254,7 +257,7 @@
     $updateit = mysqli_query($conn,$update);
 
     if($msg != ''){
-      echo  $msg;
+      echo  $msg."^&^".$url_row;
       $myfile = fopen("../"."history/".$name."to".$from.".txt", "a") or die("Unable to open file!");
       if ($time !='') {
         $time_div =     "<div class='text-center'>
@@ -281,7 +284,7 @@
                       height:30px;
                       margin:20px 10px -10px 0px'class='col-md-2 friend_photo pull-left'>
 
-                      <img style='position:relative; margin-left:-15px' src='./imgs/user.png' width='30px' height='30px'alt='' />
+                      <img style='position:relative; margin-left:-15px' src='".$url_row."' width='30px' height='30px'alt='' />
                   </div>
 
                     <div style='margin-top:20px;' class='col-md-2 msg-body pull-left'>

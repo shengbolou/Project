@@ -400,4 +400,25 @@
 
   }
 
+  //check online states
+  if (isset($_REQUEST['check_online'])) {
+    include 'conn.php';
+
+    $user = $_REQUEST['check_online'];
+
+    $query = "SELECT $user.Friend, users.online FROM $user LEFT JOIN users ON $user.Friend=users.UserName";
+
+    $update = mysqli_query($conn,$query);
+
+    $users = '';
+
+    while ($row = mysqli_fetch_assoc($update)) {
+      $users.=($row['Friend'].",".$row['online'].",");
+    }
+
+    echo $users;
+
+
+  }
+
  ?>

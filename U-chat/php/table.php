@@ -7,8 +7,12 @@ $username = "root";
 $password = "loushengbo123";
 
 
-// sql to create table
-$sql = "CREATE TABLE friend_request(
+//create database share
+$db = "CREATE DATABASE share";
+
+//create friend_request table
+$friend_request =
+"CREATE TABLE friend_request(
 ID int NOT NULL AUTO_INCREMENT,
 F varchar(255) NOT NULL,
 T varchar(255) NOT NULL,
@@ -16,7 +20,33 @@ decided BOOLEAN DEFAULT 0,
 PRIMARY KEY(ID)
 )";
 
-mysqli_query($conn,$sql);
+// create users table
+$users =
+"CREATE TABLE users(
+  ID int NOT NULL AUTO_INCREMENT,
+  UserName varchar(255) NOT NULL,
+  Password varchar(255) NOT NULL,
+  email varchar(255) NOT NULL,
+  url varchar(255) DEFAULT 'imgs/user.png',
+  PRIMARY KEY(ID)
+)";
+
+
+//create msg table
+$msg =
+"CREATE TABLE msg(
+  ID int NOT NULL AUTO_INCREMENT,
+  F varchar(255) NOT NULL,
+  T varchar(255) NOT NULL,
+  message longtext NOT NULL,
+  getted BOOLEAN DEFAULT 0,
+  PRIMARY KEY(ID)
+)"
+
+mysqli_query($conn,$db);
+mysqli_query($conn,$friend_request);
+mysqli_query($conn,$users);
+mysqli_query($conn,$mgs);
 
 mysqli_close($conn);
 

@@ -49,6 +49,7 @@ $(document).ready(function(){
     load_friends();
     check_msgs();
     load_user_photo();
+    check_online();
     $('#header').append(username);
   });
 
@@ -322,12 +323,32 @@ function load_friends(){
     for(i=0; i<friends.length-1;i++){
       $('.xx').append(
          `<a style="border-radius:0px 0px 0px 0px"href="#" id="`+friends[i]+`" onclick="startChat(this.id)" class="list-group-item">`+friends[i]+`
+            <span class="glyphicon glyphicon-record pull-right" aria-hidden="true"></span>
          </a>`
       )
     }
+ });
+}
 
-
-  });
+//check friends online states
+function check_online(){
+  var http = new XMLHttpRequest();
+  http.onreadystatechange = function(){
+    if (http.readyState == 4 && http.status == 200) {
+      var friends = http.responseText.substring(2).split(",");
+      for(i=0; i<friends.length-1;i=i+2){
+        if (friends[i+1] == '1') {
+          $('#'+friends[i]+' span').velocity({color:'#42ad28'},200);
+        }
+        else {
+          $('#'+friends[i]+' span').velocity({color:'#434A54'},200);
+        }
+      }
+    }
+  };
+  http.open('GET','php/user.php?check_online='+username.substring(2),true);
+  http.send();
+  setTimeout(check_online,500);
 }
 
 //check msgs
@@ -375,7 +396,6 @@ function startChat(data){
   document.getElementById('chat_header').innerHTML = data;
   send_msg_to = data;
   $('.chat-box').velocity('transition.slideLeftIn',300);
-  $('#'+data+' span').velocity('fadeOut',100);
   $('.chat_content').empty();
 }
 

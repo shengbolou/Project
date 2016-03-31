@@ -30,6 +30,8 @@ if(isset($_POST['Sign'])){
         )";
         $result = mysqli_query($conn,$sql);
         echo "success";
+        $online = "UPDATE users SET online=1 WHERE UserName='$username'";
+        $result2 = mysqli_query($conn,$online);
       }
     }
   }

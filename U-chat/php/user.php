@@ -421,4 +421,24 @@
 
   }
 
+  //function to upload info
+  if (isset($_POST['info'])) {
+    # code...
+    include 'conn.php';
+
+    $user = strip_tags($_POST['user']);
+    $info = strip_tags($_POST['info']);
+
+    $query = "UPDATE users SET info='$info' WHERE UserName='$user'";
+
+    $result = mysqli_query($conn,$query);
+
+    if ($result) {
+      echo "success";
+    }
+    else {
+      echo "failed";
+    }
+  }
+
  ?>

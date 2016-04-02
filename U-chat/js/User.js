@@ -17,6 +17,8 @@ $(document).ready(function(){
     translateX: '-400px'
   },0);
 
+  $('#asd').popover();
+
   $(document).keypress(function(event){
 
     var keycode = (event.keyCode ? event.keyCode : event.which);
@@ -29,6 +31,9 @@ $(document).ready(function(){
 
   $('.chose_photo_success_alert').click(function(){
     $('.photo_success_alert').velocity('transition.slideUpOut',100);
+  });
+  $('.info_alert_btn').click(function(){
+    $('.info_alert').velocity('transition.slideUpOut',300);
   });
 
   $('.logout_btn').click(function(){
@@ -46,7 +51,7 @@ $(document).ready(function(){
       });
     }
     username = data;
-    load_friends();
+    // load_friends();
     check_msgs();
     load_user_photo();
     check_online();
@@ -152,6 +157,18 @@ $(document).ready(function(){
   });
 
 });
+
+//function to submit user info
+function Submit_info(){
+  var info = document.getElementById('info').value;
+  if(info == '')
+    $('#info').parent().addClass('has-error');
+  else{
+    $.post('php/user.php',{info:'yes', user:username.substring(2), info:info},function(data){
+      $('.info_alert').velocity('transition.slideDownIn',300);
+    });
+  }
+}
 
 
 //close the chat box

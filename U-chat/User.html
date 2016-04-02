@@ -46,9 +46,20 @@
 
         <div class="row">
           <div class="col-md-12">
-
             <div class="side_bar">
-              <a style="border-radius:0px 0px 0px 0px"href="#" id="`+friends[i]+`" onclick="startChat(this.id)" class="list-group-item">`+friends[i]+`
+              <a
+              data-template='
+              <div style="width:150px"class="popover" role="tooltip">
+                <div class="arrow">
+                </div>
+                <h3 class="popover-title">
+                </h3>
+                <img style="margin-top:10px; margin-bottom:5px" class="center-block" src="imgs/user.png" width="50px" height="50px">
+                <p class="popover-content" align="justify">
+                </p>
+              </div>'
+              data-toggle="popover" data-trigger="hover"title="B" data-content="And here's some amazing content. It's very engaging. Right?"
+              style="border-radius:0px 0px 0px 0px"href="#" id="asd" onclick="startChat(this.id)" class="list-group-item">`+friends[i]+`
                 <span style="color:green"class="glyphicon glyphicon-record pull-right" aria-hidden="true"></span>
               </a>
 
@@ -148,20 +159,22 @@
                 Settings
               </div>
               <div class="panel-body">
-                <div style="display:none"class="alert alert-success photo_success_alert">
-                   <button type="button" class="close chose_photo_success_alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                   Success!
-                </div>
                 <!-- drop down list -->
                 <div class="panel panel-default">
                   <div class="panel-heading" role="tab">
                     <h4 class="panel-title text-center">
-                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         Choose your photo
                       </a>
                     </h4>
+
+                    <div style="display:none"class="alert alert-success photo_success_alert">
+                       <button type="button" class="close chose_photo_success_alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                       Success!
+                    </div>
+
                   </div>
-                  <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div id="collapseOne" class="panel-collapse collapse" role="tabpanel">
                     <div class="panel-body">
 
                       <div class="list-group text-center">
@@ -177,7 +190,39 @@
                   </div>
                 </div>
 
-              </div>
+                <!-- personal info -->
+                <div class="panel panel-default">
+
+                  <div class="panel-heading" role="tab">
+                    <h3 class="panel-title text-center">
+                      <a role="button" data-toggle="collapse" href="#info_collpase" aria-expanded="true" aria-controls="info_collapse">What's up!</a>
+                    </h3>
+                  </div>
+
+                  <div id="info_collpase" class="panel-collapse collapse">
+
+                    <div class="panel-body">
+
+                      <div style="display:none"class="alert alert-success info_alert">
+                         <button type="button" class="close info_alert_btn" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                         Success!
+                      </div>
+
+                      <div class="form-group">
+                        <textarea class="form-control" id="info" style="width: 100%"name="name" rows="5" cols="40" placeholder="What's up"></textarea>
+                      </div>
+                    </div>
+
+                    <div class="panel-footer">
+                      <button class="btn btn-sm btn-success"type="button" name="button" onclick="Submit_info()">Submit</button>
+                    </div>
+
+                  </div>
+
+                </div>  <!-- personal info -->
+
+
+              </div><!--the whole panel-->
 
               <div class="panel-footer">
                 <button class="btn btn-danger logout_btn"type="button" name="button">Log out</button>

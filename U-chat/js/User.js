@@ -17,7 +17,6 @@ $(document).ready(function(){
     translateX: '-400px'
   },0);
 
-  $('#asd').popover();
 
   $(document).keypress(function(event){
 
@@ -51,7 +50,7 @@ $(document).ready(function(){
       });
     }
     username = data;
-    // load_friends();
+    load_friends();
     check_msgs();
     load_user_photo();
     check_online();
@@ -155,7 +154,6 @@ $(document).ready(function(){
       backgroundColor: '#F5F7FA'
     },300)
   });
-
 });
 
 //function to submit user info
@@ -330,22 +328,57 @@ function load_friends(){
   $('.side_bar').append(`<div class="list-group xx"> </div>`)
   $.post('php/user.php',{load_friends:'yes',user:username.substring(2)},function(data){
     var friends = data.substring(2).split(",");
-    document.getElementById('friends_num').innerHTML = (friends.length-1).toString();
+    document.getElementById('friends_num').innerHTML = (friends.length-1)/3
 
-    if (friends.length-1==0) {
+    if ((friends.length-1)/3==0) {
       $('.xx').append(
         `<li style="border-radius:0px 0px 0px 0px"href="#" class="list-group-item"><strong>No friends</strong></li>`
       )
     }
-    for(i=0; i<friends.length-1;i++){
+    for(i=0; i<friends.length-1;i=i+3){
+      var info = friends[i+1];
+      if (info == '') {
+        info="he didn't say anything"
+      }
+      var url = friends[i+2];
       $('.xx').append(
-         `<a style="border-radius:0px 0px 0px 0px"href="#" id="`+friends[i]+`" onclick="startChat(this.id)" class="list-group-item">`+friends[i]+`
-            <span class="glyphicon glyphicon-record pull-right" aria-hidden="true"></span>
-         </a>`
+        `<a
+        data-template='
+        <div style="width:150px"class="popover" role="tooltip">
+          <div class="arrow">
+          </div>
+          <h3 class="popover-title">
+          </h3>
+          <img style="margin-top:10px; margin-bottom:5px" class="center-block" src="`+url+`" width="50px" height="50px">
+          <p class="popover-content" align="center">
+          </p>
+        </div>'
+        data-toggle="popover"
+        data-trigger="hover"
+        title="`+friends[i]+`"
+        data-content="`+info+`"
+        style="border-radius:0px 0px 0px 0px"
+        href="#"
+        id="`+friends[i]+`" onclick="startChat(this.id)"
+        class="list-group-item">
+        `+friends[i]+`
+          <span style="color:#434A54" class="glyphicon glyphicon-record pull-right" aria-hidden="true"></span>
+        </a>`
+
+        //  `<a style="border-radius:0px 0px 0px 0px"href="#" id="`+friends[i]+`" onclick="startChat(this.id)" class="list-group-item">`+friends[i]+`
+        //     <span class="glyphicon glyphicon-record pull-right" aria-hidden="true"></span>
+        //  </a>`
       )
+      $('*').popover();
     }
  });
 }
+
+function detail(data){
+    $('#'+data).popover();
+    $('#'+data).popover('show');
+}
+
 
 //check friends online states
 function check_online(){

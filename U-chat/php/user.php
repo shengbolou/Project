@@ -106,7 +106,7 @@
     $request = $_REQUEST['q'];
 
     if($request != ''){
-      $query = "SELECT UserName FROM users";
+      $query = "SELECT * FROM users";
 
       $result = mysqli_query($conn,$query);
 
@@ -119,7 +119,22 @@
         }
 
         if (stristr($request, substr($row["UserName"],0,$length))) {
-          echo "<a id='".$row["UserName"]."' onclick='friend(this.id)' class='list-group-item'>".$row["UserName"]."</a>";
+          echo "<a data-template='"
+          .'<div style="width:150px"class="popover" role="tooltip">
+            <div class="arrow">
+            </div>
+            <h3 class="popover-title">
+            </h3>
+            <img style="margin-top:10px; margin-bottom:5px" class="center-block" src="'.$row['url'].'" width="50px" height="50px">
+            <p class="popover-content" align="center">
+            </p>
+          </div>'."'".'
+          data-placement="right"
+          data-trigger="hover"
+          data-container="body"
+          data-toggle="popover"
+          title="'.$row['UserName'].'"
+          data-content="'.$row['info'].'" id="'.$row["UserName"].'"'."onclick='friend(this.id)' onmouseover='detail(this.id)' class='list-group-item'>".$row["UserName"]."</a>";
         }
 
       }
@@ -214,14 +229,14 @@
 
     $user = $_POST['user'];
 
-    $query = "SELECT DISTINCT Friend From $user";
+    $query = "SELECT $user.Friend, users.info, users.url FROM $user LEFT JOIN users ON $user.Friend=users.UserName";
 
     $update = mysqli_query($conn,$query);
 
     $users = '';
 
     while ($row = mysqli_fetch_assoc($update)) {
-      $users.=$row['Friend'].",";
+      $users.= $row['Friend'].",".$row['info'].",".$row['url'].",";
     }
 
     echo $users;

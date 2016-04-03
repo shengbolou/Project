@@ -232,6 +232,15 @@ function search(name){
       if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         $('.friends').append(xmlhttp.responseText);
       }
+      $('.list-group .list-group-item').hover(function(){
+        $(this).stop(true,true).velocity({
+          backgroundColor: "#E6E9ED"
+        },300)
+      },function(){
+        $(this).stop(true,true).velocity({
+          backgroundColor: '#F5F7FA'
+        },300)
+      });
     };
     xmlhttp.open("GET", "php/user.php?q=" + name, true);
     xmlhttp.send();
@@ -369,8 +378,17 @@ function load_friends(){
         //     <span class="glyphicon glyphicon-record pull-right" aria-hidden="true"></span>
         //  </a>`
       )
-      $('*').popover();
     }
+    $('*').popover();
+    $('.list-group .list-group-item').hover(function(){
+      $(this).stop(true,true).velocity({
+        backgroundColor: "#E6E9ED"
+      },300)
+    },function(){
+      $(this).stop(true,true).velocity({
+        backgroundColor: '#F5F7FA'
+      },300)
+    });
  });
 }
 

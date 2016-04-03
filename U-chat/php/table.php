@@ -28,6 +28,7 @@ $users =
   Password varchar(255) NOT NULL,
   email varchar(255) NOT NULL,
   url varchar(255) DEFAULT 'imgs/user.png',
+  info TEXT NOT NULL,
   PRIMARY KEY(ID)
 )";
 

@@ -1,5 +1,20 @@
 $(document).ready(function(){
 
+  $(document).keypress(function(event){
+
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+
+    if(keycode == '13'){
+      if(!$('#log_in_modal').hasClass('in')){
+        $('#Log_in').click()
+      }
+      if(!$('#sign_in_modal').hasClass('in')){
+        $('#Sign_in').click()
+      }
+    }
+
+  });
+
   $('#dismiss').click(function(){
     $('.failed').velocity("fadeOut",200);
   });
@@ -26,7 +41,7 @@ function Sign_in(){
   var rpassword = document.getElementById('s_r_password').value;
  if(username == ''|| email == '' || password == '' || rpassword == ""){
    $('input').val('');
-    $('#sign-in-modal').velocity("callout.shake",350);
+    $('#sign-in-modal').stop(true,true).velocity("callout.shake",350);
     document.getElementById('message2').innerHTML = "No blanks";
     $('.failed2').velocity("fadeIn",200);
     if(username == ''){
@@ -45,7 +60,7 @@ function Sign_in(){
   else if(password != rpassword){
     $('input').val('');
     $('input').parent().removeClass('has-error');
-    $('#sign-in-modal').velocity("callout.shake",350);
+    $('#sign-in-modal').stop(true,true).velocity("callout.shake",350);
     $('#s_password').parent().addClass('has-error');
     $('#s_r_password').parent().addClass('has-error');
     document.getElementById('message2').innerHTML = "Two passwords don't match";
@@ -54,7 +69,7 @@ function Sign_in(){
   else if(!validateEmail(email)){
     $('#s_username').popover('hide');
     $('input').parent().removeClass('has-error');
-    $('#sign-in-modal').velocity("callout.shake",350);
+    $('#sign-in-modal').stop(true,true).velocity("callout.shake",350);
     $('#s_email').parent().addClass('has-error');
     $('#s_email').popover('show');
   }
@@ -66,7 +81,7 @@ function Sign_in(){
           break;
         case "duplicate":
           $('#s_email').popover('hide');
-          $('#sign-in-modal').velocity("callout.shake",350);
+          $('#sign-in-modal').stop(true,true).velocity("callout.shake",350);
           $('input').parent().removeClass('has-error');
           $('#s_username').parent().addClass('has-error');
           $('#s_username').popover('show');
@@ -81,7 +96,7 @@ function Log_in(){
   var password = document.getElementById('l-password').value;
 
   if(username == '' || password == ''){
-    $('#log-in-modal').velocity("callout.shake",350);
+    $('#log-in-modal').stop(true,true).velocity("callout.shake",350);
     document.getElementById('message').innerHTML = "No blanks";
     $('.failed').velocity("fadeIn",200);
 
@@ -102,7 +117,7 @@ function Log_in(){
         $('input').val('');
         $('#l-username').parent().addClass('has-error');
         $('#l-password').parent().addClass('has-error');
-        $('#log-in-modal').velocity("callout.shake",350);
+        $('#log-in-modal').stop(true,true).velocity("callout.shake",350);
         document.getElementById('message').innerHTML = "username or password wrong!";
         $('.failed').velocity("fadeIn",200);
       }

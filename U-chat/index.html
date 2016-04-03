@@ -53,7 +53,7 @@
     </div>
 
     <!-- sign in modal -->
-    <div class="modal fade" id="sign-in-modal" role="dialog" aria-labelledby="label" aria-hidden="true">
+    <div class="modal fade" table-index="-1"id="sign-in-modal" role="dialog" aria-labelledby="label" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
 
@@ -116,7 +116,7 @@
 
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-normal" onclick="Sign_in()">Sign in</button>
+            <button id="Sign_in"type="button" class="btn btn-normal" onclick="Sign_in()">Sign in</button>
           </div>
 
         </div>
@@ -154,7 +154,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-normal" onclick="Log_in()">Log in</button>
+            <button type="button" class="btn btn-normal" onclick="Log_in()" id="Log_in">Log in</button>
           </div>
         </div>
       </div>

@@ -484,12 +484,15 @@ function search_friends(){
 `    <div class="row">
       <div class="col-md-12">
 
-        <div class="search">
-          <input type="text"
-          style="border-radius:0px 0px 0px 0px; height:50px;"
-          class="form-control"
-          onkeyup="search(this.value)"
-          placeholder="Search for more friends..">
+
+      <div class="input-group">
+        <span style="border-radius:0px 0px 0px 0px; border:none; outline:none; box-shadow:none"class="input-group-addon glyphicon glyphicon-search"></span>
+        <input type="text"
+        style="border-radius:0px 0px 0px 0px; height:50px;"
+        class="form-control"
+        onkeyup="search(this.value)"
+        placeholder="Search for more friends..">
+      </div>
 
           <div class="alert alert-info send_r">
             <p id="content">
@@ -673,5 +676,16 @@ function Submit(){
     });
   }
 
+}
 
+function File_upload(){
+  var file = document.getElementById('file').files[0];
+  var formdata = new FormData();
+  formdata.append("file1",file);
+  var http = new XMLHttpRequest();
+  http.onreadystatechange = function(){
+    alert(http.responseText);
+  }
+  http.open('POST','php/upload.php');
+  http.send(formdata);
 }

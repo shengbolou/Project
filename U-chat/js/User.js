@@ -687,15 +687,37 @@ function file_on_change(){
 
 //handle file upload
 function File_upload(){
-
+  $('#upload_progress').width('0%');
+  $('#upload_progress').addClass('active');
+  $('#upload_progress').addClass('progress-bar-info');
+  $('#upload_progress').addClass('progress-bar-striped');
+  $('#upload_progress').removeClass('progress-bar-success');
   var file = document.getElementById('file').files[0];
   var formdata = new FormData();
   formdata.append("file1",file);
   var http = new XMLHttpRequest();
 
   http.onreadystatechange = function(){
-    alert(http.responseText);
+    if (http.readyState == 4 && http.status == 200) {
+      // alert(http.responseText)
+    }
   }
+  http.upload.addEventListener("progress",progressHandler,false);
+  http.addEventListener("load",completeHandler,false);
   http.open('POST','php/upload.php');
   http.send(formdata);
+}
+
+function progressHandler(event){
+  var percent = (event.loaded/event.total)*100;
+  $('#upload_progress').width(Math.round(percent)+"%");
+  $('#upload_progress h6').html(Math.round(percent)+"%");
+}
+function completeHandler(event){
+  $('#upload_progress').width('100%');
+  $('#upload_progress h6').html("Upload Complete!");
+  $('#upload_progress').removeClass('active');
+  $('#upload_progress').removeClass('progress-bar-info');
+  $('#upload_progress').removeClass('progress-bar-striped');
+  $('#upload_progress').addClass('progress-bar-success');
 }

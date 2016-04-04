@@ -7,6 +7,31 @@ var send_msg_to = "";
 var side_nav_shown = 0;
 var myHeight;
 $(document).ready(function(){
+
+
+  // drop and drop upload file part
+  var dropzone = document.getElementById('drop_zone');
+
+  dropzone.ondragover = function(){
+    $('.progress').stop(true,true).velocity({
+      borderColor: '#afafaf'
+    },100);
+    return false;
+  }
+
+  dropzone.ondragleave = function(){
+    $('.progress').stop(true,true).velocity({
+      borderColor: '#000000'
+    },100);
+    return false;
+  }
+  dropzone.ondrop = function(){
+    e.preventDefault();
+  }
+
+  // drop and drop upload file part END
+
+
   $('body').velocity({
     opacity: 0
   },0);
@@ -699,12 +724,31 @@ function File_upload(){
 
   http.onreadystatechange = function(){
     if (http.readyState == 4 && http.status == 200) {
-      // alert(http.responseText)
+      var response = http.responseText;
+      alert(response);
+      switch (response) {
+        case "no file":
+          $('#drag_here').html("No file is selected!");
+          break;
+        case "file not exist":
+          $('#drag_here').html("Oops! Something is wrong, try it again later");
+          break;
+        case "type_error":
+          $('#drag_here').html("Please select image file!");
+          break;
+        case "failed":
+          $('#drag_here').html("Oops! Something is wrong, try it again later");
+          break;
+        case "file too large":
+          $('#drag_here').html("File is too large!");
+          break;
+        default:
+          http.upload.addEventListener("progress",progressHandler,false);
+          http.addEventListener("load",completeHandler,false);
+      }
     }
   }
-  http.upload.addEventListener("progress",progressHandler,false);
-  http.addEventListener("load",completeHandler,false);
-  http.open('POST','php/upload.php');
+  http.open('POST','php/upload.php?user='+username.substring(2));
   http.send(formdata);
 }
 

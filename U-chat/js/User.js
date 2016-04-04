@@ -678,11 +678,21 @@ function Submit(){
 
 }
 
+//handle file on change event
+function file_on_change(){
+  var filename = $('#file')[0].files[0].name;
+  $('#drag_here').html(filename);
+}
+
+
+//handle file upload
 function File_upload(){
+
   var file = document.getElementById('file').files[0];
   var formdata = new FormData();
   formdata.append("file1",file);
   var http = new XMLHttpRequest();
+
   http.onreadystatechange = function(){
     alert(http.responseText);
   }

@@ -125,7 +125,13 @@
             </div>
             <h3 class="popover-title">
             </h3>
-            <img style="margin-top:10px; margin-bottom:5px" class="center-block" src="'.$row['url'].'" width="50px" height="50px">
+            <img style="
+              border-radius: 200px 200px 200px 200px;
+              -moz-border-radius: 200px 200px 200px 200px;
+              -webkit-border-radius: 200px 200px 200px 200px;
+              margin-top:10px;
+              margin-bottom:5px"
+              class="center-block" src="'.$row['url'].'" width="50px" height="50px">
             <p class="popover-content" align="center">
             </p>
           </div>'."'".'

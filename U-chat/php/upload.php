@@ -3,6 +3,8 @@
 
 if (isset($_FILES['file1'])) {
 
+  header('Cache-Control: no-cache,must-revalidate',true);
+
   $user = $_REQUEST['user'];
   $tmp_name = $_FILES["file1"]["tmp_name"];
   $file_name = $_FILES["file1"]["name"];
@@ -21,10 +23,14 @@ if (isset($_FILES['file1'])) {
     echo "type_error";
   }
 
-  else if(move_uploaded_file($tmp_name,"../imgs/$user.png")){
+  else{
+
+    move_uploaded_file($tmp_name,"../imgs/$user.png");
+
+
     include 'conn.php';
 
-    $query = "UPDATE users SET url='../imgs/$user.png' WHERE UserName='$user'";
+    $query = "UPDATE users SET url='imgs/$user.png' WHERE UserName='$user'";
 
     $result = mysqli_query($conn,$query);
 
@@ -37,9 +43,7 @@ if (isset($_FILES['file1'])) {
     }
 
   }
-  else {
-    echo "failed";
-  }
+
 
 }
 

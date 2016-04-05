@@ -170,7 +170,8 @@ $(document).ready(function(){
       backgroundColor: '#E6E9ED'
     },300)
   });
-  $('.list-group .list-group-item').hover(function(){
+
+  $('.photo_collapse>a div').hover(function(){
     $(this).stop(true,true).velocity({
       backgroundColor: "#E6E9ED"
     },300)
@@ -179,6 +180,7 @@ $(document).ready(function(){
       backgroundColor: '#F5F7FA'
     },300)
   });
+
 });
 
 //function to submit user info
@@ -383,7 +385,14 @@ function load_friends(){
           </div>
           <h3 class="popover-title">
           </h3>
-          <img style="margin-top:10px; margin-bottom:5px" class="center-block" src="`+url+`" width="50px" height="50px">
+          <img style="
+            border-radius: 200px 200px 200px 200px;
+            -moz-border-radius: 200px 200px 200px 200px;
+            -webkit-border-radius: 200px 200px 200px 200px;
+            margin-top:10px;
+            margin-bottom:5px"
+
+            class="center-block" src="`+url+`" width="50px" height="50px">
           <p class="popover-content" align="center">
           </p>
         </div>'
@@ -707,49 +716,55 @@ function Submit(){
 function file_on_change(){
   var filename = $('#file')[0].files[0].name;
   $('#drag_here').html(filename);
-}
-
-
-//handle file upload
-function File_upload(){
   $('#upload_progress').width('0%');
   $('#upload_progress').addClass('active');
   $('#upload_progress').addClass('progress-bar-info');
   $('#upload_progress').addClass('progress-bar-striped');
   $('#upload_progress').removeClass('progress-bar-success');
+}
+
+
+//handle file upload
+function File_upload(){
   var file = document.getElementById('file').files[0];
   var formdata = new FormData();
   formdata.append("file1",file);
   var http = new XMLHttpRequest();
 
-  http.onreadystatechange = function(){
-    if (http.readyState == 4 && http.status == 200) {
-      var response = http.responseText;
-      alert(response);
-      switch (response) {
-        case "no file":
+  if(file.size > 1048576)
+    $('#drag_here').html("File is too large!");
+  else {
+    http.onreadystatechange = function(){
+      if (http.readyState == 4 && http.status == 200) {
+        var response = http.responseText;
+        // alert(response);
+        switch (response) {
+          case "no file":
           $('#drag_here').html("No file is selected!");
           break;
-        case "file not exist":
+          case "file not exist":
           $('#drag_here').html("Oops! Something is wrong, try it again later");
           break;
-        case "type_error":
+          case "type_error":
           $('#drag_here').html("Please select image file!");
           break;
-        case "failed":
+          case "failed":
           $('#drag_here').html("Oops! Something is wrong, try it again later");
           break;
-        case "file too large":
+          case "file too large":
           $('#drag_here').html("File is too large!");
           break;
-        default:
+          default:
           http.upload.addEventListener("progress",progressHandler,false);
           http.addEventListener("load",completeHandler,false);
+        }
       }
     }
+    http.open('POST','php/upload.php?user='+username.substring(2));
+    http.send(formdata);
+
   }
-  http.open('POST','php/upload.php?user='+username.substring(2));
-  http.send(formdata);
+
 }
 
 function progressHandler(event){

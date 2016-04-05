@@ -243,6 +243,9 @@ function send_friend_request(){
         case 'already friends':
         $('.send_w').velocity('transition.slideUpIn',1200).velocity('transition.slideUpOut');
         break;
+        case 'already sent':
+        $('.send_s').velocity('transition.slideUpIn',1200).velocity('transition.slideUpOut');
+        break;
       }
     });
   }
@@ -354,6 +357,7 @@ function cancel(data){
 function accept(data){
   $('#'+data).parent().velocity('transition.slideUpOut',200);
   $.post('php/user.php',{accept:'yes',Friend:data,This:username.substring(2)},function(data){
+    load_friend_request();
   });
 }
 

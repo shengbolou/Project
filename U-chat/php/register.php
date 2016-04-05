@@ -6,7 +6,7 @@ if(isset($_POST['Sign'])){
   include 'conn.php';
 
 
-  $username = strip_tags($_POST['username']);
+  $username = str_replace(' ',"_",strip_tags($_POST['username']));
   $email = strip_tags($_POST['email']);
   $password = strip_tags($_POST['password']);
 

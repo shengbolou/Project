@@ -34,11 +34,21 @@
           <div class="col-md-12 col-md-12 col-xs-12 col-lg-12">
 
             <ul class="nav nav-tabs my_nav text-center">
-              <li role="presentation" id="first_tab"class="active"><a href="#" onclick="load_friends()">Friends <span class="badge" id="friends_num"></span></a></li>
-              <li role="presentation"><a href="#" onclick="load_friend_request()">Requests
-                <span style="background: rgb(223, 118, 95);"class="badge" id="request_num"></span>
-              </a></li>
-              <li role="presentation"><a href="#" onclick="search_friends()">Search Friends</a></li>
+
+              <li role="presentation" id="first_tab"class="active">
+                <a type="button" onclick="load_friends()">Friends <span class="badge" id="friends_num"></span>
+                </a>
+              </li>
+
+              <li role="presentation">
+                <a type="button" onclick="load_friend_request()">Requests
+                  <span style="background: rgb(223, 118, 95);"class="badge" id="request_num"></span>
+                </a>
+              </li>
+
+              <li role="presentation"><a type="button" onclick="search_friends()">Search Friends</a></li>
+              <li role="presentation"><a type="button" onclick="group_chat()">Group chat</a></li>
+
             </ul>
 
           </div>
@@ -48,21 +58,6 @@
           <div class="col-md-12">
             <div class="side_bar">
 
-              <!-- <a
-              data-template='
-              <div style="width:150px"class="popover" role="tooltip">
-                <div class="arrow">
-                </div>
-                <h3 class="popover-title">
-                </h3>
-                <img style="margin-top:10px; margin-bottom:5px" class="center-block" src="imgs/user.png" width="50px" height="50px">
-                <p class="popover-content" align="justify">
-                </p>
-              </div>'
-              data-toggle="popover" data-trigger="hover"title="B" data-content="And here's some amazing content. It's very engaging. Right?"
-              style="border-radius:0px 0px 0px 0px"href="#" id="asd" onclick="startChat(this.id)" class="list-group-item">`+friends[i]+`
-                <span style="color:green"class="glyphicon glyphicon-record pull-right" aria-hidden="true"></span>
-              </a> -->
 
             </div>
 
@@ -77,8 +72,6 @@
 
 <!-- everything but the side navbar -->
 <div class="rest">
-
-
 
     <div class="page_header container-fluid">
 
@@ -106,7 +99,6 @@
 
 
     <div class="container-fluid center-block">
-
 
 
       <h1 style="

@@ -8,7 +8,6 @@ var side_nav_shown = 0;
 var myHeight;
 $(document).ready(function(){
 
-
   // drop and drop upload file part
   var dropzone = document.getElementById('drop_zone');
 
@@ -163,6 +162,7 @@ $(document).ready(function(){
 
   $('.my_nav li a').hover(function(){
     $(this).stop(true,true).velocity({
+      color: '#000000',
       backgroundColor: "#F5F7FA"
     },300)
   },function(){
@@ -171,7 +171,7 @@ $(document).ready(function(){
     },300)
   });
 
-  $('.photo_collapse>a div').hover(function(){
+  $('.photo_collapse a div').hover(function(){
     $(this).stop(true,true).velocity({
       backgroundColor: "#E6E9ED"
     },300)
@@ -359,6 +359,22 @@ function accept(data){
   $.post('php/user.php',{accept:'yes',Friend:data,This:username.substring(2)},function(data){
     load_friend_request();
   });
+}
+
+//function for group chat
+function group_chat(){
+  $('.side_bar').empty();
+  $('.side_bar').append(
+    `<a style="background:#CCD1D9; color:black; outline:none; border:none" class="btn btn-default">
+        <div class="media">
+          <div class="media-left">
+            <img class="media-object" src="imgs/add_friends.png" width="50px" height="50px"alt="...">
+          </div>
+          <div class="media-body">
+            <h6 style="font-family:Roboto; font-weight:300; font-size: 20px"class="text-center">Invite your friends</h6>
+          </div>
+        </div>
+        </a>`)
 }
 
 //load friends

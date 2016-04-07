@@ -112,6 +112,8 @@
 
       $length = strlen($request);
 
+      $has_result = 0;
+
       while ($row = mysqli_fetch_assoc($result)) {
 
         if($length > strlen($row["UserName"])){
@@ -119,6 +121,13 @@
         }
 
         if (stristr($request, substr($row["UserName"],0,$length))) {
+          $info = $row['info'];
+
+          if ($info == '') {
+            $info = "Didn't say anything";
+          }
+
+          $has_result = 1;
           echo "<a data-template='"
           .'<div style="width:150px"class="popover" role="tooltip">
             <div class="arrow">
@@ -140,10 +149,15 @@
           data-container="body"
           data-toggle="popover"
           title="'.$row['UserName'].'"
-          data-content="'.$row['info'].'" id="'.$row["UserName"].'"'."onclick='friend(this.id)' onmouseover='detail(this.id)' class='list-group-item'>".$row["UserName"]."</a>";
+          data-content="'.$info.'" id="'.$row["UserName"].'"'."onclick='friend(this.id)' onmouseover='detail(this.id)' class='list-group-item'>".$row["UserName"]."</a>";
         }
 
       }
+
+      if($has_result == 0) {
+        echo "<div class='list-group-item'>No result</div>";
+      }
+
 
     }
   }

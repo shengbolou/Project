@@ -6,7 +6,9 @@ var send_friend_reques_to  = "";
 var send_msg_to = "";
 var side_nav_shown = 0;
 var myHeight;
+var timeout;
 $(document).ready(function(){
+
 
   // drop and drop upload file part
   var dropzone = document.getElementById('drop_zone');
@@ -57,6 +59,8 @@ $(document).ready(function(){
   });
   $('.info_alert_btn').click(function(){
     $('.info_alert').velocity('transition.slideUpOut',300);
+    $('#info_collpase').collapse('hide');
+    $('#info').val("");
   });
 
   $('.logout_btn').click(function(){
@@ -189,12 +193,12 @@ function Submit_info(){
   if(info == '')
     $('#info').parent().addClass('has-error');
   else{
+    $('#info').parent().removeClass('has-error');
     $.post('php/user.php',{info:'yes', user:username.substring(2), info:info},function(data){
       $('.info_alert').velocity('transition.slideDownIn',300);
     });
   }
 }
-
 
 //close the chat box
 function close_chat_box() {
@@ -350,6 +354,7 @@ function load_friend_request(){
 function cancel(data){
   $('#'+data).parent().velocity('transition.slideUpOut',200);
   $.post('php/user.php',{cancel:'yes',F:data},function(data){
+    load_friend_request();
   });
 }
 
@@ -364,6 +369,7 @@ function accept(data){
 //function for group chat
 function group_chat(){
   $('.side_bar').empty();
+  //append new group chat button
   $('.side_bar').append(
     `<a style="background:#CCD1D9; color:black; outline:none; border:none" class="btn btn-default">
         <div class="media">
@@ -371,11 +377,13 @@ function group_chat(){
             <img class="media-object" src="imgs/add_friends.png" width="50px" height="50px"alt="...">
           </div>
           <div class="media-body">
-            <h6 style="font-family:Roboto; font-weight:300; font-size: 20px"class="text-center">Invite your friends</h6>
+            <h6 style="font-family:Roboto; font-weight:300; font-size: 20px"class="text-center">New group chat</h6>
           </div>
         </div>
         </a>`)
 }
+
+
 
 //load friends
 function load_friends(){
@@ -394,7 +402,7 @@ function load_friends(){
     for(i=0; i<friends.length-1;i=i+3){
       var info = friends[i+1];
       if (info == '') {
-        info="he didn't say anything"
+        info="Didn't say anything"
       }
       var url = friends[i+2];
       $('.xx').append(

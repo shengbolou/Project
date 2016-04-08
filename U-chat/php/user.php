@@ -26,7 +26,7 @@
 
     $duplicate = mysqli_query($conn,$check_duplicate);
 
-    $already_friends = "SELECT Friend FROM $F WHERE Friend='$T'";
+    $already_friends = "SELECT Friend FROM `$F` WHERE Friend='$T'";
 
     $already_friends_result = mysqli_query($conn,$already_friends);
 
@@ -226,8 +226,8 @@
 
     $query = "UPDATE friend_request SET decided = '1' WHERE F='$F'";
 
-    $add_friend = "INSERT INTO $This(Friend) VALUES('$F')";
-    $add_friend2 = "INSERT INTO $F(Friend) VALUES('$This')";
+    $add_friend = "INSERT INTO `$This`(Friend) VALUES('$F')";
+    $add_friend2 = "INSERT INTO `$F`(Friend) VALUES('$This')";
 
     $update = mysqli_query($conn,$query);
     $result = mysqli_query($conn,$add_friend);
@@ -249,7 +249,7 @@
 
     $user = $_POST['user'];
 
-    $query = "SELECT $user.Friend, users.info, users.url FROM $user LEFT JOIN users ON $user.Friend=users.UserName";
+    $query = "SELECT `$user`.Friend, users.info, users.url FROM `$user` LEFT JOIN users ON `$user`.Friend=users.UserName";
 
     $update = mysqli_query($conn,$query);
 
@@ -441,7 +441,7 @@
 
     $user = $_REQUEST['check_online'];
 
-    $query = "SELECT $user.Friend, users.online FROM $user LEFT JOIN users ON $user.Friend=users.UserName";
+    $query = "SELECT `$user`.Friend, users.online FROM `$user` LEFT JOIN users ON `$user`.Friend=users.UserName";
 
     $update = mysqli_query($conn,$query);
 

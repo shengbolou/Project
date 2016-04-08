@@ -6,7 +6,7 @@ if(isset($_POST['Sign'])){
   include 'conn.php';
 
 
-  $username = str_replace(' ',"_",strip_tags($_POST['username']));
+  $username = strip_tags($_POST['username']);
   $email = strip_tags($_POST['email']);
   $password = strip_tags($_POST['password']);
 
@@ -23,7 +23,7 @@ if(isset($_POST['Sign'])){
 
       if($result){
         // create user table
-        $sql = "CREATE TABLE $username(
+        $sql = "CREATE TABLE `$username`(
         ID int NOT NULL AUTO_INCREMENT,
         Friend varchar(255) NOT NULL,
         PRIMARY KEY(ID)

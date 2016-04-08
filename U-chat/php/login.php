@@ -5,7 +5,7 @@
     header('Cache-Control: no-cache,must-revalidate',true);
     include 'conn.php';
 
-    $username = str_replace(' ','_',strip_tags($_POST['username']));
+    $username = strip_tags($_POST['username']);
     $password = strip_tags($_POST['password']);
 
     setcookie("UserName", $username, time() + (10 * 365 * 24 * 60 * 60), "/");

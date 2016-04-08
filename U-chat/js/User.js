@@ -9,7 +9,6 @@ var myHeight;
 var timeout;
 $(document).ready(function(){
 
-
   // drop and drop upload file part
   var dropzone = document.getElementById('drop_zone');
 

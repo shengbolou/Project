@@ -343,13 +343,13 @@
 
     $name = $_REQUEST['check_msg'];
 
-    $query = "SELECT DISTINCT F FROM msg WHERE T='$name' AND getted=0";
+    $query = "SELECT DISTINCT msg.F,users.url FROM msg LEFT JOIN users ON msg.F=users.UserName WHERE msg.T='$name' AND msg.getted=0";
 
     $result = mysqli_query($conn,$query);
 
     $msgarray = '';
     while ($row = mysqli_fetch_assoc($result)) {
-      $msgarray.=$row['F'].",";
+      $msgarray.=$row['F'].",".$row['url'].",";
     }
 
     echo $msgarray;
@@ -462,7 +462,7 @@
     include 'conn.php';
 
     $user = strip_tags($_POST['user']);
-    $info = strip_tags($_POST['info']);
+    $info = str_replace("'","''",strip_tags($_POST['info']));
 
     $query = "UPDATE users SET info='$info' WHERE UserName='$user'";
 

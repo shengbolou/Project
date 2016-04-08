@@ -487,7 +487,7 @@ function check_msgs(){
   http.onreadystatechange = function(){
     if(http.readyState == 4 && http.status == 200){
       var msg_array = http.responseText.substring(2).split(",");
-      for(i = 0 ; i<msg_array.length-1; i++){
+      for(i = 0 ; i<msg_array.length-1; i=i+2){
         // $('#'+msg_array[i]+' span').velocity('fadeIn',100).velocity('reverse');
         if ($('.msg_block').find('#'+msg_array[i]).length < 1) {
 
@@ -497,11 +497,13 @@ function check_msgs(){
 
             <a href="#">
             <div style="overflow:hidden" class="cover text-center">
-            <h6 class="cover_name"style="color:white; font-size:25px;">
+            <h6 class="cover_name"style="color:white; font-size:20px;">
             `+msg_array[i]+`
             </h6>
             </div>
-            <img src="imgs/user.png" width="60px" height="60px" alt=""/>
+            <img style="border-radius: 200px 200px 200px 200px;
+                        -moz-border-radius: 200px 200px 200px 200px;
+-webkit-border-radius: 200px 200px 200px 200px;" src="`+msg_array[i+1]+`" width="60px" height="60px" alt=""/>
             </a>
 
             </div>
@@ -509,7 +511,7 @@ function check_msgs(){
 
           );
         }
-        $('.msg_block').find('#'+msg_array[i]).velocity('callout.bounce');
+        $('.msg_block').find('#'+msg_array[i]).stop(true,true).velocity('callout.bounce');
       }
     }
   };
@@ -588,6 +590,8 @@ function retrivemsg(){
   var curr_time = new Date();
   var curr_hourx = curr_time.getHours();
   var curr_minsx = curr_time.getMinutes();
+  var curr_monthx = curr_time.getMonth()+1;
+  var curr_dayx = curr_time.getDate();
   var time;
   if(curr_hourx!=hour || curr_minsx!=mins){
     if (curr_minsx < 10) {
@@ -596,7 +600,7 @@ function retrivemsg(){
     if (curr_hourx < 10) {
       curr_hourx = '0'+curr_hourx;
     }
-    time = curr_hourx+':'+curr_minsx;
+    time = curr_monthx+"/"+curr_dayx+" "+curr_hourx+':'+curr_minsx;
   }
   else {
     time = '';
@@ -612,6 +616,8 @@ function retrivemsg(){
 
         var curr_hour = curr_time.getHours();
         var curr_mins = curr_time.getMinutes();
+        var curr_month = curr_time.getMonth()+1;
+        var curr_day = curr_time.getDate();
         if(curr_hour!=hour || curr_mins!=mins){
           hour = curr_hour;
           mins = curr_mins;
@@ -632,7 +638,7 @@ function retrivemsg(){
                 -webkit-border-radius: 20px 20px 20px 20px;
                 border: 0px solid #000000;
                 opacity:0.6
-                "class="label label-default time">`+curr_hour+':'+curr_mins+`</div>
+                "class="label label-default time">`+curr_month+"/"+curr_day+" "+curr_hour+':'+curr_mins+`</div>
               </div>`
             )
         }
@@ -684,6 +690,8 @@ function Submit(){
     var curr_time = new Date();
     var curr_hour = curr_time.getHours();
     var curr_mins = curr_time.getMinutes();
+    var curr_month = curr_time.getMonth()+1;
+    var curr_day = curr_time.getDate();
     if(curr_hour!=hour || curr_mins!=mins){
       hour = curr_hour;
       mins = curr_mins;
@@ -704,10 +712,10 @@ function Submit(){
             -webkit-border-radius: 20px 20px 20px 20px;
             border: 0px solid #000000;
             opacity:0.6
-            "class="label label-default time">`+curr_hour+':'+curr_mins+`</div>
+            "class="label label-default time">`+curr_month+"/"+curr_day+" "+curr_hour+':'+curr_mins+`</div>
           </div>`
         )
-        time = curr_hour+':'+curr_mins;
+        time = curr_month+"/"+curr_day+" "+curr_hour+':'+curr_mins;
     }
     else {
       time = '';

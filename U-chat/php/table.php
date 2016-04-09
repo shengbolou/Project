@@ -1,7 +1,6 @@
 <?php
 
 include 'conn.php';
-
 $servername = "localhost";
 $username = "root";
 $password = "loushengbo123";

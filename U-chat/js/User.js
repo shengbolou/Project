@@ -7,7 +7,9 @@ var send_msg_to = "";
 var side_nav_shown = 0;
 var myHeight;
 var timeout;
+
 $(document).ready(function(){
+
 
   // drop and drop upload file part
   var dropzone = document.getElementById('drop_zone');

@@ -130,6 +130,7 @@ body::-webkit-scrollbar-thumb
 #navbar a:active,
 #navbar a:focus,
 #navbar a{
+  position: relative;
   color:#a3a3a3;
   padding: 8px 8px;
   margin-top: 5px;
@@ -138,7 +139,30 @@ body::-webkit-scrollbar-thumb
   font-family: 'Oxygen';
   font-size: 20px;
   background: transparent;
+  text-decoration: none;
 }
+/*link hover underline effect*/
+#navbar a:after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+#navbar a:hover:after{
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+/*link hover underline effect END*/
+
 
 /*for brand*/
 #brand{
@@ -232,7 +256,7 @@ body::-webkit-scrollbar-thumb
 
 /*the pragraph about me*/
 .about{
-  font-family: 'Raleway';
+  font-family: 'Roboto';
   font-weight: 500;
   line-height: 30px;
   font-size: 15px;
@@ -313,7 +337,7 @@ body::-webkit-scrollbar-thumb
   color: white;
   padding:5px;
   text-align: center;
-  font-family: 'Raleway';
+  font-family: 'Oxygen';
   font-weight: 300;
   position: relative;
   width: 100%;
@@ -324,7 +348,7 @@ body::-webkit-scrollbar-thumb
   color: white;
   padding:5px;
   text-align: center;
-  font-family: 'Raleway';
+  font-family: 'Oxygen';
   font-weight: 300;
   position: relative;
   width: 100%;
@@ -335,7 +359,7 @@ body::-webkit-scrollbar-thumb
   color: black;
   padding:5px;
   text-align: center;
-  font-family: 'Raleway';
+  font-family: 'Oxygen';
   font-weight: 300;
   position: relative;
   width: 100%;
@@ -432,7 +456,7 @@ hr{
   .t1h{
     padding:5px;
     text-align: center;
-    font-family: 'Raleway';
+    font-family: 'Roboto';
     position: relative;
     width: 100%;
     top: 10px;
@@ -446,7 +470,7 @@ hr{
   .t2h{
     padding:5px;
     text-align: center;
-    font-family: 'Raleway';
+    font-family: 'Roboto';
     position: relative;
     width: 100%;
     top: 10px;
@@ -461,7 +485,7 @@ hr{
     color: black;
     padding:5px;
     text-align: center;
-    font-family: 'Raleway';
+    font-family: 'Roboto';
     position: relative;
     width: 100%;
     top: 40px;

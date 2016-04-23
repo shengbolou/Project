@@ -162,7 +162,7 @@ $('.hover2').css('transform','scale(0)');
 $('.github').hover(
   function(){
     $(this).find('.hover2').stop().velocity({
-      scale:'1.1',
+      scale:'1',
     },"spring",600);
     $(this).stop().velocity({
       scale:'1.1',

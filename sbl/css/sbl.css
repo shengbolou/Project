@@ -1,3 +1,18 @@
+
+a:active,
+a:focus,
+a:visited,
+a{
+  outline: none;
+  border:none;
+}
+
+button:focus,
+button{
+  outline: none !important;
+  border:none !important;
+}
+
 /*configure navbar-toggle style*/
 /*******************************/
 .navbar-inverse .navbar-toggle:focus,
@@ -129,9 +144,10 @@ body::-webkit-scrollbar-thumb
 /***for the nav buttons***/
 #navbar a:active,
 #navbar a:focus,
+#navbar a:visited,
 #navbar a{
   position: relative;
-  color:#a3a3a3;
+  color:#AAB2BD;
   padding: 8px 8px;
   margin-top: 5px;
   margin-left: 10px;
@@ -140,6 +156,8 @@ body::-webkit-scrollbar-thumb
   font-size: 20px;
   background: transparent;
   text-decoration: none;
+  border: none;
+  outline: none;
 }
 /*link hover underline effect*/
 #navbar a:after{
@@ -149,7 +167,7 @@ body::-webkit-scrollbar-thumb
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #fff;
+  background-color: #CCD1D9;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -166,7 +184,7 @@ body::-webkit-scrollbar-thumb
 
 /*for brand*/
 #brand{
-  color:#a3a3a3;
+  color:#AAB2BD;
 }
 
 
@@ -256,7 +274,7 @@ body::-webkit-scrollbar-thumb
 
 /*the pragraph about me*/
 .about{
-  font-family: 'Roboto';
+  font-family: 'Oxygen';
   font-weight: 500;
   line-height: 30px;
   font-size: 15px;
@@ -302,8 +320,8 @@ body::-webkit-scrollbar-thumb
   z-index: 10;
 	top: 0;
 	left: 0;
-	background-color: #5C5959;
-  opacity: 0.7;
+	background-color: rgba(#5c5959, 0.77);
+  opacity: 0.8;
 	width: 100%;
 	height: 100%;
 }
@@ -315,7 +333,7 @@ body::-webkit-scrollbar-thumb
 	top: 0;
 	left: 0;
 	background-color: #5C5959;
-  opacity: 0.7;
+  opacity: 0.8;
 	width: 100%;
 	height: 100%;
 }
@@ -338,6 +356,7 @@ body::-webkit-scrollbar-thumb
   padding:5px;
   text-align: center;
   font-family: 'Oxygen';
+  line-height: 50px;
   font-weight: 300;
   position: relative;
   width: 100%;
@@ -367,22 +386,31 @@ body::-webkit-scrollbar-thumb
 }
 
 #t1b{
-  /*background:none;*/
+  background:none;
+  color: white;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   margin-top:100px;
 }
-/*#t1b:hover{
+#t1b:hover{
   color:black;
   background:white;
-}*/
+}
 
 #t2b{
   background:none;
+  display: block;
+  color:white;
+  margin-left: auto;
+  margin-right: auto;
   margin-top:100px;
 }
-/*#t2b:hover{
+#t2b:hover{
   color:black;
   background:white;
-}*/
+}
 
 .projects{
   padding-top: 20px;
@@ -456,7 +484,7 @@ hr{
   .t1h{
     padding:5px;
     text-align: center;
-    font-family: 'Roboto';
+    font-family: 'Oxygen';
     position: relative;
     width: 100%;
     top: 10px;
@@ -470,7 +498,7 @@ hr{
   .t2h{
     padding:5px;
     text-align: center;
-    font-family: 'Roboto';
+    font-family: 'Oxygen';
     position: relative;
     width: 100%;
     top: 10px;
@@ -485,7 +513,7 @@ hr{
     color: black;
     padding:5px;
     text-align: center;
-    font-family: 'Roboto';
+    font-family: 'Oxygen';
     position: relative;
     width: 100%;
     top: 40px;

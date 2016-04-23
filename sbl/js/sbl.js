@@ -1,52 +1,9 @@
 $(document).ready(function(){
+  $.material.init();
   var myHeight = $( window ).height();
   var window_width = $(window).width();
   var check = 0;
   var nav_collapsed_check = 0;
-
-
-
-  // button hover for projects
-  $('#t1b').velocity({
-    backgroundColor: '#ffffff',
-    backgroundColorAlpha: '0',
-    color: '#ffffff',
-    background : 'none',
-  });
-  $('#t1b').hover(
-    function(){
-      $(this).stop().velocity({
-        backgroundColorAlpha: '1',
-        color: '#000000'
-      },200)
-    },
-    function(){
-      $(this).stop().velocity({
-        backgroundColorAlpha: '0',
-        color: '#ffffff'
-      },200)
-    }
-  );
-  $('#t2b').velocity({
-    backgroundColor: '#ffffff',
-    backgroundColorAlpha: '0',
-    color: '#ffffff',
-    background : 'none',
-  });
-  $('#t2b').hover(
-    function(){
-      $(this).stop().velocity({
-        backgroundColorAlpha: '1',
-        color: '#000000'
-      },200)
-    },
-    function(){
-      $(this).stop().velocity({
-        backgroundColorAlpha: '0',
-        color: '#ffffff'
-      },200)
-    }
-  );
 
   var sequence = [
     {e:$('#Home-c a'),p:{translateX:0, opacity:1},o:{duration: 100,delay:200}},
@@ -86,9 +43,7 @@ $(document).ready(function(){
         marginTop: '-7px',
         rotateZ: '-45deg'
       },200);
-      $('.navbar-toggle .icon-bar:nth-of-type(2)').velocity({
-        backgroundColorAlpha: '0'
-      },0);
+      $('.navbar-toggle .icon-bar:nth-of-type(2)').css("visibility","hidden");
       $('.nav-collapsed').velocity("transition.slideRightIn",200);
       nav_collapsed_check = 1;
     }
@@ -105,9 +60,7 @@ $(document).ready(function(){
         marginTop: '5px',
         rotateZ: '0'
       },200);
-      $('.navbar-toggle .icon-bar:nth-of-type(2)').velocity({
-        backgroundColorAlpha: '1'
-      },0);
+        $('.navbar-toggle .icon-bar:nth-of-type(2)').css("visibility","visible");
       $('.nav-collapsed').velocity("transition.slideRightOut",200);
       nav_collapsed_check = 0;
     }
@@ -169,21 +122,21 @@ $(document).ready(function(){
 
   $('#navbar li a').hover(function(){
     $(this).stop(true,true).velocity({
-      color:'#fbfbfb'
+      color:'#CCD1D9'
     },200)
   },function(){
     $(this).stop(true,true).velocity({
-      color:'#a3a3a3'
+      color:'#AAB2BD'
     },200)
   });
 
   $('#brand').hover(function(){
     $(this).stop(true,true).velocity({
-      color:'#fbfbfb'
+      color:'#CCD1D9'
     },100)
   },function(){
     $(this).stop(true,true).velocity({
-      color:'#a3a3a3'
+      color:'#AAB2BD'
     },100)
   });
 
@@ -205,23 +158,23 @@ $(document).ready(function(){
 
 
 $('.hover2').css('transform','scale(0)');
-  $('.github').hover(
-    function(){
-      $(this).find('.hover2').stop().velocity({
-        scale:'1.1',
-      },"spring",600);
-       $(this).stop().velocity({
-         scale:'1.1',
-       },"spring",600);
-    },function(){
-      $(this).find('.hover2').stop().velocity({
-        scale:'0',
-      },"spring",600);
-       $(this).stop().velocity({
-         scale:'1',
-       },"spring",600);
-  });
 
+$('.github').hover(
+  function(){
+    $(this).find('.hover2').stop().velocity({
+      scale:'1.1',
+    },"spring",600);
+    $(this).stop().velocity({
+      scale:'1.1',
+    },"spring",600);
+  },function(){
+    $(this).find('.hover2').stop().velocity({
+      scale:'0',
+    },"spring",600);
+    $(this).stop().velocity({
+      scale:'1',
+    },"spring",600);
+  });
  $('.t3hr').css('width','0');
   $('.more').hover(
     function(){
@@ -314,7 +267,7 @@ function Go(){
   var msg = document.getElementById('msg').value;
 
   if(lastname == '' || firstname == '' || msg == ''){
-    $('.contact').velocity("callout.shake");
+    $('.contact').velocity("callout.shake",300);
 
     if(lastname == ''){
       $('.lastname').addClass('has-error');
@@ -327,6 +280,9 @@ function Go(){
     }
   }
   else{
+    $('.lastname').removeClass('has-error');
+    $('.firstname').removeClass('has-error');
+    $('.msg').removeClass('has-error');
     //AJAx
     $.post('sbl.php',{Go:'yes',lastname:lastname, firstname:firstname, email:email, msg:msg},function(data){
       if(data == 'success'){

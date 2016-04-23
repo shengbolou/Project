@@ -4,6 +4,50 @@ $(document).ready(function(){
   var check = 0;
   var nav_collapsed_check = 0;
 
+
+
+  // button hover for projects
+  $('#t1b').velocity({
+    backgroundColor: '#ffffff',
+    backgroundColorAlpha: '0',
+    color: '#ffffff',
+    background : 'none',
+  });
+  $('#t1b').hover(
+    function(){
+      $(this).stop().velocity({
+        backgroundColorAlpha: '1',
+        color: '#000000'
+      },200)
+    },
+    function(){
+      $(this).stop().velocity({
+        backgroundColorAlpha: '0',
+        color: '#ffffff'
+      },200)
+    }
+  );
+  $('#t2b').velocity({
+    backgroundColor: '#ffffff',
+    backgroundColorAlpha: '0',
+    color: '#ffffff',
+    background : 'none',
+  });
+  $('#t2b').hover(
+    function(){
+      $(this).stop().velocity({
+        backgroundColorAlpha: '1',
+        color: '#000000'
+      },200)
+    },
+    function(){
+      $(this).stop().velocity({
+        backgroundColorAlpha: '0',
+        color: '#ffffff'
+      },200)
+    }
+  );
+
   var sequence = [
     {e:$('#Home-c a'),p:{translateX:0, opacity:1},o:{duration: 100,delay:200}},
     {e:$('#Resume-c a'),p:{translateX: 0,opacity:1},o:{duration: 100}},
@@ -114,31 +158,31 @@ $(document).ready(function(){
 
 
   $('.nav-c li a').hover(function(){
-    $(this).velocity({
+    $(this).stop().velocity({
       color:'#bfd8df'
-    },100)
+    },200)
   },function(){
-    $(this).velocity({
+    $(this).stop().velocity({
       color:'#ffffff'
-    },100)
+    },200)
   });
 
-  $('#navbar a').hover(function(){
-    $(this).velocity({
+  $('#navbar li a').hover(function(){
+    $(this).stop(true,true).velocity({
       color:'#fbfbfb'
-    },100)
+    },200)
   },function(){
-    $(this).velocity({
+    $(this).stop(true,true).velocity({
       color:'#a3a3a3'
-    },100)
+    },200)
   });
 
   $('#brand').hover(function(){
-    $(this).velocity({
+    $(this).stop(true,true).velocity({
       color:'#fbfbfb'
     },100)
   },function(){
-    $(this).velocity({
+    $(this).stop(true,true).velocity({
       color:'#a3a3a3'
     },100)
   });
@@ -147,13 +191,13 @@ $(document).ready(function(){
   $('.hover3').velocity({backgroundColor: 'rgb(255, 255, 255)' ,backgroundColorAlpha: 0.6});
   $('.naptime').hover(
     function(){
-      $(this).find('.hover').velocity('transition.slideUpIn',500);
-       $(this).velocity({
+      $(this).find('.hover').stop().velocity('transition.slideUpIn',200);
+       $(this).stop(true,true).velocity({
          scale:'1.1'
        });
     },function(){
-      $(this).find('.hover').velocity('transition.slideDownOut',500);
-      $(this).velocity({
+      $(this).find('.hover').stop().velocity('transition.slideDownOut',200);
+      $(this).stop(true,true).velocity({
         scale:'1'
       });
   });
@@ -163,37 +207,37 @@ $(document).ready(function(){
 $('.hover2').css('transform','scale(0)');
   $('.github').hover(
     function(){
-      $(this).find('.hover2').velocity({
+      $(this).find('.hover2').stop().velocity({
         scale:'1.1',
-      },"spring",1000);
-       $(this).velocity({
+      },"spring",600);
+       $(this).stop().velocity({
          scale:'1.1',
-       },"spring",500);
+       },"spring",600);
     },function(){
-      $(this).find('.hover2').velocity({
+      $(this).find('.hover2').stop().velocity({
         scale:'0',
-      },"spring",1000);
-       $(this).velocity({
+      },"spring",600);
+       $(this).stop().velocity({
          scale:'1',
-       },"spring",500);
+       },"spring",600);
   });
 
  $('.t3hr').css('width','0');
   $('.more').hover(
     function(){
-      $(this).find('.hover3').velocity('transition.slideLeftIn',500);
-      $(this).find('.t3hr').velocity({delay:1000}).velocity({
+      $(this).find('.hover3').stop().velocity('transition.slideLeftIn',300);
+      $(this).find('.t3hr').stop().velocity({delay:100}).velocity({
         width:'300px'
       });
-       $(this).velocity({
+       $(this).stop().velocity({
          scale:'1.1'
        });
     },function(){
-      $(this).find('.hover3').velocity('transition.slideLeftOut',500);
-      $(this).velocity({
+      $(this).find('.hover3').stop().velocity('transition.slideLeftOut',300);
+      $(this).stop().velocity({
         scale:'1'
       });
-      $(this).find('.t3hr').velocity({delay:1000}).velocity({
+      $(this).find('.t3hr').stop().velocity({delay:100}).velocity({
         width:'0px'
       });
   });

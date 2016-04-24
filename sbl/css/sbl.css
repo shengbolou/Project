@@ -159,6 +159,16 @@
   font-family: Oxygen
 }
 
+/*customize input text color*/
+.form-group.is-focused .form-control{
+        background-image: linear-gradient(#7d7d7d,#7d7d7d),linear-gradient(#7d7d7d,#7d7d7d);
+}
+.form-group.is-focused label, .form-group.is-focused label.control-label{
+  color: black;
+}
+
+
+
 a:active,
 a:focus,
 a:visited,

@@ -27,7 +27,8 @@ $(document).ready(function(){
   $('.bground').velocity("fadeIn",{delay:200,duration:200});
   $('.pageheader').css('height',myHeight+30);
   $('.downward').css('top',myHeight-50);
-  $('.downward').velocity('transition.slideUpIn',{delay:2500});
+  $('.downward').velocity('transition.slideUpIn',{delay:2000});
+    $('.myheader').velocity('transition.slideRightIn',{delay:1800});
   $('.nav-collapsed').css("height",myHeight);
 
   $(".navbar-toggle").on("click", function () {
@@ -235,8 +236,6 @@ $('.github').hover(
   $('#logo').click(function(){
       $('html').velocity("scroll", { duration: 500, easing: "ease-in-out" });
   });
-
-  $('.myheader').velocity('transition.slideRightIn',{delay:2500});
 
   $('.downward').velocity({
     translateY:'10px'

@@ -4,6 +4,13 @@ $(document).ready(function(){
     $.material.init();
   });
   var myHeight = $( window ).height();
+
+  lightbox.option({
+    'resizeDuration': 200,
+    'wrapAround': false,
+    'maxWidth': 1500,
+    'maxHeight': 1000,
+  });
   var window_width = $(window).width();
   var check = 0;
   var nav_collapsed_check = 0;

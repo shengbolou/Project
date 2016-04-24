@@ -167,6 +167,13 @@
   color: black;
 }
 
+.btn.btn-fab{
+  background-color: #434A54;
+}
+.btn.btn-fab:hover{
+  background: #AAB2BD;
+}
+
 
 
 a:active,
@@ -241,7 +248,7 @@ body::-webkit-scrollbar-track
 
 body::-webkit-scrollbar
 {
-	width: 5px;
+	width: 8px;
 	background-color:  #434A54;
 }
 

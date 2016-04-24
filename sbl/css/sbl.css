@@ -10,7 +10,7 @@
   position: absolute;
   content: " ";
   width: 3px;
-  background-color: #7a7a7a;
+  background-color: #AAB2BD;
   left: 50%;
   margin-left: -1.5px;
 }
@@ -152,10 +152,12 @@
 }
 
 .time-line{
-  padding-top: 50px;
+  padding-top: 40px;
 }
 
-
+*{
+  font-family: Oxygen
+}
 
 a:active,
 a:focus,
@@ -208,7 +210,6 @@ button{
   transform: translateX(400px);
 }
 .nav-c li a{
-  font-family: 'Oxygen';
   font-size: 20px;
   color:white;
   background: none;
@@ -309,7 +310,6 @@ body::-webkit-scrollbar-thumb
   margin-top: 5px;
   margin-left: 10px;
   margin-right: 10px;
-  font-family: 'Oxygen';
   font-size: 20px;
   background: transparent;
   text-decoration: none;
@@ -431,7 +431,6 @@ body::-webkit-scrollbar-thumb
 
 /*the pragraph about me*/
 .about{
-  font-family: 'Oxygen';
   font-weight: 500;
   line-height: 30px;
   font-size: 15px;
@@ -509,10 +508,10 @@ body::-webkit-scrollbar-thumb
 }
 
 .t1h{
+  font-family: 'Oxygen';
   color: white;
   padding:5px;
   text-align: center;
-  font-family: 'Oxygen';
   line-height: 50px;
   font-weight: 300;
   position: relative;
@@ -521,10 +520,10 @@ body::-webkit-scrollbar-thumb
 }
 
 .t2h{
+  font-family: 'Oxygen';
   color: white;
   padding:5px;
   text-align: center;
-  font-family: 'Oxygen';
   font-weight: 300;
   position: relative;
   width: 100%;
@@ -532,10 +531,10 @@ body::-webkit-scrollbar-thumb
 }
 
 .t3h{
+  font-family: 'Oxygen';
   color: black;
   padding:5px;
   text-align: center;
-  font-family: 'Oxygen';
   font-weight: 300;
   position: relative;
   width: 100%;
@@ -583,7 +582,6 @@ body::-webkit-scrollbar-thumb
 #info{
   position: relative;
   bottom: -50px;
-  font-family: 'Oxygen';
   display: none;
 }
 
@@ -643,7 +641,6 @@ hr{
   .t1h{
     padding:5px;
     text-align: center;
-    font-family: 'Oxygen';
     position: relative;
     width: 100%;
     top: 10px;
@@ -657,7 +654,6 @@ hr{
   .t2h{
     padding:5px;
     text-align: center;
-    font-family: 'Oxygen';
     position: relative;
     width: 100%;
     top: 10px;
@@ -672,7 +668,6 @@ hr{
     color: black;
     padding:5px;
     text-align: center;
-    font-family: 'Oxygen';
     position: relative;
     width: 100%;
     top: 40px;

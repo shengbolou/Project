@@ -1,5 +1,8 @@
 $(document).ready(function(){
-  $.material.init();
+  $(function()
+  {
+    $.material.init();
+  });
   var myHeight = $( window ).height();
   var window_width = $(window).width();
   var check = 0;
@@ -178,21 +181,21 @@ $('.github').hover(
  $('.t3hr').css('width','0');
   $('.more').hover(
     function(){
-      $(this).find('.hover3').stop().velocity('transition.slideLeftIn',300);
+      $(this).find('.hover3').stop().velocity('transition.slideLeftIn',200);
       $(this).find('.t3hr').stop().velocity({delay:100}).velocity({
         width:'300px'
-      });
+      },200);
        $(this).stop().velocity({
          scale:'1.1'
        });
     },function(){
-      $(this).find('.hover3').stop().velocity('transition.slideLeftOut',300);
+      $(this).find('.hover3').stop().velocity('transition.slideLeftOut',200);
       $(this).stop().velocity({
         scale:'1'
       });
       $(this).find('.t3hr').stop().velocity({delay:100}).velocity({
         width:'0px'
-      });
+      },200);
   });
 
   $(window).scroll(function(){

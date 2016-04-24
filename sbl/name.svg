@@ -15,26 +15,26 @@
      #S{
       stroke-dasharray:500;
       stroke-dashoffset:0;
-      -webit-animation: write-S 3s linear;
-      animation: write-S 3s linear;
+      -webit-animation: write-S 2s linear;
+      animation: write-S 2s linear;
      }
      #heng{
       stroke-dasharray:2000;
       stroke-dashoffset:0;
-      -webit-animation: write-heng 3s linear;
-      animation: write-heng 3s linear;
+      -webit-animation: write-heng 2s linear;
+      animation: write-heng 2s linear;
      }
      #bo{
       stroke-dasharray:1000;
       stroke-dashoffset:0;
-      -webit-animation: write-bo 3s  linear;
-      animation: write-bo 3s  linear;
+      -webit-animation: write-bo 2s  linear;
+      animation: write-bo 2s  linear;
      }
      #lou{
       stroke-dasharray:1000;
       stroke-dashoffset:0;
-      -webit-animation: write-lou 3s  linear;
-      animation: write-lou 3s  linear;
+      -webit-animation: write-lou 2s  linear;
+      animation: write-lou 2s  linear;
      }
 
 

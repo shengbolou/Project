@@ -21,7 +21,7 @@ $(document).ready(function(){
     translateX: '10px',
     opacity: 0
   });
-  $('.bground').velocity("fadeIn",{delay:300,duration:300});
+  $('.bground').velocity("fadeIn",{delay:200,duration:200});
   $('.pageheader').css('height',myHeight+30);
   $('.downward').css('top',myHeight-50);
   $('.downward').velocity('transition.slideUpIn',{delay:2500});
@@ -246,11 +246,17 @@ $('.github').hover(
   $('.downward3').velocity({
     translateY:'10px'
   },{loop:true}).velocity('reverse');
+  $('.downward4').velocity({
+    translateY:'10px'
+  },{loop:true}).velocity('reverse');
 
   $('.downward').click(function(){
     $('.mine').velocity("scroll", { duration: 500, easing: "ease-in-out" });
   });
   $('.downward2').click(function(){
+    $('.time-line').velocity("scroll", { duration: 500, easing: "ease-in-out" });
+  });
+  $('.downward4').click(function(){
     $('.life').velocity("scroll", { duration: 500, easing: "ease-in-out" });
   });
   $('.downward3').click(function(){

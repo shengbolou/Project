@@ -438,7 +438,7 @@ body::-webkit-scrollbar-thumb
   -webkit-box-shadow: -1px 4px 12px -1px rgba(120,120,120,0.76);
   -moz-box-shadow: -1px 4px 12px -1px rgba(120,120,120,0.76);
   box-shadow: -1px 4px 12px -1px rgba(120,120,120,0.76);
-  margin-top: 100px;
+  margin-top: 80px;
   border-radius: 5px;
   margin-bottom: 40px;
 }

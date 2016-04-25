@@ -175,24 +175,24 @@ $('.github').hover(
       scale:'1',
     },"spring",600);
   });
- $('.t3hr').css('width','0');
+ // $('.t3hr').css('width','0');
   $('.more').hover(
     function(){
       $(this).find('.hover3').stop().velocity('transition.slideLeftIn',200);
-      $(this).find('.t3hr').stop().velocity({delay:100}).velocity({
-        width:'100%'
-      },200);
+      // $(this).find('.t3hr').stop().velocity({delay:100}).velocity({
+      //   width:'100%'
+      // },200);
        $(this).stop().velocity({
          scale:'1.1'
-       });
+       },200);
     },function(){
       $(this).find('.hover3').stop().velocity('transition.slideLeftOut',200);
       $(this).stop().velocity({
         scale:'1'
-      });
-      $(this).find('.t3hr').stop().velocity({delay:100}).velocity({
-        width:'0px'
       },200);
+      // $(this).find('.t3hr').stop().velocity({delay:100}).velocity({
+      //   width:'0px'
+      // },200);
   });
 
   $(window).scroll(function(){

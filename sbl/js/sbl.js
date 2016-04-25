@@ -1,8 +1,5 @@
 $(document).ready(function(){
-  $(function()
-  {
-    $.material.init();
-  });
+  $.material.init();
   var myHeight = $( window ).height();
   var window_width = $(window).width();
   var check = 0;
@@ -19,7 +16,6 @@ $(document).ready(function(){
     {e:$('#Contact-c a'),p:{translateX: 10,opacity:0},o:{duration: 100}}
   ];
 
-
   $('.nav-c li a').velocity({
     translateX: '10px',
     opacity: 0
@@ -28,7 +24,7 @@ $(document).ready(function(){
   $('.pageheader').css('height',myHeight+30);
   $('.downward').css('top',myHeight-50);
   $('.downward').velocity('transition.slideUpIn',{delay:2000});
-    $('.myheader').velocity('transition.slideRightIn',{delay:1800});
+  $('.myheader').velocity('transition.fadeIn',{delay:1800,duration:300});
   $('.nav-collapsed').css("height",myHeight);
 
   $(".navbar-toggle").on("click", function () {
@@ -184,7 +180,7 @@ $('.github').hover(
     function(){
       $(this).find('.hover3').stop().velocity('transition.slideLeftIn',200);
       $(this).find('.t3hr').stop().velocity({delay:100}).velocity({
-        width:'300px'
+        width:'100%'
       },200);
        $(this).stop().velocity({
          scale:'1.1'

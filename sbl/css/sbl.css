@@ -243,20 +243,20 @@ body::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	border-radius: 2px;
-	background-color: #434A54;
+	background-color: rgba(#e0e0e0, 0.59);
 }
 
 body::-webkit-scrollbar
 {
 	width: 8px;
-	background-color:  #434A54;
+	background-color:  rgba(#e0e0e0, 0.59);
 }
 
 body::-webkit-scrollbar-thumb
 {
 	border-radius: 2px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #a39e9e;
+	background-color: #414141;
 }
 
 
@@ -555,7 +555,7 @@ body::-webkit-scrollbar-thumb
   font-weight: 300;
   position: relative;
   width: 100%;
-  top: 50px;
+  top: 40px;
 }
 
 #t1b{
@@ -665,7 +665,7 @@ hr{
   }
   #t1b{
     background:none;
-    margin-top: 80px;
+    margin-top: 60px;
   }
 
   .t2h{
@@ -734,7 +734,7 @@ hr{
   }
 }
 
-@media (min-width: 414px) and (max-width: 768px) {
+@media (min-width: 401px) and (max-width: 768px) {
   #svg{
     position: absolute;
     z-index: 1;
@@ -757,6 +757,11 @@ hr{
     right: auto;
     left: auto;
     font-size: 50px;
+  }
+
+  .t1h, .t2h, .t3h{
+    font-size: 20px;
+    line-height: 25px;
   }
 }
 
@@ -783,5 +788,16 @@ hr{
     right: auto;
     left: auto;
     font-size: 40px;
+  }
+  #t1b{
+      margin-top: 50px;
+  }
+  #t2b{
+    margin-top: 50px;
+  }
+  .t1h, .t2h, .t3h{
+    margin-top: 5px;
+    font-size: 15px;
+    line-height: 25px;
   }
 }

@@ -112,11 +112,11 @@ $(document).ready(function(){
 
   $('.nav-c li a').hover(function(){
     $(this).stop().velocity({
-      color:'#bfd8df'
+      color:'#AAB2BD'
     },200)
   },function(){
     $(this).stop().velocity({
-      color:'#ffffff'
+      color:'#F5F7FA'
     },200)
   });
 

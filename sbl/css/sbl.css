@@ -175,6 +175,31 @@
 }
 
 
+.side-nav{
+  position: fixed;
+  margin-top: 150px;
+  width: 200px;
+  z-index: 1;
+}
+.side-nav li a{
+  position: relative;
+  color: #656D78;
+  border-radius: 0px;
+}
+.side-nav li a:active,
+.side-nav li a:focus,
+.side-nav li a:visited,
+.side-nav li a:hover{
+  color: #434A54;
+  border-right: 1px solid #434A54;
+  background: none;
+}
+.side-nav li .active{
+  color: #434A54;
+  border-right: 1px solid #434A54;
+}
+
+
 
 a:active,
 a:focus,
@@ -277,7 +302,7 @@ body::-webkit-scrollbar-thumb
   background-size: cover;
   overflow: hidden;
   position: absolute;
-  z-index: auto;
+  z-index: 2;
   width: 100%;
   height:100%;
   left:0;
@@ -300,12 +325,13 @@ body::-webkit-scrollbar-thumb
   left: 0;
 }
 
+
 /** programmer with ......**/
 .myheader{
   display: none;
   text-align: center;
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   color: white;
   font-family: "Pinyon Script";
   bottom: 150px;
@@ -384,7 +410,7 @@ body::-webkit-scrollbar-thumb
 /**for my name svg file**/
 #svg{
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   width: 30%;
   height: 30%;
   top:15%;
@@ -403,7 +429,7 @@ body::-webkit-scrollbar-thumb
   display: none;
   text-align: center;
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .downward2{

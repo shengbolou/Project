@@ -179,7 +179,7 @@
 .side-nav{
   display: none;
   position: fixed;
-  margin-top: 300px;
+  /*margin-top: 300px;*/
   width: 200px;
   z-index: 1;
 }
@@ -188,7 +188,7 @@
   color: #656D78;
   border-right: 2px solid #EEEEEE;
   border-radius: 0px;
-  transition: .3s all ease-out;
+  transition: .2s all ease-out;
 }
 .side-nav li a:active,
 .side-nav li a:focus,
@@ -201,6 +201,8 @@
   border-right: 2px solid #AAB2BD;
 }
 .side-nav li .active{
+  font-size: 18px;
+  font-weight: 600;
   color: #434A54;
   border-right: 2px solid #434A54;
   background: none;
@@ -302,7 +304,6 @@ body::-webkit-scrollbar-thumb
 }
 
 .bground{
-
   background:linear-gradient( rgba(20, 20, 20, 0.3), rgba(20, 20, 20, 0.3) ), url('../imgs/header.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -310,7 +311,7 @@ body::-webkit-scrollbar-thumb
   background-size: cover;
   overflow: hidden;
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   width: 100%;
   height:100%;
   left:0;

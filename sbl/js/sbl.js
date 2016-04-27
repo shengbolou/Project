@@ -5,6 +5,8 @@ $(document).ready(function(){
   var check = 0;
   var nav_collapsed_check = 0;
 
+  $('.side-nav').css("margin-top",myHeight/3);
+
   var sequence = [
     {e:$('#Home-c a'),p:{translateX:0, opacity:1},o:{duration: 100,delay:200}},
     {e:$('#Resume-c a'),p:{translateX: 0,opacity:1},o:{duration: 100}},
@@ -69,10 +71,10 @@ $(document).ready(function(){
 
 
 
-  var mine = $('.mine').position().top- myHeight + 400;
-  var time_line = $('.time-line').position().top- myHeight + 400;
-  var life = $('.life').position().top - myHeight + 400;
-  var work = $('.work').position().top - myHeight + 400;
+  var mine = $('.mine').position().top- myHeight + (myHeight/4);
+  var time_line = $('.time-line').position().top- myHeight + (myHeight/4);
+  var life = $('.life').position().top - myHeight + (myHeight/4);
+  var work = $('.work').position().top - myHeight + (myHeight/4);
 
   $('.mine').velocity({
     translateY: '10px',

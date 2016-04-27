@@ -153,6 +153,7 @@
 
 .time-line{
   padding-top: 40px;
+  opacity: 0;
 }
 
 *{
@@ -174,29 +175,35 @@
   background: #AAB2BD;
 }
 
-
+/*configure for side-nav*/
 .side-nav{
+  display: none;
   position: fixed;
-  margin-top: 150px;
+  margin-top: 300px;
   width: 200px;
   z-index: 1;
 }
 .side-nav li a{
   position: relative;
   color: #656D78;
+  border-right: 2px solid #EEEEEE;
   border-radius: 0px;
+  transition: .3s all ease-out;
 }
 .side-nav li a:active,
 .side-nav li a:focus,
 .side-nav li a:visited,
 .side-nav li a:hover{
   color: #434A54;
-  border-right: 1px solid #434A54;
   background: none;
+}
+.side-nav li a:hover{
+  border-right: 2px solid #AAB2BD;
 }
 .side-nav li .active{
   color: #434A54;
-  border-right: 1px solid #434A54;
+  border-right: 2px solid #434A54;
+  background: none;
 }
 
 
@@ -290,12 +297,13 @@ body::-webkit-scrollbar-thumb
   width: 100%;
   margin-top: -30px;
   overflow: hidden;
-  /*background-color: rgba(165, 171, 169, 0.3);*/
+  /*background-color: rgba(20, 20, 20, 0.8);*/
   clear: both;
 }
 
 .bground{
-  background:url('../imgs/header.png') no-repeat center center fixed;
+
+  background:linear-gradient( rgba(20, 20, 20, 0.3), rgba(20, 20, 20, 0.3) ), url('../imgs/header.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -690,7 +698,7 @@ hr{
 }
 
 
-@media (min-width: 1024px) and (max-width: 1366px) {
+@media (min-width: 1026px) and (max-width: 1366px) {
   #svg{
     position: absolute;
     z-index: 1;
@@ -751,9 +759,12 @@ hr{
     left: auto;
     font-size: 60px;
   }
+  .side-nav{
+    width: 150px
+  }
 }
 
-@media (min-width: 800px) and (max-width: 1024px) {
+@media (min-width: 800px) and (max-width: 1025px) {
   #svg{
     position: absolute;
     z-index: 1;
@@ -776,6 +787,9 @@ hr{
     right: auto;
     left: auto;
     font-size: 50px;
+  }
+  .side-nav{
+    visibility: hidden;
   }
 }
 
@@ -810,6 +824,9 @@ hr{
   }
   .timeline .timeline-title{
     font-size: 25px;
+  }
+  .side-nav{
+    visibility: hidden;
   }
 }
 
@@ -850,5 +867,9 @@ hr{
   }
   .timeline .timeline-title{
     font-size: 20px;
+  }
+
+  .side-nav{
+    visibility: hidden;
   }
 }

@@ -461,15 +461,15 @@ body::-webkit-scrollbar-thumb
 /******************************/
 
 /*the style of carousel pictures*/
-.carousel-inner img{
+/*.carousel-inner img{
   width: 100%;
   height: auto;
   max-height: 500px;
   border-radius: 5px;
-}
+}*/
 
-/*the style for carousel*/
-.carousel{
+
+/*.carousel{
   -webkit-box-shadow: -1px 4px 12px -1px rgba(120,120,120,0.76);
   -moz-box-shadow: -1px 4px 12px -1px rgba(120,120,120,0.76);
   box-shadow: -1px 4px 12px -1px rgba(120,120,120,0.76);
@@ -478,12 +478,12 @@ body::-webkit-scrollbar-thumb
   margin-bottom: 40px;
 }
 
-/*the style for the controls of carousel*/
+
 .carousel-control.left,
 .carousel-control.right {
     background-image: none
 }
-/*carousel-indicators*/
+
 .carousel-indicators li{
   width: 8px;
   height: 8px;
@@ -491,7 +491,7 @@ body::-webkit-scrollbar-thumb
 .carousel-indicators .active{
   width: 8px;
   height: 8px;
-}
+}*/
 
 /*the About me page*/
 .mine{

@@ -5,6 +5,24 @@ $(document).ready(function(){
   var check = 0;
   var nav_collapsed_check = 0;
 
+  lightbox.option({
+    'resizeDuration': 500,
+    'wrapAround': true,
+    'maxWidth': 1500
+  });
+
+  $('.pics img').hover(function(){
+    $(this).stop().velocity({
+      boxShadowBlur: 10,
+      boxshadowSpread: 0.5
+    },200)
+  },function(){
+    $(this).stop().velocity({
+      boxShadowBlur: 0,
+      boxshadowSpread: 0.5
+    },200)
+  });
+
   $('.side-nav').css("margin-top",myHeight/3);
 
   var sequence = [
@@ -17,6 +35,7 @@ $(document).ready(function(){
     {e:$('#Resume-c a'),p:{translateX: 10,opacity:0},o:{duration: 100}},
     {e:$('#Contact-c a'),p:{translateX: 10,opacity:0},o:{duration: 100}}
   ];
+
 
   $('.nav-c li a').velocity({
     translateX: '10px',

@@ -483,6 +483,15 @@ body::-webkit-scrollbar-thumb
 .carousel-control.right {
     background-image: none
 }
+/*carousel-indicators*/
+.carousel-indicators li{
+  width: 8px;
+  height: 8px;
+}
+.carousel-indicators .active{
+  width: 8px;
+  height: 8px;
+}
 
 /*the About me page*/
 .mine{
@@ -507,15 +516,6 @@ body::-webkit-scrollbar-thumb
   font-size: 15px;
 }
 
-/*carousel-indicators*/
-.carousel-indicators li{
-  width: 8px;
-  height: 8px;
-}
-.carousel-indicators .active{
-  width: 8px;
-  height: 8px;
-}
 
 
 /*the About me photo*/
@@ -645,11 +645,14 @@ body::-webkit-scrollbar-thumb
   padding-top: 20px;
   margin-top: 30px;
   margin-bottom: 50px;
-  -webkit-box-shadow: -1px 4px 12px -1px rgba(120,120,120,0.76);
+  /*-webkit-box-shadow: -1px 4px 12px -1px rgba(120,120,120,0.76);
   -moz-box-shadow: -1px 4px 12px -1px rgba(120,120,120,0.76);
-  box-shadow: -1px 4px 12px -1px rgba(120,120,120,0.76);
+  box-shadow: -1px 4px 12px -1px rgba(120,120,120,0.76);*/
 }
+.pics div a{
+  height: 100%;
 
+}
 #info{
   position: relative;
   bottom: -50px;

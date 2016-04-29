@@ -14,12 +14,14 @@ $(document).ready(function(){
   $('.pics img').hover(function(){
     $(this).stop().velocity({
       boxShadowBlur: 10,
-      boxshadowSpread: 0.5
+      boxshadowSpread: 0.5,
+      scale: '1.1'
     },200)
   },function(){
     $(this).stop().velocity({
       boxShadowBlur: 0,
-      boxshadowSpread: 0.5
+      boxshadowSpread: 0.5,
+      scale: '1'
     },200)
   });
 

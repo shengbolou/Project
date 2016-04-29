@@ -795,9 +795,13 @@ hr{
   .side-nav{
     visibility: hidden;
   }
+
+  .pics div{
+    margin-bottom: 40px;
+  }
 }
 
-@media (min-width: 401px) and (max-width: 768px) {
+@media (min-width: 401px) and (max-width: 799px) {
   #svg{
     position: absolute;
     z-index: 1;
@@ -831,6 +835,9 @@ hr{
   }
   .side-nav{
     visibility: hidden;
+  }
+  .pics div{
+    margin-bottom: 40px;
   }
 }
 
@@ -875,5 +882,8 @@ hr{
 
   .side-nav{
     visibility: hidden;
+  }
+  .pics div{
+    margin-bottom: 40px;
   }
 }

@@ -1,3 +1,15 @@
+/*fons*/
+
+@font-face {
+  font-family: 'Oxygen';
+  src: url('../fonts/Raleway-Regular.ttf');
+}
+@font-face {
+  font-family: 'journal';
+  src: url('../fonts/journal.ttf');
+}
+
+
 .timeline {
   list-style: none;
   padding: 20px 0 20px;
@@ -342,7 +354,7 @@ body::-webkit-scrollbar-thumb
   position: absolute;
   z-index: 3;
   color: white;
-  font-family: "Pinyon Script";
+  font-family: "journal";
   bottom: 150px;
   width: 100%;
   right: auto;
@@ -520,9 +532,6 @@ body::-webkit-scrollbar-thumb
 
 /*the About me photo*/
 .me{
-  -webkit-box-shadow: -1px 4px 12px -1px rgba(120,120,120,0.76);
-  -moz-box-shadow: -1px 4px 12px -1px rgba(120,120,120,0.76);
-  box-shadow: -1px 4px 12px -1px rgba(120,120,120,0.76);
   margin-top: 10px;
   margin-bottom: 50px;
   background:url('../imgs/me4.jpg') top center no-repeat;
@@ -533,6 +542,7 @@ body::-webkit-scrollbar-thumb
   width: 100%;
   height: 500px;
 }
+
 
 
 .projects .thumbnail{
@@ -649,10 +659,18 @@ body::-webkit-scrollbar-thumb
   -moz-box-shadow: -1px 4px 12px -1px rgba(120,120,120,0.76);
   box-shadow: -1px 4px 12px -1px rgba(120,120,120,0.76);*/
 }
-.pics div a{
-  height: 100%;
 
+/*pics imgs hover effect`*/
+.pics img{
+  transition: .2s all ease-in-out;
 }
+.pics img:hover{
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(120,120,120,0.76);
+  -moz-box-shadow: 0px 0px 10px 2px rgba(120,120,120,0.76);
+  box-shadow: 0px 0px 10px 2px rgba(120,120,120,0.76);
+}
+
+
 #info{
   position: relative;
   bottom: -50px;
@@ -692,7 +710,7 @@ hr{
     position: absolute;
     z-index: 1;
     color: white;
-    font-family: "Pinyon Script";
+    font-family: "journal";
     bottom: 150px;
     width: 100%;
     right: auto;
@@ -756,7 +774,7 @@ hr{
     position: absolute;
     z-index: 1;
     color: white;
-    font-family: "Pinyon Script";
+    font-family: "journal";
     bottom: 100px;
     width: 100%;
     right: auto;
@@ -785,7 +803,7 @@ hr{
     position: absolute;
     z-index: 1;
     color: white;
-    font-family: "Pinyon Script";
+    font-family: "journal";
     bottom: 150px;
     width: 100%;
     right: auto;
@@ -818,7 +836,7 @@ hr{
     position: absolute;
     z-index: 1;
     color: white;
-    font-family: "Pinyon Script";
+    font-family: "journal";
     bottom: 80px;
     width: 100%;
     right: auto;
@@ -858,7 +876,7 @@ hr{
     position: absolute;
     z-index: 1;
     color: white;
-    font-family: "Pinyon Script";
+    font-family: "journal";
     bottom: 60px;
     width: 100%;
     right: auto;

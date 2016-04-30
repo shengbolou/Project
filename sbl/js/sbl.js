@@ -5,12 +5,12 @@ $(document).ready(function(){
   var check = 0;
   var nav_collapsed_check = 0;
 
+
   lightbox.option({
     'resizeDuration': 500,
     'wrapAround': true,
     'maxWidth': 1500
   });
-
 
   $('.side-nav').css("margin-top",myHeight/3);
   // $('.life').css('height',myHeight-50);
@@ -34,7 +34,7 @@ $(document).ready(function(){
   $('.pageheader').css('height',myHeight+30);
   $('.downward').css('top',myHeight-50);
   $('.downward').velocity('transition.slideUpIn',{delay:2000});
-  $('.myheader').velocity('transition.fadeIn',{delay:2000,duration:300});
+  $('.myheader').velocity('transition.slideUpIn',{delay:2000,duration:300});
   $('.nav-collapsed').css("height",myHeight);
 
   $(".navbar-toggle").on("click", function () {

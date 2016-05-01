@@ -323,13 +323,14 @@ body::-webkit-scrollbar-thumb
   -moz-background-size: auto 110%;
   -o-background-size: auto 110%;
   background-size: auto 110%;
-  overflow: hidden;
+  overflow: auto;
   position: absolute;
   z-index: 1;
   width: 100%;
   height:100%;
   left:0;
   display: none;
+  transition: .2s background ease;
 }
 
 

@@ -25,13 +25,13 @@ $(document).ready(function(){
     {e:$('#Contact-c a'),p:{translateX: 10,opacity:0},o:{duration: 100}}
   ];
 
-
+  $('.bground').focus();
   $('.bground').mousemove(function( event ) {
 
     var containerWidth = $(this).innerWidth(),
     containerHeight = $(this).innerHeight(),
-    mousePositionX = (event.pageX / containerWidth)*5,
-    mousePositionY = (event.pageY /containerHeight)*10;
+    mousePositionX = (event.pageX / containerWidth)*10,
+    mousePositionY = (event.pageY /containerHeight)*104;
 
     $(this).css('background-position', mousePositionX + '%' + ' ' + mousePositionY + '%');
 

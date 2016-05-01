@@ -26,6 +26,18 @@ $(document).ready(function(){
   ];
 
 
+  $('.bground').mousemove(function( event ) {
+
+    var containerWidth = $(this).innerWidth(),
+    containerHeight = $(this).innerHeight(),
+    mousePositionX = (event.pageX / containerWidth)*5,
+    mousePositionY = (event.pageY /containerHeight)*10;
+
+    $(this).css('background-position', mousePositionX + '%' + ' ' + mousePositionY + '%');
+
+  });
+
+
   $('.nav-c li a').velocity({
     translateX: '10px',
     opacity: 0

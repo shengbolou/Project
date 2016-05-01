@@ -318,11 +318,11 @@ body::-webkit-scrollbar-thumb
 }
 
 .bground{
-  background:linear-gradient( rgba(20, 20, 20, 0.3), rgba(20, 20, 20, 0.3) ), url('../imgs/header.png') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background:linear-gradient( rgba(20, 20, 20, 0.3), rgba(20, 20, 20, 0.3) ), url('../imgs/header.png') no-repeat center center;
+  -webkit-background-size: auto 110%;
+  -moz-background-size: auto 110%;
+  -o-background-size: auto 110%;
+  background-size: auto 110%;
   overflow: hidden;
   position: absolute;
   z-index: 1;

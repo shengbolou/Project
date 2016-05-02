@@ -12,6 +12,8 @@ $(document).ready(function(){
     'maxWidth': 1500
   });
 
+
+
   $('.side-nav').css("margin-top",myHeight/3);
   // $('.life').css('height',myHeight-50);
   var sequence = [
@@ -36,7 +38,6 @@ $(document).ready(function(){
     $(this).css('background-position', mousePositionX + '%' + ' ' + mousePositionY + '%');
 
   });
-
 
   $('.nav-c li a').velocity({
     translateX: '10px',
@@ -109,10 +110,21 @@ $(document).ready(function(){
   },10);
 
   $(window).scroll(function(){
-    if($(this).scrollTop() >= mine){
+
+
+    if($(this).scrollTop() >= mine+400){
       if(!$('.side-nav').is(':visible')){
-        $('.side-nav').stop().velocity("fadeIn",{duration:200});
+        $('.side-nav').stop().velocity("transition.slideLeftIn",{duration:200});
       }
+    }
+    if($(this).scrollTop() < mine+400){
+      if($('.side-nav').is(':visible')){
+        $('.side-nav').stop().velocity("transition.slideLeftOut",{duration:200});
+      }
+    }
+
+
+    if($(this).scrollTop() >= mine){
       $('.side-nav li a').removeClass("active");
       $('.side-nav li:nth-child(1) a').addClass("active");
       $('.mine').velocity({
@@ -291,7 +303,7 @@ $('.github').hover(
 
 
   $('.downward').click(function(){
-    $('html').velocity("scroll", { duration: 500, offset:mine+500}).stop();
+    $('html').velocity("scroll",{easing: [15, .67, .44, .90],duration: 500, offset:mine+500}).stop();
   });
   $('.side-nav li:nth-child(1)').click(function(){
     $('html').velocity("scroll", { duration: 500, offset:mine+500}).stop();

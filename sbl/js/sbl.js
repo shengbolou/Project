@@ -1,16 +1,26 @@
 $(document).ready(function(){
+
   $.material.init();
+
   var myHeight = $( window ).height();
   var window_width = $(window).width();
-  var check = 0;
+
   var nav_collapsed_check = 0;
 
-
+  //configuration for lightbox plugin
   lightbox.option({
     'resizeDuration': 500,
     'wrapAround': true,
     'maxWidth': 1500
   });
+
+  //check whether the page is fully loaded
+  var readyStateCheckInterval = setInterval(function() {
+    if (document.readyState === "complete") {
+      clearInterval(readyStateCheckInterval);
+      $('.svg_block').append('<embed id="svg"  src="name.svg">');
+    }
+  }, 10);
 
 
 
@@ -252,14 +262,12 @@ $('.github').hover(
       if(!$('#info').is(':visible'))
         $('#info').velocity('transition.slideUpIn');
     }
-    if($(this).scrollTop() >= 150 && check==0){
+    if($(this).scrollTop() >= 150 && !$('.navbar').is(':visible')){
       $('.navbar').velocity('transition.slideDownIn',200);
-       check=1;
     }
     if($(this).scrollTop() == 0){
       //scroll to top
       $('.navbar').velocity('transition.slideUpOut',200);
-      check=0;
     }
   });
 
@@ -303,7 +311,7 @@ $('.github').hover(
 
 
   $('.downward').click(function(){
-    $('html').velocity("scroll",{easing: [15, .67, .44, .90],duration: 500, offset:mine+500}).stop();
+    $('html').velocity("scroll",{easing: [.53,.21,.29,.95],duration: 500, offset:mine+500}).stop();
   });
   $('.side-nav li:nth-child(1)').click(function(){
     $('html').velocity("scroll", { duration: 500, offset:mine+500}).stop();

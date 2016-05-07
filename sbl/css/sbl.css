@@ -58,7 +58,7 @@
 }
 
 .timeline > li > .timeline-panel {
-  width: 46%;
+  width: 45%;
   float: left;
   border: 1px solid #d4d4d4;
   border-radius: 2px;
@@ -790,6 +790,58 @@ hr{
 }
 
 @media (min-width: 800px) and (max-width: 1025px) {
+  .timeline > li > .timeline-panel {
+    width: 42%;
+    float: left;
+    border: 1px solid #d4d4d4;
+    border-radius: 2px;
+    padding: 20px;
+    position: relative;
+    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  }
+
+  .timeline > li > .timeline-panel:before {
+    position: absolute;
+    top: 26px;
+    right: -15px;
+    display: inline-block;
+    border-top: 15px solid transparent;
+    border-left: 15px solid #ccc;
+    border-right: 0 solid #ccc;
+    border-bottom: 15px solid transparent;
+    content: " ";
+  }
+
+  .timeline > li > .timeline-panel:after {
+    position: absolute;
+    top: 27px;
+    right: -14px;
+    display: inline-block;
+    border-top: 14px solid transparent;
+    border-left: 14px solid #fff;
+    border-right: 0 solid #fff;
+    border-bottom: 14px solid transparent;
+    content: " ";
+  }
+  .timeline > li > .timeline-badge {
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 1.3em;
+    text-align: center;
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    margin-left: -25px;
+    background-color: #999999;
+    z-index: 100;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+  }
   #svg{
     position: absolute;
     z-index: 1;
@@ -823,6 +875,58 @@ hr{
 }
 
 @media (min-width: 401px) and (max-width: 799px) {
+  .timeline > li > .timeline-panel {
+    width: 40%;
+    float: left;
+    border: 1px solid #d4d4d4;
+    border-radius: 2px;
+    padding: 20px;
+    position: relative;
+    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  }
+
+  .timeline > li > .timeline-panel:before {
+    position: absolute;
+    top: 26px;
+    right: -15px;
+    display: inline-block;
+    border-top: 15px solid transparent;
+    border-left: 15px solid #ccc;
+    border-right: 0 solid #ccc;
+    border-bottom: 15px solid transparent;
+    content: " ";
+  }
+
+  .timeline > li > .timeline-panel:after {
+    position: absolute;
+    top: 27px;
+    right: -14px;
+    display: inline-block;
+    border-top: 14px solid transparent;
+    border-left: 14px solid #fff;
+    border-right: 0 solid #fff;
+    border-bottom: 14px solid transparent;
+    content: " ";
+  }
+  .timeline > li > .timeline-badge {
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1em;
+    text-align: center;
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    margin-left: -20px;
+    background-color: #999999;
+    z-index: 100;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+  }
   #svg{
     position: absolute;
     z-index: 1;
@@ -852,7 +956,7 @@ hr{
     line-height: 25px;
   }
   .timeline .timeline-title{
-    font-size: 25px;
+    font-size: 20px;
   }
   .side-nav{
     visibility: hidden;
@@ -863,6 +967,58 @@ hr{
 }
 
 @media (max-width: 400px) {
+  .timeline > li > .timeline-panel {
+    width: 40%;
+    float: left;
+    border: 1px solid #d4d4d4;
+    border-radius: 2px;
+    padding: 20px;
+    position: relative;
+    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  }
+
+  .timeline > li > .timeline-panel:before {
+    position: absolute;
+    top: 26px;
+    right: -15px;
+    display: inline-block;
+    border-top: 15px solid transparent;
+    border-left: 15px solid #ccc;
+    border-right: 0 solid #ccc;
+    border-bottom: 15px solid transparent;
+    content: " ";
+  }
+
+  .timeline > li > .timeline-panel:after {
+    position: absolute;
+    top: 27px;
+    right: -14px;
+    display: inline-block;
+    border-top: 14px solid transparent;
+    border-left: 14px solid #fff;
+    border-right: 0 solid #fff;
+    border-bottom: 14px solid transparent;
+    content: " ";
+  }
+  .timeline > li > .timeline-badge {
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1em;
+    text-align: center;
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    margin-left: -15px;
+    background-color: #999999;
+    z-index: 100;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+  }
   #svg{
     position: absolute;
     z-index: 1;
@@ -912,7 +1068,7 @@ hr{
     line-height: 25px;
   }
   .timeline .timeline-title{
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .side-nav{

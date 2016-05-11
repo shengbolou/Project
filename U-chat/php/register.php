@@ -18,8 +18,9 @@ if(isset($_POST['Sign'])){
     if(count(mysqli_fetch_assoc($result2))>0)
       echo "duplicate";
     else {
+      //INSERT into user table
       $query = "INSERT INTO users(UserName,Password,email) VALUES ('$username','$password','$email')";
-
+      //query request
       $result = mysqli_query($conn,$query);
 
       if($result){
@@ -31,6 +32,7 @@ if(isset($_POST['Sign'])){
         )";
         $result = mysqli_query($conn,$sql);
         echo "success";
+        //set online
         $online = "UPDATE users SET online=1 WHERE UserName='$username'";
         $result2 = mysqli_query($conn,$online);
       }

@@ -31,6 +31,14 @@ $users =
   PRIMARY KEY(ID)
 )";
 
+$friend_table=
+"CREATE TABLE friends(
+  ID int NOT NULL AUTO_INCREMENT,
+  user_one varchar(255) NOT NULL,
+  user_two varchar(255) NOT NULL,
+  PRIMARY KEY(ID)
+)";
+
 
 //create msg table
 $msg =
@@ -41,12 +49,14 @@ $msg =
   message longtext NOT NULL,
   getted BOOLEAN DEFAULT 0,
   PRIMARY KEY(ID)
-)"
+)";
 
 mysqli_query($conn,$db);
 mysqli_query($conn,$friend_request);
 mysqli_query($conn,$users);
-mysqli_query($conn,$mgs);
+mysqli_query($conn,$msg);
+mysqli_query($conn,$friend_table);
+
 
 mysqli_close($conn);
 

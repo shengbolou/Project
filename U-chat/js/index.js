@@ -21,7 +21,9 @@ $(document).ready(function(){
   $('#dismiss2').click(function(){
     $('.failed2').velocity("fadeOut",200);
   });
-  $.post('php/table.php');
+
+  $.post('php/table.php',function(data){
+  });
 
   $('.main').velocity({
     translateY: '5px'

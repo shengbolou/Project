@@ -440,14 +440,14 @@
 
     $user = $_REQUEST['check_online'];
 
-    $query = "SELECT `$user`.Friend, users.online FROM `$user` LEFT JOIN users ON `$user`.Friend=users.UserName";
+    $query = "SELECT friends.user_two, users.online FROM friends LEFT JOIN users ON friends.user_one=users.UserName";
 
     $update = mysqli_query($conn,$query);
 
     $users = '';
 
     while ($row = mysqli_fetch_assoc($update)) {
-      $users.=($row['Friend'].",".$row['online'].",");
+      $users.=($row['user_two'].",".$row['online'].",");
     }
 
     echo $users;

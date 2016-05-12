@@ -374,16 +374,16 @@ function group_chat(){
   $('.side_bar').empty();
   //append new group chat button
   $('.side_bar').append(
-    `<a style="background:#CCD1D9; color:black; outline:none; border:none" class="btn btn-default">
-        <div class="media">
-          <div class="media-left">
-            <img class="media-object" src="imgs/add_friends.png" width="50px" height="50px"alt="...">
-          </div>
-          <div class="media-body">
-            <h6 style="font-family:Roboto; font-weight:300; font-size: 20px"class="text-center">New group chat</h6>
-          </div>
-        </div>
-        </a>`)
+    `<a style="background:#CCD1D9; color:black; outline:none; border:none" class="btn btn-default new_group_chat">
+    <div class="media">
+    <div class="media-left">
+    <img class="media-object" src="imgs/add_friends.png" width="50px" height="50px"alt="...">
+    </div>
+    <div class="media-body">
+    <h6 style="font-family:Roboto; font-weight:300; font-size: 20px"class="text-center">New group chat</h6>
+    </div>
+    </div>
+    </a>`)
 }
 
 

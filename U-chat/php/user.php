@@ -26,7 +26,7 @@
 
     $duplicate = mysqli_query($conn,$check_duplicate);
 
-    $already_friends = "SELECT Friend FROM `$F` WHERE Friend='$T'";
+    $already_friends = "SELECT user_two FROM friends WHERE user_one='$F'";
 
     $already_friends_result = mysqli_query($conn,$already_friends);
 

@@ -17,7 +17,6 @@
 
     $RightPass = mysqli_fetch_row($result)[0];
 
-
     if( $RightPass == $password){
       echo "success";
       $online = "UPDATE users SET online=1 WHERE UserName='$username'";

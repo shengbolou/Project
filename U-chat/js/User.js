@@ -241,6 +241,7 @@ function send_friend_request(){
 
   if (username.substring(2) != send_friend_reques_to) {
     $.post('php/user.php',{send:'yes',F:username.substring(2),T:send_friend_reques_to},function(data){
+      alert(data);
       switch (data.substring(2)) {
         case 'success':
         $('.send_s').velocity('transition.slideUpIn',1200).velocity('transition.slideUpOut');

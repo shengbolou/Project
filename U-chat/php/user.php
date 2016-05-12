@@ -224,17 +224,17 @@
     $F = $_POST['Friend'];
     $This = $_POST['This'];
 
+    //update friend request
     $query = "UPDATE friend_request SET decided = '1' WHERE F='$F'";
-
-    $add_friend = "INSERT INTO `$This`(Friend) VALUES('$F')";
-    $add_friend2 = "INSERT INTO `$F`(Friend) VALUES('$This')";
-
     $update = mysqli_query($conn,$query);
+
+
+    $add_friend = "INSERT INTO friends(user_one, user_two) VALUES('$F','$This')";
+    $add_friend2 = "INSERT INTO friends(user_one, user_two) VALUES('$This','$F')";
     $result = mysqli_query($conn,$add_friend);
     $result2 = mysqli_query($conn,$add_friend2);
 
     if ($result && $result2) {
-      # code...
       echo "success";
     }
     else {
@@ -249,14 +249,13 @@
 
     $user = $_POST['user'];
 
-    $query = "SELECT `$user`.Friend, users.info, users.url FROM `$user` LEFT JOIN users ON `$user`.Friend=users.UserName";
-
+    $query = "SELECT friends.user_two, users.info, users.url FROM friends LEFT JOIN users ON friends.user_two=users.UserName where friends.user_one='$user'";
     $update = mysqli_query($conn,$query);
 
     $users = '';
 
     while ($row = mysqli_fetch_assoc($update)) {
-      $users.= $row['Friend'].",".$row['info'].",".$row['url'].",";
+      $users.= $row['user_two'].",".$row['info'].",".$row['url'].",";
     }
 
     echo $users;

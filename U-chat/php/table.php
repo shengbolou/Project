@@ -28,6 +28,7 @@ $users =
   email varchar(255) NOT NULL,
   url varchar(255) DEFAULT 'imgs/user.png',
   info TEXT NOT NULL,
+  online BOOLEAN DEFAULT 0,
   PRIMARY KEY(ID)
 )";
 

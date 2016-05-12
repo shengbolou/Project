@@ -25,14 +25,15 @@ if(isset($_POST['Sign'])){
 
       if($result){
         // create user table
-        $sql = "CREATE TABLE `$username`(
-        ID int NOT NULL AUTO_INCREMENT,
-        Friend varchar(255) NOT NULL,
-        PRIMARY KEY(ID)
-        )";
-        $result = mysqli_query($conn,$sql);
-        echo "success";
+        // $sql = "CREATE TABLE `$username`(
+        // ID int NOT NULL AUTO_INCREMENT,
+        // Friend varchar(255) NOT NULL,
+        // PRIMARY KEY(ID)
+        // )";
+        // $result = mysqli_query($conn,$sql);
+        // echo "success";
         //set online
+        echo "success";
         $online = "UPDATE users SET online=1 WHERE UserName='$username'";
         $result2 = mysqli_query($conn,$online);
       }

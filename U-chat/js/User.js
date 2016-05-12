@@ -364,6 +364,7 @@ function accept(data){
   $('#'+data).parent().velocity('transition.slideUpOut',200);
   $.post('php/user.php',{accept:'yes',Friend:data,This:username.substring(2)},function(data){
     load_friend_request();
+    alert(data);
   });
 }
 

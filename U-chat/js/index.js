@@ -17,9 +17,15 @@ $(document).ready(function(){
 
   $('#dismiss').click(function(){
     $('.failed').velocity("fadeOut",200);
+    $('#l-username').parent().removeClass('has-error');
+    $('#l-password').parent().removeClass('has-error');
   });
   $('#dismiss2').click(function(){
     $('.failed2').velocity("fadeOut",200);
+    $('#s_username').parent().removeClass('has-error');
+    $('#s_email').parent().removeClass('has-error');
+    $('#s_password').parent().removeClass('has-error');
+    $('#s_r_password').parent().removeClass('has-error');
   });
 
   $.post('php/table.php',function(data){
@@ -123,6 +129,7 @@ function Log_in(){
         $('#log-in-modal').stop(true,true).velocity("callout.shake",350);
         document.getElementById('message').innerHTML = "username or password wrong!";
         $('.failed').velocity("fadeIn",200);
+          break;
       }
     });
   }

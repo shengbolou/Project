@@ -5,10 +5,6 @@ $servername = "localhost";
 $username = "root";
 $password = "loushengbo123";
 
-
-//create database share
-$db = "CREATE DATABASE share";
-
 //create friend_request table
 $friend_request =
 "CREATE TABLE friend_request(
@@ -52,7 +48,6 @@ $msg =
   PRIMARY KEY(ID)
 )";
 
-mysqli_query($conn,$db);
 mysqli_query($conn,$friend_request);
 mysqli_query($conn,$users);
 mysqli_query($conn,$msg);

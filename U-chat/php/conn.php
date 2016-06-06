@@ -8,6 +8,10 @@ $password = 'loushengbo123';
 
 $conn = mysqli_connect($serverName,$userName,$password);
 
+//create database share
+$db = "CREATE DATABASE share";
+mysqli_query($conn,$db);
+
 if(!$conn){
   die("connection error");
 }

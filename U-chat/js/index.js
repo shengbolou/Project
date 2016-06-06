@@ -23,7 +23,7 @@ $(document).ready(function(){
   });
 
   $.post('php/table.php',function(data){
-    alert(data);
+    // alert(data);
   });
 
   $('.main').velocity({

@@ -12,11 +12,11 @@ if (isset($_FILES['file1'])) {
   $file_size = $_FILES["file1"]["size"];
 
   if (!$tmp_name) {
-    echo "file not exist";
+    echo "file does not exist";
   }
 
   else if($file_size > 1048576){
-    echo "file too large";
+    echo "file is too large";
   }
 
   else if($file_extension!='image/jpg' && $file_extension!='image/jpeg' && $file_extension!='image/png' && $file_extension!='image/gif'){

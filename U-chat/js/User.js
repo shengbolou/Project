@@ -241,7 +241,7 @@ function send_friend_request(){
 
   if (username.substring(2) != send_friend_reques_to) {
     $.post('php/user.php',{send:'yes',F:username.substring(2),T:send_friend_reques_to},function(data){
-      alert(data);
+      // alert(data);
       switch (data.substring(2)) {
         case 'success':
         $('.send_s').velocity('transition.slideUpIn',1200).velocity('transition.slideUpOut');
@@ -259,7 +259,8 @@ function send_friend_request(){
 }
 
 // search friends
-function search(name){
+function search(name)
+{
   $('.friends').empty();
   $('.send_r').velocity("transition.slideUpOut",300);
   if(name.length != 0){
@@ -374,7 +375,7 @@ function group_chat(){
   $('.side_bar').empty();
   //append new group chat button
   $('.side_bar').append(
-    `<a style="background:#CCD1D9; color:black; outline:none; border:none" class="btn btn-default new_group_chat">
+    `<a style="background:#CCD1D9; color:black; outline:none; border:none" data-toggle="modal" data-target="#group-chat" class="btn btn-default new_group_chat">
     <div class="media">
     <div class="media-left">
     <img class="media-object" src="imgs/add_friends.png" width="50px" height="50px"alt="...">
@@ -385,6 +386,7 @@ function group_chat(){
     </div>
     </a>`)
 }
+
 
 
 

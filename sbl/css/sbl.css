@@ -191,7 +191,7 @@
 .side-nav{
   display: none;
   position: fixed;
-  /*margin-top: 300px;*/
+  /*margin-top: 500px;*/
   width: 200px;
   z-index: 1;
 }
@@ -288,22 +288,32 @@ button{
 /*srcoll bar style*/
 body::-webkit-scrollbar-track
 {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  display: none;
+	/*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
 	border-radius: 2px;
-	background-color: #434A54;
+	/*background-color: #434A54;*/
+  /*background-color: transparent;*/
 }
 
 body::-webkit-scrollbar
 {
-	width: 8px;
-	background-color: #434A54;
+  visibility: hidden;
+	width: 2px;
+  background-color: auto;
+}
+
+body::-webkit-scrollbar : hover
+{
+  visibility: visible;
+	width: 6px;
+  background-color: auto;
 }
 
 body::-webkit-scrollbar-thumb
 {
 	border-radius: 2px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #E6E9ED;
+	-webkit-box-shadow: inset 0 0 6px black;
+  background-color: rgb(74, 74, 74);
 }
 
 

@@ -24,7 +24,7 @@ $(document).ready(function(){
 
 
 
-  $('.side-nav').css("margin-top",myHeight/3);
+  $('.side-nav').css("margin-top",myHeight/3.5);
   // $('.life').css('height',myHeight-50);
   var sequence = [
     {e:$('#Home-c a'),p:{translateX:0, opacity:1},o:{duration: 100,delay:200}},
@@ -260,7 +260,7 @@ $('.github').hover(
   $(window).scroll(function(){
     if($(this).scrollTop() >= $('body').height()-myHeight-30){
       if(!$('#info').is(':visible'))
-        $('#info').velocity('transition.slideUpIn');
+        $('#info').velocity("fadeIn",{duration: 500});
     }
     if($(this).scrollTop() >= 150 && !$('.navbar').is(':visible')){
       $('.navbar').velocity('transition.slideDownIn',200);

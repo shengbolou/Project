@@ -55,7 +55,7 @@ $(document).ready(function(){
     opacity: 0
   });
   $('.bground').velocity("fadeIn",{delay:200,duration:200});
-  $('.pageheader').css('height',myHeight+30);
+  $('.pageheader').css('height',myHeight+50);
   $('.downward').css('top',myHeight-50);
   $('.downward').velocity('transition.slideUpIn',{delay:2000});
   $('.myheader').velocity('transition.slideUpIn',{delay:2000,duration:300});

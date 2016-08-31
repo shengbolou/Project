@@ -564,6 +564,16 @@ body::-webkit-scrollbar-`thumb`
   width: 100%;
   padding-bottom: 100%;
 }
+.naptime{
+  margin-top: 20px;
+  background: url('../imgs/placeit.png') top center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  padding-bottom: 100%;
+}
 
 
 .description > li{

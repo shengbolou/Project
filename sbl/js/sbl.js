@@ -24,7 +24,7 @@ $(document).ready(function(){
 
 
 
-  $('.side-nav').css("margin-top",myHeight/3.5);
+  $('.side-nav').css("margin-top",myHeight/4);
   // $('.life').css('height',myHeight-50);
   var sequence = [
     {e:$('#Home-c a'),p:{translateX:0, opacity:1},o:{duration: 100,delay:200}},
@@ -237,25 +237,7 @@ $('.github').hover(
       scale:'1',
     },"spring",600);
   });
- // $('.t3hr').css('width','0');
-  $('.more').hover(
-    function(){
-      $(this).find('.hover3').stop().velocity('transition.slideLeftIn',200);
-      // $(this).find('.t3hr').stop().velocity({delay:100}).velocity({
-      //   width:'100%'
-      // },200);
-       $(this).stop().velocity({
-         scale:'1.1'
-       },200);
-    },function(){
-      $(this).find('.hover3').stop().velocity('transition.slideLeftOut',200);
-      $(this).stop().velocity({
-        scale:'1'
-      },200);
-      // $(this).find('.t3hr').stop().velocity({delay:100}).velocity({
-      //   width:'0px'
-      // },200);
-  });
+
 
   $(window).scroll(function(){
     if($(this).scrollTop() >= $('body').height()-myHeight-30){

@@ -124,12 +124,12 @@ $(document).ready(function(){
 
     if($(this).scrollTop() >= mine+400){
       if(!$('.side-nav').is(':visible')){
-        $('.side-nav').stop().velocity("transition.slideLeftIn",{duration:200});
+        $('.side-nav').stop().velocity("transition.fadeIn",{duration:200});
       }
     }
     if($(this).scrollTop() < mine+400){
       if($('.side-nav').is(':visible')){
-        $('.side-nav').stop().velocity("transition.slideLeftOut",{duration:200});
+        $('.side-nav').stop().velocity("transition.fadeOut`",{duration:200});
       }
     }
 
@@ -202,41 +202,7 @@ $(document).ready(function(){
     },100)
   });
 
-  $('.hover').velocity({backgroundColor: '#5C5959' ,backgroundColorAlpha: 0.6});
-  $('.hover3').velocity({backgroundColor: 'rgb(255, 255, 255)' ,backgroundColorAlpha: 0.6});
-  $('.naptime').hover(
-    function(){
-      $(this).find('.hover').stop().velocity('transition.slideUpIn',200);
-       $(this).stop(true,true).velocity({
-         scale:'1.1'
-       });
-    },function(){
-      $(this).find('.hover').stop().velocity('transition.slideDownOut',200);
-      $(this).stop(true,true).velocity({
-        scale:'1'
-      });
-  });
 
-
-
-$('.hover2').css('transform','scale(0)');
-
-$('.github').hover(
-  function(){
-    $(this).find('.hover2').stop().velocity({
-      scale:'1',
-    },"spring",600);
-    $(this).stop().velocity({
-      scale:'1.1',
-    },"spring",600);
-  },function(){
-    $(this).find('.hover2').stop().velocity({
-      scale:'0',
-    },"spring",600);
-    $(this).stop().velocity({
-      scale:'1',
-    },"spring",600);
-  });
 
 
   $(window).scroll(function(){

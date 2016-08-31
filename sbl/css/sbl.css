@@ -545,24 +545,28 @@ body::-webkit-scrollbar-thumb
 
 /*the About me photo*/
 .me{
-  margin-top: 10px;
-  margin-bottom: 50px;
+  margin-top: 20px;
   background: url('../imgs/about_me.jpg') top center no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   width: 100%;
-  height: 280px;
+  padding-bottom: 100%;
+}
+.naptime{
+  margin-top: 20px;
+  background: url('../imgs/placeit.png') top center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  padding-bottom: 100%;
 }
 
 .description > li{
   margin-top: 10px
-}
-
-.projects .thumbnail{
-  position: relative;
-  overflow: hidden;
 }
 
 .hover{
@@ -973,8 +977,14 @@ hr{
   .side-nav{
     visibility: hidden;
   }
-}
+  .descriptionC a,h4{
+      text-align: center;
+  }
+  .descriptionC ul{
+    display:table; margin:0 auto
+  }
 
+}
 @media (max-width: 400px) {
   .timeline > li > .timeline-panel {
     width: 40%;
@@ -986,6 +996,23 @@ hr{
     -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
   }
+
+  .intro
+  {
+    line-height: 10px;
+  }
+  .intro-container
+  {
+    margin-top: 0px
+  }
+
+  .descriptionC a,h4{
+      text-align: center;
+  }
+  .descriptionC ul{
+    display:table; margin:0 auto
+  }
+
 
   .timeline > li > .timeline-panel:before {
     position: absolute;

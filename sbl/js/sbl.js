@@ -19,6 +19,7 @@ $(document).ready(function(){
     if (document.readyState === "complete") {
       clearInterval(readyStateCheckInterval);
       $('.svg_block').append('<embed id="svg"  src="name.svg">');
+      $('.load').velocity("transition.fadeOut",100);
     }
   }, 10);
 
@@ -129,7 +130,7 @@ $(document).ready(function(){
     }
     if($(this).scrollTop() < mine+400){
       if($('.side-nav').is(':visible')){
-        $('.side-nav').stop().velocity("transition.fadeOut`",{duration:200});
+        $('.side-nav').stop().velocity("transition.fadeOut",{duration:200});
       }
     }
 
@@ -203,8 +204,6 @@ $(document).ready(function(){
   });
 
 
-
-
   $(window).scroll(function(){
     if($(this).scrollTop() >= $('body').height()-myHeight-30){
       if(!$('#info').is(':visible'))
@@ -218,8 +217,6 @@ $(document).ready(function(){
       $('.navbar').velocity('transition.slideUpOut',200);
     }
   });
-
-
 
 
   $('.pdf').css('height',myHeight+30);

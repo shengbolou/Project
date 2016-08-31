@@ -194,14 +194,12 @@ body{
 .side-nav{
   display: none;
   position: fixed;
-  /*margin-top: 500px;*/
   width: 200px;
   z-index: 1;
 }
 .side-nav li a{
   position: relative;
   color: #656D78;
-  /*border-right: 2px solid #EEEEEE;*/
   border-radius: 0px;
   transition: .2s all ease-out;
 }
@@ -217,7 +215,6 @@ body{
 }
 .side-nav li .active{
   font-size: 18px;
-  font-weight: 600;
   color: #434A54;
   border-right: 2px solid #434A54;
   background: none;
@@ -389,7 +386,7 @@ body::-webkit-scrollbar-thumb
   margin-top: 5px;
   margin-left: 10px;
   margin-right: 10px;
-  font-size: 20px;
+  font-size: 15px;
   background: transparent;
   text-decoration: none;
   border: none;
@@ -559,7 +556,9 @@ body::-webkit-scrollbar-thumb
   height: 280px;
 }
 
-
+.description > li{
+  margin-top: 10px
+}
 
 .projects .thumbnail{
   position: relative;

@@ -576,6 +576,17 @@ body::-webkit-scrollbar-thumb
   padding-bottom: 100%;
 }
 
+.wemeet{
+  margin-top: 40px;
+  background: url('../imgs/wemeet.png') top center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  padding-bottom: 100%;
+}
+
 
 .description > li{
   margin-top: 10px

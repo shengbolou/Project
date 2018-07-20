@@ -557,7 +557,7 @@ body::-webkit-scrollbar-thumb
 /*the About me photo*/
 .me{
   margin-top: 20px;
-  background: url('../imgs/about_me.jpg') top center no-repeat;
+  background: url('../imgs/me.png') top center no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

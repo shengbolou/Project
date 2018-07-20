@@ -35,7 +35,6 @@
       <ul style="width:30%; margin-top:50px" class="nav-c nav center-block">
         <li id="Home-c"><a class="text-center"href="index.html">Home</a></li>
         <li id="Resume-c"><a class="text-center" href=".resume" data-toggle="modal">Resume</a></li>
-        <li id="Contact-c"><a class="text-center"href=".contact" data-toggle="modal"><strong>Contact</strong></a></li>
       </ul>
     </div>
 
@@ -83,8 +82,7 @@
             </div>
             <div id="navbar"class="collapse navbar-collapse navheadercoll">
               <ul class="nav navbar-nav navbar-right">
-                <li style="margin-top:5px;"id="Resume"><a class="text-center"href=".resume" data-toggle="modal">RESUME</a></li>
-                <li style="margin-top:5px"id="Contact"><a class="text-center"href=".contact" data-toggle="modal">CONTACT</a></li>
+                <li style="margin-top:5px;" id="Resume"><a class="text-center" href=".resume" data-toggle="modal">RESUME</a></li>
               </ul>
             </div>
           </div>
@@ -115,8 +113,7 @@
                 col-sm-5 col-sm-offset-0
                 col-xs-6 col-xs-offset-3" style="">
 
-                  <div style="
-                    border-radius: 50%;" class="me" >
+                  <div style="border-radius: 50%;" class="me" >
                   </div>
                 </div>
 
@@ -126,14 +123,12 @@
                 col-xs-8 col-xs-offset-2" style="">
 
                   <h4 class="intro"align="justify"style="font-family:'Oxygen';line-height:50px; padding-bottom:20%; margin-top:10%">
-                    Hello, my name is Shengbo Lou, I'm a software engineer and also a student at University of Massachusetts Amherst.
+                    Hello, my name is Shengbo Lou, I'm a software engineer and also a Master student in Computer Science at University of Massachusetts Amherst.
+                    Currently I'm a senior software engineer intern at IBM, I work in MaaS360 iOS development team contributing to the MaaS360 iOS application.
                   </h4>
 
                 </div>
               </div>
-
-
-
                   <blockquote style="margin-top:50px">
                     <p>
                       Favourite quote:
@@ -143,7 +138,6 @@
                     </h3>
                     <cite class="pull-right">―Michael Jordan</cite>
                   </blockquote>
-
               </div>
             </div>
 
@@ -206,13 +200,14 @@
                   </div>
                 </div>
               </li>
-              <!-- third -->
+
+              <!-- 5th -->
               <li class="timeline">
-                <div class="timeline-badge info"><i class="glyphicon glyphicon-tags"></i></div>
+                <div class="timeline-badge primary"><i class="glyphicon glyphicon-pushpin"></i></div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
-                    <h3 class="timeline-title">Personal Website</h3>
-                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> Spring 2016</small></p>
+                    <h3 class="timeline-title">Software Engineer Intern at Charles River Development</h3>
+                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> Summer 2016</small></p>
                   </div>
                   <div class="timeline-body">
 
@@ -220,16 +215,26 @@
                 </div>
               </li>
 
-              <!-- 5th -->
               <li class="timeline-inverted">
+                <div class="timeline-badge info"><i class="glyphicon glyphicon-tags"></i></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3 class="timeline-title">WeMeet web application</h3>
+                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> Fall 2016</small></p>
+                  </div>
+                  <div class="timeline-body">
+                  </div>
+                </div>
+              </li>
+
+              <li class="timeline">
                 <div class="timeline-badge primary"><i class="glyphicon glyphicon-pushpin"></i></div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
-                    <h3 class="timeline-title">Internship at Charles River Development</h3>
-                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> Summer 2016</small></p>
+                    <h3 class="timeline-title">Senior Software Developer Intern at IBM</h3>
+                    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> Summer 2018</small></p>
                   </div>
                   <div class="timeline-body">
-
                   </div>
                 </div>
               </li>
@@ -381,15 +386,6 @@
         </div><!--row-->
       </div><!--my projects END-->
 
-      <!-- the info alert at the bottom -->
-      <div style="margin-bottom:50px;" id="info" class="alert alert-dismissible"role="alert">
-        <button style="color: black"
-        type="button" class="close" data-dismiss="alert" name="button"><span aria-hidden="true">&times;</span></button>
-        <a data-toggle="modal" href=".contact">
-          <h4 style="text-align:center; color:black; font-family:'Oxygen'"><strong>Please</strong> send a friendly Hello!</h4>
-        </a>
-      </div>
-
       <!-- footer -->
       <div style="height:250px; text-align:center;" class="container-fluid page-header">
         <div class="row center-block">
@@ -416,7 +412,7 @@
 
             <h6 style="color:white; text-align:center; margin-top:20px;
             font-family:'Oxygen';">
-            Copyright (c) 2016 Copyright Shengbo Lou. All Rights Reserved.
+            Copyright (c) 2016-2018 Copyright Shengbo Lou. All Rights Reserved.
             </h6>
           </div>
         </div>
@@ -446,91 +442,6 @@
           </div>
         </div>
       </div>
-
-
-      <!-- Contact dialog -->
-      <div class="modal fade contact" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-
-            <div class="modal-header">
-              <button id="Close" type="button" class="close" data-dismiss="modal" aria-lebel="Close" name="button">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <h4 style="font-family:'Oxygen';color:black">Send a Hello letter</h4>
-            </div>
-
-            <div class="modal-body">
-              <div class="container-fluid contact-info text-center">
-                <h5 style="font-family:'Oxygen';color:black">Shengbo Lou</h5>
-                <h6><a style="font-family:'Oxygen';color:black"href="mailto:loushengbo@hotmail.com">loushengbo@hotmail.com</a></h6>
-                <address style="font-family:'Oxygen';color:black; font-size:12px"class="address">
-                  56 Eastman LN
-                  <br>Amherst
-                  <br>MA
-                  01003
-                </address>
-
-
-                <div class="row">
-                  <div class="col-md-12">
-
-                    <div id="success" class="alert alert-success alert-dismissible">
-                      <button type="button" class="close"><span aria-hidden="true">&times;</span></button>
-                      <h5 style="font-family: 'Oxygen'; font-size:15px" class="text-center">
-                        <strong>Thank you</strong> for your letter!
-                      </h5>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group label-floating lastname">
-                          <label style="left:0;"for="lastname" class="control-label">Last Name*</label>
-                          <input id="lastname" type="text" name="name" class="form-control input-field" value="">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group label-floating firstname">
-                          <label style="left:0"for="firstname" class="control-label">First Name*</label>
-                          <input id="firstname"type="text" name="name" class="form-control" value="">
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group label-floating email">
-                          <label style="left:0" for="email" class="control-label">Your email</label>
-                          <input id="email"type="text" name="name" class="form-control" value="">
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group label-floating msg">
-                          <label style="left:0" for="msg" class="control-label">What's in your mind</label>
-                          <textarea style="width: 100%" class="form-control"
-                          rows="5" id="msg"></textarea>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div><!--modal-body-->
-
-
-            <div class="modal-footer">
-                <button id="Close"type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button class="btn btn-success submitbtn"  accesskey="enter" onclick="Go()" type="button" name="button">Submit</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
 
   </body>
 </html>

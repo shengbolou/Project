@@ -205,10 +205,6 @@ $(document).ready(function(){
 
 
   $(window).scroll(function(){
-    if($(this).scrollTop() >= $('body').height()-myHeight-30){
-      if(!$('#info').is(':visible'))
-        $('#info').velocity("fadeIn",{duration: 500});
-    }
     if($(this).scrollTop() >= 150 && !$('.navbar').is(':visible')){
       $('.navbar').velocity('transition.slideDownIn',200);
     }
@@ -284,42 +280,3 @@ $(document).ready(function(){
   });
   $('#success').hide();
 });
-
-
-function Go(){
-  var lastname = document.getElementById('lastname').value;
-  var firstname = document.getElementById('firstname').value;
-  var email = document.getElementById('email').value;
-  var msg = document.getElementById('msg').value;
-
-  if(lastname == '' || firstname == '' || msg == ''){
-    $('.contact').velocity("callout.shake",300);
-
-    if(lastname == ''){
-      $('.lastname').addClass('has-error');
-    }
-    if(firstname == ''){
-      $('.firstname').addClass('has-error');
-    }
-    if(msg == ''){
-      $('.msg').addClass('has-error');
-    }
-  }
-  else{
-    $('.lastname').removeClass('has-error');
-    $('.firstname').removeClass('has-error');
-    $('.msg').removeClass('has-error');
-    //AJAx
-    $.post('sbl.php',{Go:'yes',lastname:lastname, firstname:firstname, email:email, msg:msg},function(data){
-      if(data == 'success'){
-        $('input').val("");
-        $('textarea').val("");
-        $('#success').show();
-        $('.close').click(function(){
-          $('#success').hide();
-          $('.contact').modal("hide");
-        })
-      }
-    });
-  }
-}
